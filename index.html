@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드형 게시물 페이지</title>
+    <link rel="stylesheet" href="style.css">
+
+<body id="tt-body-index">
+    <div id="z_body_container">
+        <header class="z_header">
+            <div class="z_blog_title">
+                <a href="https://zenncloud.com/" title="zenncloud" class="z_blog_title_link"></a>
+                zenncloud
+            </div>
+            <div class="z_header_contents">
+                <!-- 데스크탑 메뉴 -->
+                <!-- <div class="z_navigation">
+                    <nav>
+                        <ul class="tt_category">
+                            <li class=""><a href="/category" class="link_tit"> 분류 전체보기 </a>
+                                <ul class="category_list">
+                                    <li class=""><a href="/category/workspace" class="link_item"> workspace </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/workspace/web" class="link_sub_item"> web
+                                                </a></li>
+                                            <li class=""><a href="/category/workspace/tools" class="link_sub_item">
+                                                    tools </a></li>
+                                            <li class=""><a href="/category/workspace/system" class="link_sub_item">
+                                                    system </a></li>
+                                            <li class=""><a href="/category/workspace/workflow" class="link_sub_item">
+                                                    workflow </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="/category/creation" class="link_item"> creation </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/creation/original" class="link_sub_item">
+                                                    original </a></li>
+                                            <li class=""><a href="/category/creation/boardgames" class="link_sub_item">
+                                                    boardgames </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="/category/keepsakes" class="link_item"> keepsakes </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/keepsakes/clearlog" class="link_sub_item">
+                                                    clearlog </a></li>
+                                            <li class=""><a href="/category/keepsakes/goods" class="link_sub_item">
+                                                    goods </a></li>
+                                            <li class=""><a href="/category/keepsakes/picks" class="link_sub_item">
+                                                    picks </a></li>
+                                            <li class=""><a href="/category/keepsakes/archive" class="link_sub_item">
+                                                    archive </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="/category/mosaic" class="link_item"> mosaic </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/mosaic/moments" class="link_sub_item">
+                                                    moments </a></li>
+                                            <li class=""><a href="/category/mosaic/places" class="link_sub_item"> places
+                                                </a></li>
+                                            <li class=""><a href="/category/mosaic/subculture" class="link_sub_item">
+                                                    subculture </a></li>
+                                            <li class=""><a href="/category/mosaic/wishlist" class="link_sub_item">
+                                                    wishlist </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="/category/log" class="link_item"> log </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/log/updates" class="link_sub_item"> updates
+                                                </a></li>
+                                            <li class=""><a href="/category/log/notice" class="link_sub_item"> notice
+                                                </a></li>
+                                            <li class=""><a href="/category/log/news" class="link_sub_item"> news </a>
+                                            </li>
+                                            <li class=""><a href="/category/log/journal" class="link_sub_item"> journal
+                                                </a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div> -->
+                <!-- 모바일 메뉴 - 아이콘 -->
+                <div class="zm_navigation">
+                    <div id="menu-toggle" class="icon-wrapper">
+                        <div id="icon-open" class="icon visible">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="13.0909" y="13.0908" width="10.9091" height="10.9091" rx="5" fill="black">
+                                </rect>
+                                <rect width="10.9091" height="10.9091" rx="5" fill="black"></rect>
+                                <circle cx="18.5455" cy="5.45455" r="5.45455" fill="#00C6C5"></circle>
+                                <circle cx="5.45455" cy="18.5454" r="5.45455" fill="#00C6C5"></circle>
+                            </svg>
+                        </div>
+                        <div id="icon-close" class="icon hidden">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="-7.62939e-06" y="22.5686" width="31.9169" height="1.99481" rx="0.997404"
+                                    transform="rotate(-45 -7.62939e-06 22.5686)" fill="#00C6C5"></rect>
+                                <rect x="1.43133" y="0.020752" width="31.9169" height="1.99481" rx="0.997404"
+                                    transform="rotate(45 1.43133 0.020752)" fill="black"></rect>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- 모바일 사이드 메뉴 -->
+                <div id="zm_aside" class="zm_aside">
+                    <!-- 카테고리 목록 -->
+                    <nav class="">
+                        <ul class="tt_category">
+                            <li class=""><a href="/category" class="link_tit"> 분류 전체보기 </a>
+                                <ul class="category_list">
+                                    <li class=""><a href="/category/workspace" class="link_item"> workspace </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/workspace/web" class="link_sub_item"> web
+                                                </a></li>
+                                            <li class=""><a href="/category/workspace/tools" class="link_sub_item">
+                                                    tools </a></li>
+                                            <li class=""><a href="/category/workspace/system" class="link_sub_item">
+                                                    system </a></li>
+                                            <li class=""><a href="/category/workspace/workflow" class="link_sub_item">
+                                                    workflow </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="/category/creation" class="link_item"> creation </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/creation/original" class="link_sub_item">
+                                                    original </a></li>
+                                            <li class=""><a href="/category/creation/boardgames" class="link_sub_item">
+                                                    boardgames </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="/category/keepsakes" class="link_item"> keepsakes </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/keepsakes/clearlog" class="link_sub_item">
+                                                    clearlog </a></li>
+                                            <li class=""><a href="/category/keepsakes/goods" class="link_sub_item">
+                                                    goods </a></li>
+                                            <li class=""><a href="/category/keepsakes/picks" class="link_sub_item">
+                                                    picks </a></li>
+                                            <li class=""><a href="/category/keepsakes/archive" class="link_sub_item">
+                                                    archive </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="/category/mosaic" class="link_item"> mosaic </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/mosaic/moments" class="link_sub_item">
+                                                    moments </a></li>
+                                            <li class=""><a href="/category/mosaic/places" class="link_sub_item"> places
+                                                </a></li>
+                                            <li class=""><a href="/category/mosaic/subculture" class="link_sub_item">
+                                                    subculture </a></li>
+                                            <li class=""><a href="/category/mosaic/wishlist" class="link_sub_item">
+                                                    wishlist </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class=""><a href="/category/log" class="link_item"> log </a>
+                                        <ul class="sub_category_list">
+                                            <li class=""><a href="/category/log/updates" class="link_sub_item"> updates
+                                                </a></li>
+                                            <li class=""><a href="/category/log/notice" class="link_sub_item"> notice
+                                                </a></li>
+                                            <li class=""><a href="/category/log/news" class="link_sub_item"> news </a>
+                                            </li>
+                                            <li class=""><a href="/category/log/journal" class="link_sub_item"> journal
+                                                </a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="aside-overlay" class="hidden"></div>
+            </div>
+        </header>
+
+        <!-- container -->
+        <div id="z_container">
+            <main class="z_main">
+                <div class="z_main_area">
+                    <div class="zc2_container">
+                        <div class="zc_section_header">
+                            <h2 class="zc_section_title">최신 글</h2>
+                            <div class="zc_section_title_line"></div>
+                        </div>
+                        <div class="zc2_list">
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+                                                <img loading="lazy" src="https://picsum.photos/400/300?random=3"
+                                                    class="zc2_thumbnail_image" role="presentation">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="https://clock.zenncloud.com" target="_blank" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/mosaic/moments" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    moments
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.09.26</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">애플 미리 알림: 우선순위와 깃발, 명확하게 구분해서 관리하는 방법</div>
+                                        <div class="zc2_item_summary">애플의 미리 알림(Reminders) 앱에는 할 일마다 우선순위를 지정하거나 깃발을 달 수
+                                            있는 기능이 있습니다.처음 보면 둘 다 “중요 표시”처럼 보이지만, 실제로는 역할과 목적이 완전히 다릅니다.이번 글에서는 우선순위를
+                                            입력하지 않은 항목까지 포함해, 제 나름의 기준을 기반으로 효율적으로 관리하는 방법을 작성해 봅니다. 우선순위(Priority) – ‘일
+                                            자체의 중요도’우선순위는 할 일 자체의 중요도를 나타내는 지표입니다.우선순위는 일 자체의 중요도만 표시하고, 처리 시점이나 긴급성은
+                                            반영하지 않습니다. 깃발(Flag) – ‘놓치지 않고 처리해야 하는 일’깃발은 처리 여부를 시각적으로 강조하는 기능입니다.중요도와
+                                            관계없이, 반드시 확인/처리해야 하는 일을 표시 합니다.깃발을 사용하게되면100개 이..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+                                                <img loading="lazy" src="https://picsum.photos/400/300?random=4"
+                                                    class="zc2_thumbnail_image" role="presentation">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/64" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/mosaic/moments" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    moments
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.09.25</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">기록 습관 다시 세우기: 캘린더, 미리 알림, 메모 정리하기</div>
+                                        <div class="zc2_item_summary">매년 이맘때가 되면 시중에 새로운 다이어리들이 하나둘 나오기 시작합니다. 저도 늘 구경은
+                                            하지만, 사실 종이 다이어리를 꾸준히 쓰는 스타일은 아닙니다. 그럼에도 불구하고 월간 캘린더 정도는 기록용으로 쓰면 꽤 괜찮겠다는 생각이
+                                            들었습니다.‘그럼 굳이 새 다이어리를 살 필요가 있을까?이미 macOS에 기본으로 있는 캘린더 앱을 활용하면 충분하지 않을까?’이런
+                                            생각에서 출발해, 이번 기회에 기록 관련된 도구들을 전체적으로 정리해보기로 했습니다. 평소에도 메모와 미리 알림은 자주 사용했지만 구조가
+                                            정돈되지 않았고, 캘린더는 거의 방치해둔 상태였거든요. 그래서 세 가지 앱을 “제 역할”에 맞게 새롭게 활용해보기로 했습니다. 캘린더:
+                                            추억을 기록하는 월간 다이어리캘린더는 앞으로 해야 할 일정을 관리하기보다는, ..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+
+                                                <img loading="lazy" src="https://picsum.photos/400/300?random=1"
+                                                    class="zc2_thumbnail_image" role="presentation">
+                                                class="zc2_thumbnail_image" role="presentation">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/57" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/keepsakes/clearlog" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    clearlog
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.07.11</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">Steam 도전과제 컴플리트 #15 - Banana</div>
+                                        <div class="zc2_item_summary">Banana모든 도전 과제 달성기록용 포스트 추천 여부: ★★★☆☆스타일과 타격감은 인정.
+                                            그러나 그 안의 불편함은 분명 존재한다 시선을 사로잡는 비주얼과 액션『스텔라 블레이드』는 압도적인 비주얼과 세련된 연출,그리고 패링과
+                                            회피를 중심으로 한 리듬감 있는 전투로 ‘보여주는 게임’의 정석을 구현한 액션 어드벤처다.이브의 캐릭터성과 스타일리시한 전투는 충분히
+                                            몰입감을 제공하며,매끈한 애니메이션과 보스전의 연출 등은 확실히 눈에 띄는 장점.보스가 하나같이 더럽게 생겼지만 그건 제작사 측에서
+                                            의도하였다고 하는거니깐 딱히 단점으로 삼진 않겠다. 스팀판에서 개선된 더빙, 그러나 기술적 완성도는 아쉬움초기 한국어 더빙 버전은 몰입을
+                                            방해하는 수준이었지만,스팀판 출시와 함께 추가된 일본어 더빙은 전체적인 몰입도..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+
+                                                <img loading="lazy" src="https://picsum.photos/400/300?random=2"
+                                                    class="zc2_thumbnail_image" role="presentation">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/56" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/keepsakes/clearlog" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    clearlog
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.07.10</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">Steam 도전과제 컴플리트 #14 - 스텔라 블레이드™</div>
+                                        <div class="zc2_item_summary">스텔라 블레이드™모든 도전 과제 달성기록용 포스트 추천 여부: ★★☆☆☆게임이라기보단,
+                                            마켓 드롭을 위한 숫자 누적기 바나나 소개『Banana』는 아주 단순하다.화면에 떠 있는 바나나 이미지를 클릭하면 숫자가 올라간다.그리고
+                                            약 3시간마다 자동으로 랜덤 바나나 아이템이 드롭된다.그게 전부다. 핵심은 클릭이 아니라 ‘드롭’드롭되는 바나나 아이템은 Steam
+                                            커뮤니티 마켓에서 거래 가능하며,대부분은 0.04원 수준이지만,드물게 등장하는 희귀 바나나는 수천 원에서 수십만 원에 거래되기도
+                                            한다.결과적으로 이 드롭 시스템이 게임의 주목적이 되었고,많은 유저들이 바나나를 클릭하거나 켜두기만 하며 이득을 노리는 구조다. 매크로와
+                                            봇, 그리고 실질적인 기능이러한 특성 탓에 지금은 수많은 매크로와 자동화 봇이 유입..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+                                                <img loading="lazy" src="https://picsum.photos/400/300?random=5"
+                                                    class="zc2_thumbnail_image" role="presentation">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/55" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/log/notice" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    notice
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.07.09</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">블로그 카테고리 안내</div>
+                                        <div class="zc2_item_summary">이곳은 다양한 관심사와 작업 결과물을 주제별로 정리해두는 개인 아카이브입니다.내용을 보다
+                                            쉽게 찾아볼 수 있도록 카테고리를 몇 가지 기준에 따라 분류해두었습니다.각 카테고리의 성격과 용도를 간단히 소개합니다. 🧩
+                                            mosaic다양한 주제의 정보와 기록을 모아두는 카테고리모자이크처럼 서로 다른 조각들을 한데 모아 구성된 공간으로, 특정 주제에 국한되지
+                                            않은 실용 정보와 경험을 담습니다. 하위 폴더의미 및 용도subculture게임, 애니메이션, 드라마 등 서브컬처 감상 및 소소한 감상
+                                            정리wishlist위시리스트: 갖고 싶은 물건, 관심 있는 아이템에 대한 정보 수집 및 개인적 메모moments기록하고 싶은 순간들에
+                                            초점. 감정이 실린 짧은 메모나 소소한 경험에 적합 (간단한 음식 후기, 생활 소감, 작..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+                                                <img loading="lazy" src="https://picsum.photos/400/300?random=6"
+                                                    class="zc2_thumbnail_image" role="presentation">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/54" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/workspace/workflow" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    workflow
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.07.08</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">제품을 만드는 절차와 단계별 목표</div>
+                                        <div class="zc2_item_summary">제품 개발은 단순히 ‘개발을 시작해서 출시하는 것’만을 의미하지 않는다.각 단계마다 생각할
+                                            거리와 해결할 문제가 다르고, 그에 따라 목표도 조금씩 달라진다.아래는 일반적인 제품 개발의 4단계 흐름과 각 단계에서의 주요 목표를
+                                            정리한 내용이다. 1단계. 전략 – 무엇을 만들까?핵심 질문: 우리는 왜 이 제품을 만들려는가?해결하려는 문제 정의사용자의 니즈 또는
+                                            불편 탐색시장 기회 또는 비즈니스 가능성 확인제품이 지향할 방향 설정중장기 로드맵과 우선순위 설정자원(사람, 시간, 예산 등) 분배※ 이
+                                            단계에서는 ‘무엇을 만들지’보다는 ‘무엇을 해결할 것인지’에 집중하는 게 중요하다. 2단계. 기획 – 어떻게 만들까?핵심 질문: 이
+                                            문제를 어떤 형태의 제품으로 풀 것인가?주요 기능 정의 및 사용자 흐름 설계화면..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                        <div class="cp_zc2_bottom">
+                            <iframe
+                                src="https://ads-partners.coupang.com/widgets.html?id=919592&amp;template=carousel&amp;trackingCode=AF6561083&amp;subId=&amp;width=1400&amp;height=160&amp;tsource="
+                                width="1400" height="160" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"
+                                browsingtopics=""></iframe>
+                        </div>
+                    </div>
+
+                    <!-- // cover-zc2 -->
+
+                    <!-- cover-zc1 -->
+
+                    <!-- // cover-zc1 -->
+                    <!-- cover-zc2 -->
+
+                    <div class="zc2_container">
+                        <div class="zc_section_header">
+                            <h2 class="zc_section_title">Creation</h2>
+                            <div class="zc_section_title_line"></div>
+                        </div>
+                        <div class="zc2_list">
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+
+                                                <img loading="lazy"
+                                                    src="https://blog.kakaocdn.net/dna/nvtpm/btsNKs2PivO/AAAAAAAAAAAAAAAAAAAAAGgqy7Dwfv5mcIufDHw_MJFRmAC1ZsiKrD0KmWSNa8B-/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=rT6v5Rka6sqQQR5W65np36%2BrRgU%3D"
+                                                    class="zc2_thumbnail_image" role="presentation">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/12" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/creation/original" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    original
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.05.06</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">Union Arena Custom Playmat</div>
+                                        <div class="zc2_item_summary">없어서 직접 만들어 사용하고 있는 Union Arena의 플레이 매트 입니다.특별한
+                                            디자인을 선호하는게 없기에 최초 발매시의 매뉴얼에 포함된 Basic한 디자인을 최대한 따라서 만들면서 조금 취향에 맞게 수정을 했습니다.
+                                            실제 사용 중인 모습실제 제작했을경우의 사이즈 입니다.매트 사이즈는 600x350mm 두께 4mm로 하였습니다. 전체 공유는
+                                            중단하였습니다.</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+
+                                                <img loading="lazy"
+                                                    src="https://blog.kakaocdn.net/dna/XqZTm/btsNKoe2jKW/AAAAAAAAAAAAAAAAAAAAAOrqAc8GxPySV0bwsYqD6OwnLEevsNnTOtFiuIFhXlsg/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=3yBtBMzz2OTUYeSdszddAvC6mp8%3D"
+                                                    class="zc2_thumbnail_image" role="presentation">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/11" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/creation/original" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    original
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.05.06</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">tistory skin - zenn.skin</div>
+                                        <div class="zc2_item_summary">zenn.skin은 간결하고 현대적인 디자인으로 제작된 프리미엄 티스토리 스킨입니다.개인
+                                            블로그부터 전문 블로그까지 다양한 주제에 적용 가능하도록 설계되었으며,세련된 시각적 요소와 강력한 커스터마이징 기능을 함께 제공합니다.
+                                            💡 zenn.skin의 특징zenn.skin은 사용자가 자신의 취향에 맞게 쉽게 조정할 수 있도록 다양한 커스터마이징 옵션을
+                                            제공합니다. 테마 색상, 레이아웃, 링크 등을 손쉽게 변경하여 나만의 블로그를 만들 수 있습니다.커스터마이징 가능한 항목과 사용법은 다음
+                                            링크를 확인해 주세요🎨 24가지 블로그 테마 색상스킨 편집에서 24가지의 아름다운 컬러 세트 중에서 개인의 취향에 맞게 블로그 테마
+                                            색상을 선택할 수 있습니다.더불어 랜덤으로 적용되는 메뉴까지 총 25가지의 옵션 중에서 ..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+
+                                                <img loading="lazy"
+                                                    src="https://blog.kakaocdn.net/dna/b19CbA/btsNKAGysoq/AAAAAAAAAAAAAAAAAAAAAIEICzxu8mxAttKGpvoDXUZdrSnwPclnBeZxKAoNOSB3/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=kMUj0xtVs5I7tpJ%2FYcV8ja3u%2FUI%3D"
+                                                    class="zc2_thumbnail_image" role="presentation">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/10" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/creation/original" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    original
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.05.06</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">tistory skin - BiCute skin</div>
+                                        <div class="zc2_item_summary">BiCute 스킨은 인기 스킨 Odyssey의 장점을 계승하면서, 다양한 문제점을 보완하고
+                                            사용자 맞춤 기능을 강화한 티스토리 블로그용 스킨입니다. 💡 주요 특징✅ Odyssey의 장점 계승 PC 레이아웃 : 2단 우측
+                                            사이드바 / 1단 서랍형 사이드바목록 탐색 타입 : 페이지 나열 / 더보기 버튼**티스토리 '메뉴'**를 활용한 네비게이션 바 적용
+                                            가능헤더 슬로건 / 이벤트 배너 섹션 지원사이드바 : 프로필 + SNS 링크(YouTube, Instagram, Twitter)※
+                                            Facebook은 제거됨트위터 타임라인 적용 가능푸터 : 외부링크 최대 3개 / 푸터 문구 2줄 삽입 가능티스토리 링크 기반 관련 사이트
+                                            연결 기능 🛠 Odyssey의 문제점 보완반응형 사이즈 어긋남 해결헤더 범위 튀는 현상..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+
+                                                <img loading="lazy"
+                                                    src="https://blog.kakaocdn.net/dna/9p45u/btsNL3AX7wu/AAAAAAAAAAAAAAAAAAAAACuaT5G_c_bjY7Jpc7nDVjfEAlLtsR2TvAdNc4-f78q9/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=Qs92EQdVYCx4zeeX63jlUfbPOOE%3D"
+                                                    class="zc2_thumbnail_image" role="presentation">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/9" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/creation/original" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    original
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.05.06</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">🎁 일본 라인 스티커, 필요하신 분들 도와드려요</div>
+                                        <div class="zc2_item_summary">일본 라인 스탬프를 구매하고 싶지만 일본 계정이 없어 어려움을 겪고 계신가요?원하시는 일본
+                                            한정 스티커를 대신 구매해 선물해드리고 있습니다. 💬 어떻게 도와드리나요?일본 라인 계정이 없어 직접 구매가 어려우신 분들을 위해 대리
+                                            구매 후 선물해드리는 방식으로 도움을 드리고 있어요.선물은 연락주신 계정으로 직접 전달됩니다.다른 계정으로 전송을 원하시는 경우, 미리
+                                            말씀해 주세요. 💰 스티커 선물 비용 비용은 다음과 같습니다:50 코인 = 2,500원100 코인 = 5,000원 📱 연락 방법라인
+                                            ID : KouryakunoZEN메시지로 연락 주실 때, 스티커 링크를 함께 보내주시면 빠르게 확인이 가능합니다.일본어가 어려우신 경우,
+                                            크롬 브라우저의 번역 기능을 활용해 주세요. 🔍 스티커 찾는 방법스타리코..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+
+                                                <img loading="lazy"
+                                                    src="https://blog.kakaocdn.net/dna/c0Czzs/btsNMBYg5C4/AAAAAAAAAAAAAAAAAAAAAADImLK8OOQ0G-YjAaRdJDvwNE3r2wmDV7O8PuoIg378/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&amp;expires=1759244399&amp;allow_ip=&amp;allow_referer=&amp;signature=5Ery8FNccH3WwHYMsEhFxTdn1gE%3D"
+                                                    class="zc2_thumbnail_image" role="presentation">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/8" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/creation/original" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    original
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.05.06</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">Union Arena Deck Builder(uadeck) - Update Log</div>
+                                        <div class="zc2_item_summary">반다이남코의 트레이딩 카드 게임 [UNION ARENA]의 덱 빌더 사이트의 업데이트
+                                            내역입니다. 사이트: 링크 📝 Release Note📌 version_2.0.11_2025.04.19일반카드 카운트 표시방식 변경
+                                            version_2.0.10_2025.04.18신규 작품 추가강철의연금술사, 윈드브레이커 추가
+                                            version_2.0.4_2025.03.20일반리절트에서 카드리스트로 돌아올 때 카드 데이터 추가카드 번호로만 판단하던 기록을 패러렐
+                                            값까지 확인하도록 추가이미지 생성방식 dom-to-html에서 html2canvas로 변경코드 정리다국어 지원
+                                            version_2.0.1_2025.03.19일반iOS 터치 오류 방지 / 카운터 변경시 화면 갱신 / body에 opacity 적용되는
+                                            문제 수정 iOS..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                        <div class="cp_zc2_bottom">
+                            <iframe
+                                src="https://ads-partners.coupang.com/widgets.html?id=919592&amp;template=carousel&amp;trackingCode=AF6561083&amp;subId=&amp;width=1400&amp;height=160&amp;tsource="
+                                width="1400" height="160" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"
+                                browsingtopics=""></iframe>
+                        </div>
+                    </div>
+
+                    <!-- <div class="zc2_container">
+                        <div class="zc_section_header">
+                            <h2 class="zc_section_title">공지사항</h2>
+                            <div class="zc_section_title_line"></div>
+                        </div>
+                        <div class="zc2_list">
+
+                            <article class="zc2_item">
+                                <div class="zc2_item_wrapper">
+                                    <div class="zc2_thumbnail">
+                                        <div class="zc2_thumbnail_wrapper">
+                                            <div class="zc2_thumbnail_inset">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="/38" class="zc2_item_link"></a>
+                                    <div class="zc2_content_wrapper">
+                                        <div class="zc2_item_info">
+
+                                            <a href="/category/log/notice" class="zc2_category_link">
+                                                <div class="zc2_category_text">
+                                                    notice
+                                                </div>
+                                            </a>
+                                            <div class="zc2_info_divider"></div>
+                                            <div class="zc2_date">2025.06.18</div>
+
+                                        </div>
+                                        <div class="zc2_item_title">댓글 기능 중단 안내 및 소통 채널 변경 공지</div>
+                                        <div class="zc2_item_summary">안녕하세요.최근 블로그 운영과 관련하여 불편한 점이 많아 안내 글을 남깁니다.
+                                            티스토리에서는 꽤 오래전부터 의미 없는 댓글들이 매크로 계정들에 의해 무차별적으로 달리고 있습니다.처음엔 그냥 무시하거나 수동으로
+                                            삭제해왔지만, 이제는 그 양도 많고, 반복적으로 알림이 오는 것조차 스트레스가 되어버렸습니다.한동안은 블로그 자체에서 댓글 입력란을 아예
+                                            제거해보기도 했지만, 매크로 계정들은 실제 댓글 입력란이 존재하든 말든 상관없이 자동화된 방식으로 댓글을 남기기 때문에 큰 효과가
+                                            없더군요. 티스토리 자체에서 ‘댓글 기능을 전체 비활성화’하는 옵션도 없어, 결국 하나하나 게시글 단위로 댓글 기능을 차단하는 방법밖에
+                                            없다는 결론에 이르렀습니다. 또한 티스토리 자체에서 '댓글 기능 전체 비활성화' 설정이 없어, 게시..</div>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                        <div class="cp_zc2_bottom">
+                            <iframe
+                                src="https://ads-partners.coupang.com/widgets.html?id=919592&amp;template=carousel&amp;trackingCode=AF6561083&amp;subId=&amp;width=1400&amp;height=160&amp;tsource="
+                                width="1400" height="160" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"
+                                browsingtopics=""></iframe>
+                        </div>
+                    </div> -->
+
+                </div>
+            </main>
+            <!-- // container -->
+
+            <!-- footer -->
+            <footer id="z_footer">
+                <div class="z_footer_wrapper">
+                    <div class="z_footer_copyright">
+                        Powered by
+                        <a href="https://x.com/zenless_x" target="_blank" rel="noopener noreferrer"
+                            class="powered-link">
+                            zenn
+                        </a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script>
+        const useToc = 'true';
+        const tocDepth = 'depth-limit-3';
+        const tocPosition = 'position_before_heading';
+        const tocCounter = 'counter_decimal';
+        let isCollapsed = 'toc-opend';
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
