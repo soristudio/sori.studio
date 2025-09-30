@@ -4,12 +4,12 @@ function loadFooter() {
   
   // 푸터 HTML을 직접 정의
   const footerHTML = `
-<footer id="z_footer">
-    <div class="z_footer_wrapper">
-        <div class="z_footer_copyright">
+<footer id="z-footer">
+    <div class="z-footer__wrapper">
+        <div class="z-footer__copyright">
             Powered by
             <a href="https://x.com/zenless_x" target="_blank" rel="noopener noreferrer"
-                class="powered-link">
+                class="z-footer__powered-link">
                 zenn
             </a>
         </div>
@@ -24,8 +24,8 @@ function loadFooter() {
     console.log('푸터 HTML 삽입 완료');
     
     // 푸터가 제대로 로드되었는지 확인
-    const testElement = document.getElementById('z_footer');
-    console.log('z_footer 확인:', testElement);
+    const testElement = document.getElementById('z-footer');
+    console.log('z-footer 확인:', testElement);
     
     return true; // 성공적으로 로드됨
   } else {
