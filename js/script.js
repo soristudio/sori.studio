@@ -1,47 +1,36 @@
-  document.addEventListener('DOMContentLoaded', function () {
-  // ===== ZM aside Toggle =====
-  const toggle = document.getElementById('menu-toggle');
-const iconOpen = document.getElementById('icon-open');
-const iconClose = document.getElementById('icon-close');
-const aside = document.getElementById('zm_aside');
-const overlay = document.getElementById('aside-overlay');
-const body = document.body;
+// DOM이 로드되면 헤더를 먼저 로드
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOM 로드 완료');
 
-if (toggle && iconOpen && iconClose && aside && overlay) {
-  const openMenu = () => {
-    iconOpen.classList.add('hidden');
-    iconOpen.classList.remove('visible');
-    iconClose.classList.add('visible');
-    iconClose.classList.remove('hidden');
-
-    aside.classList.add('open');
-    overlay.classList.remove('hidden');
-    body.style.overflow = 'hidden';
-  };
-
-  const closeMenu = () => {
-    iconOpen.classList.add('visible');
-    iconOpen.classList.remove('hidden');
-    iconClose.classList.add('hidden');
-    iconClose.classList.remove('visible');
-
-    aside.classList.remove('open');
-    overlay.classList.add('hidden');
-    body.style.overflow = '';
-  };
-
-  toggle.addEventListener('click', () => {
-    const isMenuOpen = aside.classList.contains('open');
-    if (isMenuOpen) {
-      closeMenu();
+  // 헤더 초기화 (header.js에서 제공)
+  if (typeof initializeHeader === 'function') {
+    const headerSuccess = initializeHeader();
+    if (headerSuccess) {
+      console.log('헤더 초기화 완료');
     } else {
-      openMenu();
+      console.error('헤더 초기화 실패');
     }
-  });
+  } else {
+    console.error('initializeHeader 함수를 찾을 수 없습니다. header.js가 로드되었는지 확인하세요.');
+  }
 
-  // 오버레이 클릭 시 닫기
-  overlay.addEventListener('click', closeMenu);
-}
+  // 푸터 초기화 (footer.js에서 제공)
+  if (typeof initializeFooter === 'function') {
+    const footerSuccess = initializeFooter();
+    if (footerSuccess) {
+      console.log('푸터 초기화 완료');
+    } else {
+      console.error('푸터 초기화 실패');
+    }
+  } else {
+    console.error('initializeFooter 함수를 찾을 수 없습니다. footer.js가 로드되었는지 확인하세요.');
+  }
+
+  // 기존 스크립트 실행
+  initializeScripts();
+});
+
+function initializeScripts() {
 
   // ===== Masonry Grid =====
   const grids = document.querySelectorAll('.zc1_list');
@@ -66,12 +55,19 @@ if (toggle && iconOpen && iconClose && aside && overlay) {
   }
 
   // ===== Table of Contents (TOC) =====
+
+  const useToc = 'true';
+  const tocDepth = 'depth-limit-3';
+  const tocPosition = 'position_before_heading';
+  const tocCounter = 'counter_decimal';
+  let isCollapsed = 'toc-opend';
+  
   if (typeof useToc !== 'undefined' && useToc !== 'false') {
     let selector = 'h2';
     if (tocDepth === 'depth-limit-2') selector += ', h3';
     else if (tocDepth === 'depth-limit-3') selector += ', h3, h4';
 
-    const container = document.querySelector('.z_article_view');
+    const container = document.querySelector('.z-article__body');
     if (container) {
       const headings = container.querySelectorAll(selector);
       const tocContainer = document.createElement('div');
@@ -157,7 +153,7 @@ if (toggle && iconOpen && iconClose && aside && overlay) {
         listItem.appendChild(titleSpan);
 
         listItem.addEventListener('click', function () {
-          const header = document.querySelector('.z_header');
+          const header = document.querySelector('.z-header');
           const offsetTop = heading.offsetTop - (header.offsetHeight + 10);
           window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         });
@@ -179,4 +175,4 @@ if (toggle && iconOpen && iconClose && aside && overlay) {
   }
 
   requestAnimationFrame(raf);
-});
+}

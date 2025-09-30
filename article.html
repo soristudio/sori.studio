@@ -5,185 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>카드형 게시물 페이지</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- hljs -->
+    <link rel="stylesheet" href="/css/lib/highlight.min.css" />
+    <script src="/js/lib/highlight.min.js"></script>
+    <!-- lenis.js -->
+    <script src="/js/lib/lenis.min.js"></script>
 
 <body id="tt-body-index">
-    <div id="z_body_container">
-        <header class="z_header">
-            <div class="z_blog_title">
-                <a href="https://zenncloud.com/" title="zenncloud" class="z_blog_title_link"></a>
-                zenncloud
-            </div>
-            <div class="z_header_contents">
-                <!-- 데스크탑 메뉴 -->
-                <!-- <div class="z_navigation">
-                    <nav>
-                        <ul class="tt_category">
-                            <li class=""><a href="/category" class="link_tit"> 분류 전체보기 </a>
-                                <ul class="category_list">
-                                    <li class=""><a href="/category/workspace" class="link_item"> workspace </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/workspace/web" class="link_sub_item"> web
-                                                </a></li>
-                                            <li class=""><a href="/category/workspace/tools" class="link_sub_item">
-                                                    tools </a></li>
-                                            <li class=""><a href="/category/workspace/system" class="link_sub_item">
-                                                    system </a></li>
-                                            <li class=""><a href="/category/workspace/workflow" class="link_sub_item">
-                                                    workflow </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="/category/creation" class="link_item"> creation </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/creation/original" class="link_sub_item">
-                                                    original </a></li>
-                                            <li class=""><a href="/category/creation/boardgames" class="link_sub_item">
-                                                    boardgames </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="/category/keepsakes" class="link_item"> keepsakes </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/keepsakes/clearlog" class="link_sub_item">
-                                                    clearlog </a></li>
-                                            <li class=""><a href="/category/keepsakes/goods" class="link_sub_item">
-                                                    goods </a></li>
-                                            <li class=""><a href="/category/keepsakes/picks" class="link_sub_item">
-                                                    picks </a></li>
-                                            <li class=""><a href="/category/keepsakes/archive" class="link_sub_item">
-                                                    archive </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="/category/mosaic" class="link_item"> mosaic </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/mosaic/moments" class="link_sub_item">
-                                                    moments </a></li>
-                                            <li class=""><a href="/category/mosaic/places" class="link_sub_item"> places
-                                                </a></li>
-                                            <li class=""><a href="/category/mosaic/subculture" class="link_sub_item">
-                                                    subculture </a></li>
-                                            <li class=""><a href="/category/mosaic/wishlist" class="link_sub_item">
-                                                    wishlist </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="/category/log" class="link_item"> log </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/log/updates" class="link_sub_item"> updates
-                                                </a></li>
-                                            <li class=""><a href="/category/log/notice" class="link_sub_item"> notice
-                                                </a></li>
-                                            <li class=""><a href="/category/log/news" class="link_sub_item"> news </a>
-                                            </li>
-                                            <li class=""><a href="/category/log/journal" class="link_sub_item"> journal
-                                                </a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div> -->
-                <!-- 모바일 메뉴 - 아이콘 -->
-                <div class="zm_navigation">
-                    <div id="menu-toggle" class="icon-wrapper">
-                        <div id="icon-open" class="icon visible">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="13.0909" y="13.0908" width="10.9091" height="10.9091" rx="5" fill="black">
-                                </rect>
-                                <rect width="10.9091" height="10.9091" rx="5" fill="black"></rect>
-                                <circle cx="18.5455" cy="5.45455" r="5.45455" fill="#00C6C5"></circle>
-                                <circle cx="5.45455" cy="18.5454" r="5.45455" fill="#00C6C5"></circle>
-                            </svg>
-                        </div>
-                        <div id="icon-close" class="icon hidden">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect x="-7.62939e-06" y="22.5686" width="31.9169" height="1.99481" rx="0.997404"
-                                    transform="rotate(-45 -7.62939e-06 22.5686)" fill="#00C6C5"></rect>
-                                <rect x="1.43133" y="0.020752" width="31.9169" height="1.99481" rx="0.997404"
-                                    transform="rotate(45 1.43133 0.020752)" fill="black"></rect>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <!-- 모바일 사이드 메뉴 -->
-                <div id="zm_aside" class="zm_aside">
-                    <!-- 카테고리 목록 -->
-                    <nav class="">
-                        <ul class="tt_category">
-                            <li class=""><a href="/category" class="link_tit"> 분류 전체보기 </a>
-                                <ul class="category_list">
-                                    <li class=""><a href="/category/workspace" class="link_item"> workspace </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/workspace/web" class="link_sub_item"> web
-                                                </a></li>
-                                            <li class=""><a href="/category/workspace/tools" class="link_sub_item">
-                                                    tools </a></li>
-                                            <li class=""><a href="/category/workspace/system" class="link_sub_item">
-                                                    system </a></li>
-                                            <li class=""><a href="/category/workspace/workflow" class="link_sub_item">
-                                                    workflow </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="/category/creation" class="link_item"> creation </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/creation/original" class="link_sub_item">
-                                                    original </a></li>
-                                            <li class=""><a href="/category/creation/boardgames" class="link_sub_item">
-                                                    boardgames </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="/category/keepsakes" class="link_item"> keepsakes </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/keepsakes/clearlog" class="link_sub_item">
-                                                    clearlog </a></li>
-                                            <li class=""><a href="/category/keepsakes/goods" class="link_sub_item">
-                                                    goods </a></li>
-                                            <li class=""><a href="/category/keepsakes/picks" class="link_sub_item">
-                                                    picks </a></li>
-                                            <li class=""><a href="/category/keepsakes/archive" class="link_sub_item">
-                                                    archive </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="/category/mosaic" class="link_item"> mosaic </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/mosaic/moments" class="link_sub_item">
-                                                    moments </a></li>
-                                            <li class=""><a href="/category/mosaic/places" class="link_sub_item"> places
-                                                </a></li>
-                                            <li class=""><a href="/category/mosaic/subculture" class="link_sub_item">
-                                                    subculture </a></li>
-                                            <li class=""><a href="/category/mosaic/wishlist" class="link_sub_item">
-                                                    wishlist </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class=""><a href="/category/log" class="link_item"> log </a>
-                                        <ul class="sub_category_list">
-                                            <li class=""><a href="/category/log/updates" class="link_sub_item"> updates
-                                                </a></li>
-                                            <li class=""><a href="/category/log/notice" class="link_sub_item"> notice
-                                                </a></li>
-                                            <li class=""><a href="/category/log/news" class="link_sub_item"> news </a>
-                                            </li>
-                                            <li class=""><a href="/category/log/journal" class="link_sub_item"> journal
-                                                </a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div id="aside-overlay" class="hidden"></div>
-            </div>
-        </header>
+    <div id="z-body">
+        <!-- 헤더 컴포넌트가 여기에 로드됩니다 -->
+        <div id="z-header"></div>
 
         <!-- container -->
-        <div id="z_container">
-            <main class="z_main">
-                <div class="z_main_area">
+        <div id="z-layout">
+            <main class="z-main">
+                <div class="z-main__area">
                     <!-- 컨텐츠 -->
-                    <div class="z_article_section">
+                    <div class="z-article__section">
                         <!-- <div class="cp_wrapper"> -->
                         <iframe class="cp_left"
                             src="https://ads-partners.coupang.com/widgets.html?id=919455&amp;template=carousel&amp;trackingCode=AF6561083&amp;subId=&amp;width=160&amp;height=600&amp;tsource="
@@ -196,22 +35,22 @@
                             browsingtopics=""></iframe>
                         <div class="cp_side">
                         </div>
-                        <div class="z_article">
+                        <div class="z-article">
 
-                            <h1 class="z_article_title">tistory skin - zenn.skin</h1>
-                            <div class="z_article_info">
-                                <a href="/category/creation/original" class="z_category_link">
-                                    <div class="z_category_link_title">creation/original</div>
+                            <h1 class="z-article__title">tistory skin - zenn.skin</h1>
+                            <div class="z-article__meta">
+                                <a href="/category/creation/original" class="z-article__category">
+                                    <div class="z-article__category-text">creation/original</div>
                                 </a>
-                                <div class="z_info_divider"></div>
-                                <div class="z_article_date">2025. 5. 6. 16:00</div>
+                                <div class="z-article__meta-divider"></div>
+                                <div class="z-article__date">2025. 5. 6. 16:00</div>
                             </div>
                             <!-- 에디터 영역 -->
-                            <div class="z_article_view" id="z_article_view">
+                            <div class="z-article__body" id="z-article__body">
 
                                 <div class="tt_article_useless_p_margin contents_style">
                                     <img src="https://picsum.photos/1200/600" alt="게시물 썸네일"
-                                        class="z_article_thumbnail">
+                                        class="z-article__thumb">
                                     <!-- <figure style="text-align:center; margin:20px 0;">
                                         <img src="https://picsum.photos/800/450" alt="샘플 이미지"
                                             style="max-width:100%; height:auto;">
@@ -255,39 +94,39 @@
                                 <!-- // content end -->
 
                                 <!-- article-footer -->
-                                <div class="z_article-footer">
-                                    <div class="z_prenext_article_divider"></div>
+                                <div class="z-article__footer">
+                                    <div class="z-article__prenext-divider"></div>
 
                                     <div class="article-page">
-                                        <div class="z_prenext_article_container">
+                                        <div class="z-article__prenext-list">
                                             <div>
-                                                <div class="z_prenext_article">
-                                                    <div class="z_prenext_wrapper">
-                                                        <div class="z_prenext_thumbnail">
-                                                            <div class="z_prenext_thumbnail_wrapper">
-                                                                <div class="z_prenext_thumbnail_inset">
+                                                <div class="z-prenext">
+                                                    <div class="z-prenext__inner">
+                                                        <div class="z-prenext__thumb">
+                                                            <div class="z-prenext__thumb-wrapper">
+                                                                <div class="z-prenext__thumb-inset">
 
                                                                     <img loading="lazy"
                                                                         src="https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fb19CbA%2FbtsNKAGysoq%2FAAAAAAAAAAAAAAAAAAAAAIEICzxu8mxAttKGpvoDXUZdrSnwPclnBeZxKAoNOSB3%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DkMUj0xtVs5I7tpJ%252FYcV8ja3u%252FUI%253D"
-                                                                        class="z_prenext_thumbnail_image"
+                                                                        class="z-prenext__image"
                                                                         role="presentation">
 
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <a href="/10" class="z_prenext_article_link"></a>
-                                                        <div class="z_prenext_contents_wrapper">
-                                                            <div class="z_prenext_item_info">
+                                                        <a href="/10" class="z-prenext__link"></a>
+                                                        <div class="z-prenext__content">
+                                                            <div class="z-prenext__meta">
                                                                 <a href="/category/creation/original"
-                                                                    class="z_prenext_category_link">
-                                                                    <div class="z_prenext_category_link_title">
+                                                                    class="z-prenext__category">
+                                                                    <div class="z-prenext__category-text">
                                                                         creation/original
                                                                     </div>
                                                                 </a>
-                                                                <div class="z_prenext_info_divider"></div>
+                                                                <div class="z-prenext__meta-divider"></div>
                                                                 <div class="date">2025.05.06</div>
                                                             </div>
-                                                            <div class="z_prenext_item_title">
+                                                            <div class="z-prenext__title">
                                                                 tistory skin - BiCute skin
                                                             </div>
                                                         </div>
@@ -297,33 +136,33 @@
                                             </div>
                                             <!-- 이전글 다음글 -->
 
-                                            <div class="z_prenext_article">
-                                                <div class="z_prenext_wrapper">
-                                                    <div class="z_prenext_thumbnail">
-                                                        <div class="z_prenext_thumbnail_wrapper">
-                                                            <div class="z_prenext_thumbnail_inset">
+                                            <div class="z-prenext">
+                                                <div class="z-prenext__inner">
+                                                    <div class="z-prenext__thumb">
+                                                        <div class="z-prenext__thumb-wrapper">
+                                                            <div class="z-prenext__thumb-inset">
 
                                                                 <img loading="lazy"
                                                                     src="https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdna%2Fnvtpm%2FbtsNKs2PivO%2FAAAAAAAAAAAAAAAAAAAAAGgqy7Dwfv5mcIufDHw_MJFRmAC1ZsiKrD0KmWSNa8B-%2Fimg.jpg%3Fcredential%3DyqXZFxpELC7KVnFOS48ylbz2pIh7yKj8%26expires%3D1759244399%26allow_ip%3D%26allow_referer%3D%26signature%3DrT6v5Rka6sqQQR5W65np36%252BrRgU%253D"
-                                                                    class="z_prenext_thumbnail_image"
+                                                                    class="z-prenext__image"
                                                                     role="presentation">
 
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <a href="/12" class="z_prenext_article_link"></a>
-                                                    <div class="z_prenext_contents_wrapper">
-                                                        <div class="z_prenext_item_info">
+                                                    <a href="/12" class="z-prenext__link"></a>
+                                                    <div class="z-prenext__content">
+                                                        <div class="z-prenext__meta">
                                                             <a href="/category/creation/original"
-                                                                class="z_prenext_category_link">
-                                                                <div class="z_prenext_category_link_title">
+                                                                class="z-prenext__category">
+                                                                <div class="z-prenext__category-text">
                                                                     creation/original
                                                                 </div>
                                                             </a>
-                                                            <div class="z_prenext_info_divider"></div>
+                                                            <div class="z-prenext__meta-divider"></div>
                                                             <div class="date">2025.05.06</div>
                                                         </div>
-                                                        <div class="z_prenext_item_title">
+                                                        <div class="z-prenext__title">
                                                             Union Arena Custom Playmat
                                                         </div>
                                                     </div>
@@ -339,36 +178,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="z_common_area">
+                    <div class="z-common-area">
                     </div>
                 </div>
         </div>
         </main>
         <!-- // container -->
 
-        <!-- footer -->
-        <footer id="z_footer">
-            <div class="z_footer_wrapper">
-                <div class="z_footer_copyright">
-                    Powered by
-                    <a href="https://x.com/zenless_x" target="_blank" rel="noopener noreferrer" class="powered-link">
-                        zenn
-                    </a>
-                </div>
-            </div>
-        </footer>
+        <!-- 푸터 컴포넌트가 여기에 로드됩니다 -->
+        <div id="z-footer"></div>
     </div>
     </div>
 
 
-    <script>
-        const useToc = 'true';
-        const tocDepth = 'depth-limit-3';
-        const tocPosition = 'position_before_heading';
-        const tocCounter = 'counter_decimal';
-        let isCollapsed = 'toc-opend';
-    </script>
-    <script src="./script.js"></script>
+
+    <script src="/js/header.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>
