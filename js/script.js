@@ -61,7 +61,7 @@ function initializeScripts() {
   const tocPosition = 'position_before_heading';
   const tocCounter = 'counter_decimal';
   let isCollapsed = 'toc-opend';
-  
+
   if (typeof useToc !== 'undefined' && useToc !== 'false') {
     let selector = 'h2';
     if (tocDepth === 'depth-limit-2') selector += ', h3';

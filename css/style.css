@@ -244,9 +244,19 @@ div[data-tistory-react-app="Namecard"] {
 
 
 
+ol[data-ke-list-type='decimal'],
+ol[data-ke-list-type='decimal'] li,
+#tt-body-page ol[data-ke-list-type='decimal'],
+#tt-body-page ol[data-ke-list-type='decimal']>li {
+    list-style-type: decimal;
+}
 
-
-
+ul[data-ke-list-type='disc'],
+ul[data-ke-list-type='disc']>li,
+#tt-body-page ul[data-ke-list-type='disc'],
+#tt-body-page ul[data-ke-list-type='disc']>li {
+    list-style-type: disc;
+}
 
 /* //////////////////// 
   일반
