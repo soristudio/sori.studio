@@ -262,7 +262,6 @@ ul[data-ke-list-type='disc']>li,
   일반
 //////////////////// */
 
-
 .z_common_header {
     display: flex;
     align-items: center;
@@ -496,6 +495,52 @@ ul[data-ke-list-type='disc']>li,
 .z_guestbook_area .tt-box-total {
     display: none;
 }
+
+/* //////////////////// 
+  페이지네이션
+//////////////////// */
+/* z-pagination 컨테이너 */
+.z-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* 버튼 간격 */
+  margin: 24px 0;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* 페이지 버튼 */
+.z-pagination a {
+  display: inline-block;
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+/* 마우스 오버 */
+.z-pagination a:hover {
+  background-color: #f0f0f0;
+  border-color: #bbb;
+}
+
+/* 현재 페이지 강조 */
+.z-pagination a.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  pointer-events: none;
+}
+
+/* 반응형: 모바일에서 버튼 줄이기 */
+@media (max-width: 480px) {
+  .z-pagination a {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+}
+
 
 /* //////////////////// 
   ZC 공통
