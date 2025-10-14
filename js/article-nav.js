@@ -47,11 +47,9 @@
 //     container.innerHTML = html;
 // }
 
+// 카테고리별 이전/다음 글 로드
 document.addEventListener('DOMContentLoaded', loadPrevNext);
 
-
-
-// 카테고리별 이전/다음 글 로드
 async function loadPrevNext() {
     const res = await fetch('/data/posts.json');
     const posts = await res.json();
@@ -60,23 +58,23 @@ async function loadPrevNext() {
     const currentPost = posts.find(post => post.url === currentPath);
     if (!currentPost) return;
 
-    // 같은 카테고리(하위 포함) 게시물만 필터
-    const filteredPosts = posts.filter(post =>
-        post.category.startsWith(currentPost.category)
-    );
+    const filteredPosts = posts
+        .filter(post => post.category.startsWith(currentPost.category))
+        .sort((a, b) => a.id - b.id); // 최신순
 
     const currentIndex = filteredPosts.findIndex(post => post.url === currentPath);
     if (currentIndex === -1) return;
 
-    const prev = filteredPosts[currentIndex - 1];
-    const next = filteredPosts[currentIndex + 1];
+    const prev = filteredPosts[currentIndex - 1] || null;
+    const next = filteredPosts[currentIndex + 1] || null;
 
     const container = document.querySelector('.z-article__prenext-list');
     if (!container) return;
 
-    function createPrenext(post) {
+    function createPrenext(post, empty = false) {
         return `
-        <div class="z-prenext">
+        <div class="z-prenext ${empty ? 'empty' : ''}">
+            ${!empty ? `
             <div class="z-prenext__inner">
                 <div class="z-prenext__thumb">
                     <div class="z-prenext__thumb-wrapper">
@@ -96,15 +94,13 @@ async function loadPrevNext() {
                     </div>
                     <div class="z-prenext__title">${post.title}</div>
                 </div>
-            </div>
+            </div>` : ''}
         </div>`;
     }
 
-    let html = '';
-    if (prev) html += createPrenext(prev);
-    if (next) html += createPrenext(next);
-
-    container.innerHTML = html;
+    // HTML 생성: 왼쪽 = 이전, 오른쪽 = 다음
+    container.innerHTML = `
+        ${prev ? createPrenext(prev) : createPrenext({}, true)}
+        ${next ? createPrenext(next) : createPrenext({}, true)}
+    `;
 }
-
-document.addEventListener('DOMContentLoaded', loadPrevNext);

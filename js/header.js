@@ -1,13 +1,13 @@
 // ===== Header Component Loader =====
 function loadHeader() {
-  console.log('헤더 컴포넌트 로드 시작');
-  
+  // console.log('헤더 컴포넌트 로드 시작');
+
   // 헤더 HTML을 직접 정의
   const headerHTML = `
 <header class="z-header">
     <div class="z-header__blog-title">
-        <a href="https://zenncloud.com/" title="zenncloud" class="z-header__blog-title-link"></a>
-        zenncloud
+        <a href="https://sori.studio/" title="sori.studio" class="z-header__blog-title-link"></a>
+        sori.studio
     </div>
     <div class="z-header__contents">
         <!-- 모바일 메뉴 - 아이콘 -->
@@ -105,18 +105,18 @@ function loadHeader() {
         <div id="z-header__aside-overlay" class="hidden"></div>
     </div>
 </header>`;
-  
+
   // z-header가 있는 경우에만 로드
   const placeholder = document.getElementById('z-header');
   if (placeholder) {
-    console.log('placeholder 찾음, HTML 삽입 중...');
+    // console.log('placeholder 찾음, HTML 삽입 중...');
     placeholder.innerHTML = headerHTML;
-    console.log('헤더 HTML 삽입 완료');
-    
+    // console.log('헤더 HTML 삽입 완료');
+
     // 헤더가 제대로 로드되었는지 확인
     const testElement = document.getElementById('z-header__aside-overlay');
-    console.log('z-header__aside-overlay 확인:', testElement);
-    
+    // console.log('z-header__aside-overlay 확인:', testElement);
+
     return true; // 성공적으로 로드됨
   } else {
     console.error('z-header를 찾을 수 없습니다');
@@ -126,8 +126,8 @@ function loadHeader() {
 
 // ===== ZM aside Toggle 초기화 함수 =====
 function initializeToggleMenu() {
-  console.log('토글 메뉴 초기화 시작');
-  
+  // console.log('토글 메뉴 초기화 시작');
+
   const toggle = document.getElementById('menu-toggle');
   const iconOpen = document.getElementById('icon-open');
   const iconClose = document.getElementById('icon-close');
@@ -135,10 +135,10 @@ function initializeToggleMenu() {
   const overlay = document.getElementById('z-header__aside-overlay');
   const body = document.body;
 
-  console.log('찾은 요소들:', { toggle, iconOpen, iconClose, aside, overlay });
+  // console.log('찾은 요소들:', { toggle, iconOpen, iconClose, aside, overlay });
 
   if (toggle && iconOpen && iconClose && aside && overlay) {
-    console.log('토글 메뉴 이벤트 리스너 등록');
+    // console.log('토글 메뉴 이벤트 리스너 등록');
     const openMenu = () => {
       iconOpen.classList.add('hidden');
       iconOpen.classList.remove('visible');
@@ -179,12 +179,12 @@ function initializeToggleMenu() {
 
 // ===== Header 초기화 함수 =====
 function initializeHeader() {
-  console.log('헤더 초기화 시작');
-  
+  // console.log('헤더 초기화 시작');
+
   // 헤더 로드 (이제 동기적)
   const success = loadHeader();
   if (success) {
-    console.log('헤더 로드 완료');
+    // console.log('헤더 로드 완료');
     // 토글 메뉴 초기화 (이제 동기적으로 실행)
     initializeToggleMenu();
     return true;

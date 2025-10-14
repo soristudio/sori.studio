@@ -541,6 +541,23 @@ ul[data-ke-list-type='disc']>li,
   }
 }
 
+/* 이미지 그리드 */
+figure.imagegridblock .image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+figure.imagegridblock .image-container img {
+    width: 100%;
+    height: auto;
+}
+
+figure.imagegridblock figcaption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 0.875rem;
+    color: #555;
+}
 
 /* //////////////////// 
   ZC 공통
@@ -1391,7 +1408,12 @@ ul[data-ke-list-type='disc']>li,
     transition: 0.3s;
 }
 
-.z-prenext::before {
+.z-prenext.empty {
+    pointer-events: none;
+    visibility: hidden;
+}
+
+:before {
     content: "";
     width: 100%;
     height: 100%;

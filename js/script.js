@@ -1,14 +1,13 @@
-// DOM이 로드되면 헤더를 먼저 로드
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOM 로드 완료');
+  // console.log('DOM 로드 완료');
 
   // 헤더 초기화 (header.js에서 제공)
   if (typeof initializeHeader === 'function') {
     const headerSuccess = initializeHeader();
     if (headerSuccess) {
-      console.log('헤더 초기화 완료');
+      // console.log('헤더 초기화 완료');
     } else {
-      console.error('헤더 초기화 실패');
+      // console.error('헤더 초기화 실패');
     }
   } else {
     console.error('initializeHeader 함수를 찾을 수 없습니다. header.js가 로드되었는지 확인하세요.');
@@ -18,9 +17,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (typeof initializeFooter === 'function') {
     const footerSuccess = initializeFooter();
     if (footerSuccess) {
-      console.log('푸터 초기화 완료');
+      // console.log('푸터 초기화 완료');
     } else {
-      console.error('푸터 초기화 실패');
+      // console.error('푸터 초기화 실패');
     }
   } else {
     console.error('initializeFooter 함수를 찾을 수 없습니다. footer.js가 로드되었는지 확인하세요.');
