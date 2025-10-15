@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     list.innerHTML = "";
 
     pagePosts.forEach(post => {
+      const thumbSrc = post.thumb && post.thumb.trim() !== "" ? post.thumb : "/img/thumb_bg.png";
+
       const article = document.createElement("article");
       article.classList.add("z-card");
       article.innerHTML = `
@@ -47,7 +49,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="z-card__thumb">
             <div class="z-card__thumb_wrapper">
               <div class="z-card__thumb_inset">
-                <img loading="lazy" src="${post.thumb}" class="z-card__thumb_image" role="presentation">
+                <img loading="lazy" src="${thumbSrc}" class="z-card__thumb_image" role="presentation"
+                  onerror="this.onerror=null;this.src='/img/load_error.png';">
               </div>
             </div>
           </div>

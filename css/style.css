@@ -501,44 +501,45 @@ ul[data-ke-list-type='disc']>li,
 //////////////////// */
 /* z-pagination 컨테이너 */
 .z-pagination {
-  display: flex;
-  justify-content: center;
-  gap: 8px; /* 버튼 간격 */
-  margin: 24px 0;
-  font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    /* 버튼 간격 */
+    margin: 24px 0;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 /* 페이지 버튼 */
 .z-pagination a {
-  display: inline-block;
-  padding: 6px 12px;
-  text-decoration: none;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  transition: all 0.2s;
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.2s;
 }
 
 /* 마우스 오버 */
 .z-pagination a:hover {
-  background-color: #f0f0f0;
-  border-color: #bbb;
+    background-color: #f0f0f0;
+    border-color: #bbb;
 }
 
 /* 현재 페이지 강조 */
 .z-pagination a.active {
-  background-color: #007bff;
-  color: #fff;
-  border-color: #007bff;
-  pointer-events: none;
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+    pointer-events: none;
 }
 
 /* 반응형: 모바일에서 버튼 줄이기 */
 @media (max-width: 480px) {
-  .z-pagination a {
-    padding: 4px 8px;
-    font-size: 14px;
-  }
+    .z-pagination a {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
 }
 
 /* 이미지 그리드 */
@@ -547,6 +548,7 @@ figure.imagegridblock .image-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
 }
+
 figure.imagegridblock .image-container img {
     width: 100%;
     height: auto;
@@ -882,6 +884,7 @@ figure.imagegridblock figcaption {
         right: calc(50% - 760px/2 - 200px);
     }
 }
+
 .cp_top iframe,
 .cp_bottom iframe {
     width: 100%;

@@ -1,11 +1,20 @@
 [
     {
+        "id": 6,
+        "title": "DarkOne 한글 규칙 설명서",
+        "category": "creation/boardgame",
+        "date": "2025.06.16",
+        "thumb": "/category/creation/boardgame/2025/images/dark-one-user-guide-kor_01.jpeg",
+        "url": "/category/creation/boardgame/2025/dark-one-user-guide-kor.html",
+        "excerpt": "Domina Games에서 2023.12.21에 발매한 신작 보드게임 DarkOne의 한글 규칙 설명서입니다. 이쪽은 정식 발매자체가 되지 않고 있기에 당연히 공식은 아니고 임의로 한글화 한거니, 오역이 있을 수 있습니다.  4명의 개성있는 캐릭터들 중 하나를 선택하여 1:1로 대전을 하는 게임으로, '블레이드 론도' 시리즈에서 캐릭터 선택이 추가되었다고 보면 조금은 쉽게 다가갈 수 있지 않을까 싶은데... 선택하는 캐릭터에 따라 사용하는 방식이 다르기에 꽤 흥미롭습니다.  1~2인용 게임이며, 플레이 타임은 10-20분 정도입니다."
+    },
+    {
         "id": 5,
         "title": "Union Arena Custom Playmat",
         "category": "creation/original",
         "date": "2025.05.06",
-        "thumb": "/article/creation/original/2025/images/union-arena-custom-playmat_01.jpeg",
-        "url": "/article/creation/original/2025/union-arena-custom-playmat.html",
+        "thumb": "/category/creation/original/2025/images/union-arena-custom-playmat_01.jpeg",
+        "url": "/category/creation/original/2025/union-arena-custom-playmat.html",
         "excerpt": "유니온 아레나 커스텀 플레이매트입니다. 유니온 아레나는 카드 게임을 위한 디지털 플랫폼으로, 플레이매트를 커스터마이징할 수 있는 기능을 제공합니다."
     },
     {
@@ -13,8 +22,8 @@
         "title": "tistory skin - zenn.skin",
         "category": "creation/original",
         "date": "2025.05.06",
-        "thumb": "/article/creation/original/2025/images/tistory-zenn-skin_01.jpeg",
-        "url": "/article/creation/original/2025/tistory-zenn-skin.html",
+        "thumb": "/category/creation/original/2025/images/tistory-zenn-skin_01.jpeg",
+        "url": "/category/creation/original/2025/tistory-zenn-skin.html",
         "excerpt": "zenn.skin은 Zenn 블로그의 미니멀하고 깔끔한 디자인을 티스토리 블로그에 적용한 스킨입니다. Zenn의 심플한 미학을 좋아하는 사용자에게 적합합니다."
     },
     {
@@ -22,8 +31,8 @@
         "title": "tistory skin - BiCute skin",
         "category": "creation/original",
         "date": "2025.05.06",
-        "thumb": "/article/creation/original/2025/images/tistory-bicute-skin_01.jpeg",
-        "url": "/article/creation/original/2025/tistory-bicute-skin.html",
+        "thumb": "/category/creation/original/2025/images/tistory-bicute-skin_01.jpeg",
+        "url": "/category/creation/original/2025/tistory-bicute-skin.html",
         "excerpt": "BiCute 스킨은 인기 스킨 Odyssey의 장점을 계승하면서, 다양한 문제점을 보완하고 사용자 맞춤 기능을 강화한 티스토리 블로그용 스킨입니다."
     },
     {
@@ -31,8 +40,8 @@
         "title": "일본 라인 스티커, 필요하신 분들 도와드려요",
         "category": "creation/original",
         "date": "2025.05.06",
-        "thumb": "/article/creation/original/2025/images/gift-line-sticker_01.jpg",
-        "url": "/article/creation/original/2025/gift-line-sticker.html",
+        "thumb": "/category/creation/original/2025/images/gift-line-sticker_01.jpg",
+        "url": "/category/creation/original/2025/gift-line-sticker.html",
         "excerpt": "일본 라인 스탬프를 구매하고 싶지만 일본 계정이 없어 어려움을 겪고 계신가요? 원하시는 일본 한정 스티커를 대신 구매해 선물해드리고 있습니다."
     },
     {
@@ -40,8 +49,8 @@
         "title": "Union Arena Deck Builder(uadeck) - Update Log",
         "category": "creation/original",
         "date": "2025.05.06",
-        "thumb": "/article/creation/original/2025/images/union-arena-deck-builder_update-log_01.jpeg",
-        "url": "/article/creation/original/2025/union-arena-deck-builder_update-log.html",
+        "thumb": "/category/creation/original/2025/images/union-arena-deck-builder_update-log_01.jpeg",
+        "url": "/category/creation/original/2025/union-arena-deck-builder_update-log.html",
         "excerpt": "반다이남코의 트레이딩 카드 게임 [UNION ARENA]의 덱 빌더 사이트 uniare.zenncloud.com 의 업데이트 내역입니다."
     }
 ]
