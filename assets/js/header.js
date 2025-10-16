@@ -6,7 +6,7 @@ function loadHeader() {
   const headerHTML = `
 <header class="z-header">
     <div class="z-header__blog-title">
-        <a href="https://sori.studio/" title="sori.studio" class="z-header__blog-title-link"></a>
+        <a href="/" title="sori.studio" class="z-header__blog-title-link"></a>
         sori.studio
     </div>
     <div class="z-header__contents">
@@ -73,17 +73,17 @@ function loadHeader() {
                                             clearlog </a></li>
                                     <li class=""><a href="/category/keepsakes/goods" class="z-header__sub-category-item">
                                             goods </a></li>
-                                    <li class=""><a href="/category/keepsakes/picks" class="z-header__sub-category-item">
-                                            picks </a></li>
+                                    <li class=""><a href="/category/keepsakes/pick" class="z-header__sub-category-item">
+                                            pick </a></li>
                                     <li class=""><a href="/category/keepsakes/archive" class="z-header__sub-category-item">
                                             archive </a></li>
                                 </ul>
                             </li>
                             <li class=""><a href="/category/mosaic" class="z-header__category-item"> mosaic </a>
                                 <ul class="z-header__sub-category-list">
-                                    <li class=""><a href="/category/mosaic/moments" class="z-header__sub-category-item">
-                                            moments </a></li>
-                                    <li class=""><a href="/category/mosaic/places" class="z-header__sub-category-item"> places
+                                    <li class=""><a href="/category/mosaic/moment" class="z-header__sub-category-item">
+                                            moment </a></li>
+                                    <li class=""><a href="/category/mosaic/place" class="z-header__sub-category-item"> place
                                         </a></li>
                                     <li class=""><a href="/category/mosaic/subculture" class="z-header__sub-category-item">
                                             subculture </a></li>
@@ -200,3 +200,22 @@ function initializeHeader() {
   }
 }
 
+async function updateCategoryCounts() {
+  const res = await fetch('/data/posts.json');
+  const posts = await res.json();
+
+  // 모든 li에 대해 반복
+  document.querySelectorAll('.z-header__sub-category-item, .z-header__category-item').forEach(item => {
+    const link = item.querySelector('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href'); // /category/creation/original 같은 형식
+    if (!href) return;
+
+    // posts.json에서 해당 카테고리 시작하는 글만 카운트
+    const count = posts.filter(p => p.status === 'public' && p.category.startsWith(href.replace('/category/', ''))).length;
+
+    // 기존 텍스트에 게시물 수 추가
+    link.textContent = `${link.textContent.trim()} (${count})`;
+  });
+}

@@ -1,6 +1,156 @@
 [
     {
-        "id": 10010,
+        "id": 80006,
+        "title": "워드프레스 게시글에 댓글 기능 붙이기 (REST API 기반)",
+        "category": "workspace/web",
+        "date": "2025.04.13",
+        "thumb": "/category/workspace/web/2025/images/wordpress-add-comments-rest-api_01.png",
+        "url": "/category/workspace/web/2025/wordpress-add-comments-rest-api.html",
+        "excerpt": "워드프레스 REST API를 이용하여 게시물에 댓글 기능을 추가하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80005,
+        "title": "워드프레스 글에 이미지 추가하기 (커스텀 필드 활용)",
+        "category": "workspace/web",
+        "date": "2025.04.12",
+        "thumb": "/category/workspace/web/2025/images/wordpress-add-image-custom-field_01.png",
+        "url": "/category/workspace/web/2025/wordpress-add-image-custom-field.html",
+        "excerpt": "워드프레스 REST API를 이용하여 이미지 업로드 및 게시물에 연결하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80004,
+        "title": "워드프레스 사용자 프로필 이름 다루기 (display_name 사용법)",
+        "category": "workspace/web",
+        "date": "2025.04.11",
+        "thumb": "/category/workspace/web/2025/images/wordpress-user-display-name_01.png",
+        "url": "/category/workspace/web/2025/wordpress-user-display-name.html",
+        "excerpt": "워드프레스에서 사용자 프로필 이름을 다루는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80003,
+        "title": "워드프레스 사용자 회원가입 기능 직접 만들기 (플러그인 활용)",
+        "category": "workspace/web",
+        "date": "2025.04.10",
+        "thumb": "/category/workspace/web/2025/images/wordpress-register-plugin_01.png",
+        "url": "/category/workspace/web/2025/wordpress-register-plugin.html",
+        "excerpt": "워드프레스에서 사용자 회원가입 기능을 직접 구현하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80002,
+        "title": "워드프레스 로그인 & 글 작성 직접 구현하기 (JWT 인증)",
+        "category": "workspace/web",
+        "date": "2025.04.09",
+        "thumb": "/category/workspace/web/2025/images/wordpress-login-jwt_01.png",
+        "url": "/category/workspace/web/2025/wordpress-login-jwt.html",
+        "excerpt": "워드프레스에서 JWT 인증을 이용하여 로그인 및 글 작성을 구현하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80001,
+        "title": "워드프레스에서 REST API로 글 목록 불러오기",
+        "category": "workspace/web",
+        "date": "2025.04.08",
+        "thumb": "/category/workspace/web/2025/images/wordpress-rest-api-posts_01.png",
+        "url": "/category/workspace/web/2025/wordpress-rest-api-posts.html",
+        "excerpt": "워드프레스에서 REST API를 이용하여 게시물 목록을 불러오는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 20002,
+        "title": "애플 미리 알림: 우선순위와 깃발, 명확하게 구분해서 관리하는 방법",
+        "category": "mosaic/moment",
+        "date": "2025.09.26",
+        "thumb": "",
+        "url": "/category/mosaic/moment/2025/apple-reminders-priority-flag-management.html",
+        "excerpt": "애플 미리 알림 앱에서 우선순위와 깃발을 명확하게 구분하여 효과적으로 관리하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 20001,
+        "title": "기록 습관 다시 세우기: 캘린더, 미리 알림, 메모 정리하기",
+        "category": "mosaic/moment",
+        "date": "2025.09.25",
+        "thumb": "",
+        "url": "/category/mosaic/moment/2025/rebuild-recording-habits-calendar-reminder-memo.html",
+        "excerpt": "일정과 할 일, 메모를 효과적으로 관리하는 방법에 대해 생각해봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 40006,
+        "title": "[스토브 패치] 주인님, 세이라가 꿈만 같은 끈적달콤 봉사를 해 드릴게요 - R18 패치",
+        "category": "keepsakes/gamelog",
+        "date": "2025.07.14",
+        "thumb": "",
+        "url": "/category/keepsakes/gamelog/2025/stove-seira-sweet-service-r18-patch.html",
+        "excerpt": "스토브판 주인님, 세이라가 꿈만 같은 끈적달콤 봉사를 해 드릴게요의 R18 패치 방법입니다.",
+        "status": "public"
+    },
+    {
+        "id": 40005,
+        "title": "[스토브 패치] 당신과 그녀와 그녀의 사랑 - R18 패치",
+        "category": "keepsakes/gamelog",
+        "date": "2025.07.14",
+        "thumb": "",
+        "url": "/category/keepsakes/gamelog/2025/stove-you-and-her-and-her-love-r18-patch.html",
+        "excerpt": "스토브판 당신과 그녀와 그녀의 사랑의 R18 패치 방법입니다.",
+        "status": "public"
+    },
+    {
+        "id": 40004,
+        "title": "[스팀 패치] 헬 테이커 - 한국어 패치",
+        "category": "keepsakes/gamelog",
+        "date": "2025.07.14",
+        "thumb": "",
+        "url": "/category/keepsakes/gamelog/2025/steam-heltaker-korean-patch.html",
+        "excerpt": "스팀판 헬 테이커의 한국어 패치 방법입니다.",
+        "status": "public"
+    },
+    {
+        "id": 40003,
+        "title": "[스팀 패치] 갈레리아의 지하미궁과 마녀의 여단 - 한국어 패치",
+        "category": "keepsakes/gamelog",
+        "date": "2025.07.13",
+        "thumb": "",
+        "url": "/category/keepsakes/gamelog/2025/steam-labyrinth-of-galleria-coven-of-dusk-korean-patch.html",
+        "excerpt": "스팀판 갈레리아의 지하미궁과 마녀의 여단의 한국어 패치 방법입니다.",
+        "status": "public"
+    },
+    {
+        "id": 40002,
+        "title": "[스팀 패치] 캡틴 츠바사 라이즈 오브 뉴 챔피언즈 - 한국어 패치",
+        "category": "keepsakes/gamelog",
+        "date": "2025.07.13",
+        "thumb": "",
+        "url": "/category/keepsakes/gamelog/2025/steam-captain-tsubasa-rise-of-new-champions-korean-patch.html",
+        "excerpt": "스팀판 캡틴 츠바사 라이즈 오브 뉴 챔피언즈의 한국어 패치 방법입니다.",
+        "status": "public"
+    },
+    {
+        "id": 40001,
+        "title": "[스팀 패치] 프로젝트 디바 미수록곡 해제법 (천본앵 · 오오에도 줄리아 나이트)",
+        "category": "keepsakes/gamelog",
+        "date": "2025.07.13",
+        "thumb": "/category/keepsakes/gamelog/2025/images/steam-project-diva-unlock-extra-songs-senbonzakura-oedo-julia-night_01.jpg",
+        "url": "/category/keepsakes/gamelog/2025/steam-project-diva-unlock-extra-songs-senbonzakura-oedo-julia-night.html",
+        "excerpt": "2025년 7월 11일자로 스팀판 프로젝트 디바 메가믹스+에 천본앵과 오오에도 줄리아 나이트가 추가되었습니다. 이 곡들은 DLC가 아닌 무료 업데이트로 제공되며, 아래의 방법으로 곡을 해제할 수 있습니다.",
+        "status": "public"
+    },
+    {
+        "id": 65001,
+        "title": "블로그 카테고리 안내",
+        "category": "log/notice",
+        "date": "2025.07.09",
+        "thumb": "",
+        "url": "/category/log/notice/2025/blog-category-guide.html",
+        "excerpt": "이곳은 다양한 관심사와 작업 결과물을 주제별로 정리해두는 개인 아카이브입니다. 내용을 보다 쉽게 찾아볼 수 있도록 카테고리를 몇 가지 기준에 따라 분류해두었습니다. 각 카테고리의 성격과 용도를 간단히 소개합니다.",
+        "status": "public"
+    },
+    {
+        "id": 30010,
         "title": "Eden's Shadow 규칙 설명서",
         "category": "creation/boardgame",
         "date": "2025.06.28",
@@ -10,7 +160,7 @@
         "status": "public"
     },
     {
-        "id": 10009,
+        "id": 30009,
         "title": "GEMINOA 규칙 설명서",
         "category": "creation/boardgame",
         "date": "2025.06.27",
@@ -20,7 +170,7 @@
         "status": "public"
     },
     {
-        "id": 10008,
+        "id": 30008,
         "title": "건나건(ガンナガン) 규칙 설명서",
         "category": "creation/boardgame",
         "date": "2025.06.24",
@@ -30,7 +180,7 @@
         "status": "public"
     },
     {
-        "id": 10007,
+        "id": 30007,
         "title": "CROSS LORDS 카드 한글화 번역",
         "category": "creation/boardgame",
         "date": "2025.06.22",
@@ -40,7 +190,7 @@
         "status": "public"
     },
     {
-        "id": 10006,
+        "id": 30006,
         "title": "CROSSxGEAR 카드 목록",
         "category": "creation/boardgame",
         "date": "2025.06.22",
@@ -50,7 +200,7 @@
         "status": "public"
     },
     {
-        "id": 10005,
+        "id": 30005,
         "title": "CROSSxGEAR 규칙 설명서",
         "category": "creation/boardgame",
         "date": "2025.06.21",
@@ -60,7 +210,7 @@
         "status": "public"
     },
     {
-        "id": 10004,
+        "id": 30004,
         "title": "Lemures 규칙 설명서",
         "category": "creation/boardgame",
         "date": "2025.06.20",
@@ -70,7 +220,7 @@
         "status": "public"
     },
     {
-        "id": 10003,
+        "id": 30003,
         "title": "아이돌어라이브(アイドルアライブ) 규칙 설명서",
         "category": "creation/boardgame",
         "date": "2025.06.19",
@@ -160,7 +310,7 @@
         "status": "public"
     },
     {
-        "id": 80005,
+        "id": 90005,
         "title": "노트 관리 기법: 'PDCA'의 활용과 적용",
         "category": "workspace/system",
         "date": "2025.06.29",
@@ -170,7 +320,7 @@
         "status": "public"
     },
     {
-        "id": 80004,
+        "id": 90004,
         "title": "노트 관리 기법: 'PARA'의 활용과 적용",
         "category": "workspace/system",
         "date": "2025.06.27",
@@ -180,7 +330,7 @@
         "status": "public"
     },
     {
-        "id": 80003,
+        "id": 90003,
         "title": "노트 관리 기법: '제텔카스텐'의 활용과 적용",
         "category": "workspace/system",
         "date": "2025.06.26",
@@ -190,7 +340,7 @@
         "status": "public"
     },
     {
-        "id": 80002,
+        "id": 90002,
         "title": "효율적인 사진 관리: 폴더 구조와 파일명 형식 정리 방법",
         "category": "workspace/system",
         "date": "2025.06.26",
@@ -200,7 +350,7 @@
         "status": "public"
     },
     {
-        "id": 80001,
+        "id": 90001,
         "title": "3-2-1 백업 전략: 데이터 안전을 위한 최적의 방법",
         "category": "workspace/system",
         "date": "2025.06.17",
@@ -210,7 +360,7 @@
         "status": "public"
     },
     {
-        "id": 10002,
+        "id": 30002,
         "title": "DarkOne 카드 목록",
         "category": "creation/boardgame",
         "date": "2025.06.16",
@@ -220,7 +370,7 @@
         "status": "public"
     },
     {
-        "id": 10001,
+        "id": 30001,
         "title": "DarkOne 한글 규칙 설명서",
         "category": "creation/boardgame",
         "date": "2025.06.16",
@@ -230,7 +380,7 @@
         "status": "public"
     },
     {
-        "id": 15005,
+        "id": 35005,
         "title": "Union Arena Custom Playmat",
         "category": "creation/original",
         "date": "2025.05.06",
@@ -240,7 +390,7 @@
         "status": "public"
     },
     {
-        "id": 15004,
+        "id": 35004,
         "title": "tistory skin - zenn.skin",
         "category": "creation/original",
         "date": "2025.05.06",
@@ -250,7 +400,7 @@
         "status": "public"
     },
     {
-        "id": 15003,
+        "id": 35003,
         "title": "tistory skin - BiCute skin",
         "category": "creation/original",
         "date": "2025.05.06",
@@ -260,7 +410,7 @@
         "status": "public"
     },
     {
-        "id": 15002,
+        "id": 35002,
         "title": "일본 라인 스티커, 필요하신 분들 도와드려요",
         "category": "creation/original",
         "date": "2025.05.06",
@@ -270,13 +420,23 @@
         "status": "public"
     },
     {
-        "id": 15001,
+        "id": 35001,
         "title": "Union Arena Deck Builder(uadeck) - Update Log",
         "category": "creation/original",
         "date": "2025.05.06",
         "thumb": "/category/creation/original/2025/images/union-arena-deck-builder_update-log_01.jpeg",
         "url": "/category/creation/original/2025/union-arena-deck-builder_update-log.html",
         "excerpt": "반다이남코의 트레이딩 카드 게임 [UNION ARENA]의 덱 빌더 사이트 uniare.zenncloud.com 의 업데이트 내역입니다.",
+        "status": "public"
+    },
+    {
+        "id": 70001,
+        "title": "새롭게 시작, 가볍게 남기는 기록들",
+        "category": "log/news",
+        "date": "2025.04.01",
+        "thumb": "",
+        "url": "/category/log/news/2025/new-start-light-notes.html",
+        "excerpt": "새로운 시작을 맞이하여 기록 습관을 다시 세우고, 가볍게 남기는 기록들에 대해 생각해봅니다.",
         "status": "public"
     }
 ]

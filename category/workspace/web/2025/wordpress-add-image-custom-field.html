@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>워드프레스 글에 이미지 추가하기 (커스텀 필드 활용)</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/lib/highlight.min.js"></script>
+    <script src="/assets/js/lib/lenis.min.js"></script>
+    <script src="/assets/js/head.js"></script>
+</head>
+
+<body id="tt-body-index">
+    <div id="z-body">
+        <div id="z-header"></div>
+
+        <div id="z-layout">
+            <main class="z-main">
+                <div class="z-main__area">
+
+                    <div class="z-article__section">
+
+                        <div class="z-article">
+                            <!--  -->
+                            <h1 class="z-article__title">워드프레스 글에 이미지 추가하기 (커스텀 필드 활용)</h1>
+                            <div class="z-article__meta">
+                                <a href="/category/workspace/web" class="z-article__category">
+                                    <div class="z-article__category-text">workspace/web</div>
+                                </a>
+                                <div class="z-article__meta-divider"></div>
+                                <div class="z-article__date">2025. 4. 12.</div>
+                            </div>
+
+                            <!-- article-content -->
+                            <div class="z-article__body" id="z-article__body">
+                                <img src="./images/wordpress-add-image-custom-field_01.jpg" alt="" class="z-article__thumb">
+                                <!-- contents start -->
+<h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>? 워드프레스 REST API를 이용해서 나만의 사이트 만들기 - 5편</b></h2>
+<p style="color: #333333; text-align: start;" data-ke-size="size16"><b>이미지를 업로드하고 게시물에 연결하기 (커스텀 필드 활용)</b></p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">이제 다시 글쓰기로 돌아와 사용자들이 글을 작성할 때 이미지를 함께 업로드할 수 있도록 구현할 것입니다.<br />짧은 텍스트 중심의 트위터 스타일 웹 앱이지만, 이미지가 추가되면 콘텐츠의 전달력과 몰입도가 확실히 달라집니다. 그래서 간단하면서도 직관적인 이미지 업로드 기능을 구현해봤습니다.</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-end="465" data-start="455" data-ke-size="size26">목표</h2>
+<ul style="list-style-type: disc;" data-ke-list-type="disc">
+<li>이미지 선택 및 미리보기</li>
+<li data-start="349" data-end="367">최대 8장까지 업로드 제한</li>
+<li data-start="370" data-end="400">워드프레스 Media API를 통한 이미지 등록</li>
+<li data-start="403" data-end="439">image_urls라는 커스텀 메타 필드에 이미지 URL 저장</li>
+</ul>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-end="421" data-start="400" data-ke-size="size26">왜 커스텀 메타 필드가 필요한가?</h2>
+<p data-end="534" data-start="423" data-ke-size="size16">워드프레스에서 대표 이미지(featured_media)는 하나만 설정할 수 있고, 본문(content)에 이미지를 삽입하면 편집이 불편하며 구조적으로 깔끔하게 데이터를 관리하기 어렵습니다.</p>
+<p data-end="642" data-start="536" data-ke-size="size16">저는 이미지 URL을 별도로 저장하고, 클라이언트에서 해당 필드를 이용해 이미지를 깔끔하게 렌더링하는 구조를 원했습니다. <br />예를 들어, 다음과 같은 형태로 이미지를 저장하고 사용하는 것이죠:</p>
+<pre id="code_1744092321157" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>"meta": {
+  "image_urls": [
+    "https://myDomain.com/uploads/image1.jpg",
+    "https://myDomain.com/uploads/image2.jpg",
+    "https://myDomain.com/uploads/image3.jpg"
+  ]
+}</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h2 data-end="759" data-start="733" data-ke-size="size26">이미지 URL 필드를 위한 커스텀 플러그인</h2>
+<p data-end="885" data-start="761" data-ke-size="size16">이 문제를 해결하기 위해 저는 image_urls라는 커스텀 메타 필드를 등록해주는 전용 플러그인을 따로 만들어 사용합니다.</p>
+<p data-end="885" data-start="761" data-ke-size="size16">이&nbsp;플러그인의&nbsp;역할은&nbsp;단순히&nbsp;image_urls라는&nbsp;메타&nbsp;필드를&nbsp;REST&nbsp;API에&nbsp;노출시키는&nbsp;것입니다.</p>
+<p><figure class="fileblock" data-ke-align="alignCenter">
+    <a href="./file/custom-image-meta.zip" class="">
+        <div class="image"></div>
+        <div class="desc">
+            <div class="filename">
+                <span class="name">custom-image-meta.zip</span>
+            </div>
+            <div class="size">1.56MB</div>
+        </div>
+    </a>
+</figure></p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16"><span style="color: #333333; text-align: start;">? 이 플러그인은 워드프레스 관리자 &gt; 플러그인 &gt; 새로 추가 &gt; 업로드 를 통해 설치한 뒤<span>&nbsp;</span></span><b>활성화</b>하면 바로 사용할 수 있습니다.</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h3 data-ke-size="size23">? HTML 구조</h3>
+<pre id="code_1744094200164" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>&lt;textarea id="postContent" placeholder="무슨 일이 일어나고 있나요?"&gt;&lt;/textarea&gt;
+&lt;input type="file" id="imageUpload" multiple style="display: none" /&gt;
+&lt;button id="customUploadBtn" type="button"&gt;이미지 선택&lt;/button&gt;
+&lt;div id="preview"&gt;&lt;/div&gt;
+&lt;p id="fileStatus"&gt;0장의 이미지 선택됨&lt;/p&gt;
+&lt;button id="postButton" onclick="submitPost()"&gt;게시하기&lt;/button&gt;
+
+&lt;p id="loading" class="loading" style="display: none"&gt;
+  이미지 업로드 중...&lt;span id="progress"&gt;0/0&lt;/span&gt;
+&lt;/p&gt;</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">1. input[type="file"]은 숨겨두고, 버튼으로 클릭 유도</p>
+<p data-ke-size="size16">2. 미리보기(preview) 영역에 이미지와 삭제 버튼 표시</p>
+<p data-ke-size="size16">3. 업로드 진행 상태도 progress로 표시</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h3 data-ke-size="size23">? 이미지 선택 &amp; 미리보기 함수:</h3>
+<p data-ke-size="size16">이미지를&nbsp;선택하면&nbsp;미리보기로&nbsp;보여주고,&nbsp;개별&nbsp;삭제도&nbsp;가능하게&nbsp;처리합니다.</p>
+<pre id="code_1744094478073" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>let selectedImages = [];
+
+function renderPreview() {
+    const preview = document.getElementById('preview');
+    preview.innerHTML = '';
+
+    selectedImages.forEach((file, index) =&gt; {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.width = '80px';
+            img.style.height = '80px';
+            img.style.objectFit = 'cover';
+
+            const removeBtn = document.createElement('button');
+            removeBtn.innerText = '❌';
+            removeBtn.onclick = () =&gt; {
+                selectedImages.splice(index, 1);
+                renderPreview();
+            };
+
+            const container = document.createElement('div');
+            container.style.display = 'inline-block';
+            container.style.position = 'relative';
+            container.appendChild(img);
+            container.appendChild(removeBtn);
+
+            preview.appendChild(container);
+        };
+        reader.readAsDataURL(file);
+    });
+
+    fileStatus.innerText = `${selectedImages.length}장의 이미지 선택됨`;
+}</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h3 data-ke-size="size23">? 이미지 업로드: 워드프레스 Media API 활용</h3>
+<p data-ke-size="size16">fetch로&nbsp;워드프레스의&nbsp;Media&nbsp;API에&nbsp;직접&nbsp;이미지를&nbsp;업로드합니다.&nbsp;<br />이&nbsp;과정에서&nbsp;JWT&nbsp;토큰을&nbsp;사용해&nbsp;인증을&nbsp;처리하고,&nbsp;업로드된&nbsp;이미지의&nbsp;source_url을&nbsp;반환받습니다.</p>
+<pre id="code_1744093616490" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>async function uploadImage(file, index, total) {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('title', file.name);
+    formData.append('status', 'publish');
+
+    document.getElementById('progress').innerText = `${index}/${total}`;
+
+    const response = await fetch(mediaApiUrl, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${token}`
+        },
+        body: formData
+    });
+
+    if (response.ok) {
+        const data = await response.json();
+        return data.source_url;
+    } else {
+        alert(`이미지 ${index} 업로드 실패!`);
+        return null;
+    }
+}</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h3 data-ke-size="size23">? 게시물 작성 시 이미지 URL 저장:</h3>
+<p data-ke-size="size16">이미지 업로드가 끝나면 해당 URL들을 배열로 모아서 게시물에 저장하고 REST API에 커스텀 메타 필드로 전달을 합니다.</p>
+<pre id="code_1744097664882" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+        title: `${userSlug}-${getCurrentTimestamp()}`,
+        content,
+        status: 'publish',
+        meta: {
+            image_urls: JSON.stringify(imageUrls),
+        },
+    }),
+});</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h3 data-ke-size="size23">실제로 구현된 부분 샘플</h3>
+<p><figure class="imageblock alignCenter" >
+    <span data-lightbox="lightbox">
+        <img src="./images/wordpress-add-image-custom-field_02.png"  />
+    </span>
+    <figcaption></figcaption>
+</figure></p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+                                <!-- contents end -->
+                            </div>
+                        </div>
+                        <!-- // article-content -->
+
+                        <!-- article-footer -->
+                        <div class="z-article__footer">
+                            <div class="z-article__prenext-divider"></div>
+                            <div class="article-page">
+                                <div class="z-article__prenext-list">
+                                    <!-- article-nav -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // article-footer -->
+                        <!-- comments -->
+                        <div id="disqus_thread"></div>
+                        <script>(function () { var d = document, s = d.createElement('script'); s.src = 'https://zenless.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();</script>
+
+                    </div>
+                </div>
+
+        </div>
+        <div class="z-common-area"></div>
+        </main>
+    </div>
+
+    </div>
+
+    <div id="z-footer"></div>
+
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/article-nav.js"></script>
+    <script src="/assets/js/cp_widget.js"></script>
+
+</body>
+
+</html>

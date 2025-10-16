@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>워드프레스 게시글에 댓글 기능 붙이기 (REST API 기반)</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/lib/highlight.min.js"></script>
+    <script src="/assets/js/lib/lenis.min.js"></script>
+    <script src="/assets/js/head.js"></script>
+</head>
+
+<body id="tt-body-index">
+    <div id="z-body">
+        <div id="z-header"></div>
+
+        <div id="z-layout">
+            <main class="z-main">
+                <div class="z-main__area">
+
+                    <div class="z-article__section">
+
+                        <div class="z-article">
+                            <!--  -->
+                            <h1 class="z-article__title">워드프레스 게시글에 댓글 기능 붙이기 (REST API 기반)</h1>
+                            <div class="z-article__meta">
+                                <a href="/category/workspace/web" class="z-article__category">
+                                    <div class="z-article__category-text">workspace/web</div>
+                                </a>
+                                <div class="z-article__meta-divider"></div>
+                                <div class="z-article__date">2025. 4. 13.</div>
+                            </div>
+
+                            <!-- article-content -->
+                            <div class="z-article__body" id="z-article__body">
+                                <img src="./images/wordpress-add-comments-rest-api_01.jpg" alt="" class="z-article__thumb">
+                                <!-- contents start -->
+<h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>? 워드프레스 REST API를 이용해서 나만의 사이트 만들기 - 6편</b></h2>
+<p style="color: #333333; text-align: start;" data-ke-size="size16"><b>게시물에 댓글 보기 &amp; 작성 기능 추가하기 (댓글 API 활용)</b></p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">&nbsp;</p>
+<h3 data-end="409" data-start="378" data-ke-size="size23">? 게시물 클릭 &rarr; 상세 페이지로 이동하는 구조</h3>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">포스팅은 따로 하지 않았지만 게시물 목록 화면(index.html)에서 각 게시물 하단에 각 게시물의 링크를 클립보드에 복사할 수 있는 버튼과, 현재 게시물에 작성된 댓글의 개수를 보여지도록 구현해놓은 상태입니다.</p>
+<p><figure class="imageblock alignCenter" >
+    <span data-lightbox="lightbox">
+        <img src="./images/wordpress-add-comments-rest-api_02.png"  />
+    </span>
+    <figcaption>메인화면에서 보여지는 모습</figcaption>
+</figure></p>
+<p data-end="490" data-start="411" data-ke-size="size16"><br />여기서 댓글을 클릭하면 id를 포함한 쿼리 파라미터를 이용해 상세 페이지로 이동하도록 설정했습니다.</p>
+<pre id="code_1744100671241" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>location.href = `post.html?id=${post.id}`;</code></pre>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">그렇게&nbsp;이동한&nbsp;post.html에서는&nbsp;URL에서&nbsp;id&nbsp;값을&nbsp;추출하여&nbsp;해당&nbsp;게시물을&nbsp;불러옵니다.</p>
+<pre id="code_1744100922725" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>const postId = new URLSearchParams(location.search).get("id");
+const postUrl = `https://myDomain.com/wp-json/wp/v2/posts/${postId}`;</code></pre>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16"><b>상세 페이지(post.html)</b> 구조:</p>
+<pre id="code_1744100967769" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>&lt;h3&gt;댓글&lt;/h3&gt;
+&lt;div id="commentList"&gt;&lt;/div&gt;
+
+&lt;h4&gt;댓글 작성&lt;/h4&gt;
+&lt;textarea id="commentContent" placeholder="댓글을 입력하세요"&gt;&lt;/textarea&gt;
+&lt;button onclick="submitComment()"&gt;댓글 작성&lt;/button&gt;</code></pre>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">? 댓글 불러오기 (GET):</p>
+<p data-end="490" data-start="411" data-ke-size="size16">워드프레스의&nbsp;댓글&nbsp;REST&nbsp;API는&nbsp;아래처럼&nbsp;간단히&nbsp;호출할&nbsp;수&nbsp;있습니다.</p>
+<pre id="code_1744101023974" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>const commentsUrl = `https://myDomain.com/wp-json/wp/v2/comments?post=${postId}`;
+const res = await fetch(commentsUrl);
+const comments = await res.json();</code></pre>
+<p data-ke-size="size16">&nbsp;</p>
+<p data-ke-size="size16">그리고&nbsp;우리는&nbsp;이것을 이용해 댓글&nbsp;트리를&nbsp;그려줍니다.</p>
+<pre id="code_1744101145376" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>function renderComments(comments, parentId = 0, depth = 0) {
+  return comments
+    .filter(c =&gt; c.parent === parentId)
+    .map(c =&gt; {
+      const replies = renderComments(comments, c.id, depth + 1);
+      const indent = `margin-left: ${depth * 20}px`;
+      return `
+        &lt;div class="comment" style="${indent}"&gt;
+          &lt;div class="comment-author"&gt;${c.author_name}&lt;/div&gt;
+          &lt;div class="comment-content"&gt;${c.content.rendered}&lt;/div&gt;
+          &lt;button onclick="showReplyForm(${c.id}, ${depth + 1})"&gt;답글&lt;/button&gt;
+          &lt;div id="reply-form-${c.id}"&gt;&lt;/div&gt;
+          ${replies}
+        &lt;/div&gt;
+      `;
+    }).join("");
+}</code></pre>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">? 댓글 작성 (POST)</p>
+<pre id="code_1744101304798" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>async function submitComment(parentId = 0) {
+  const textareaId = parentId ? `replyContent-${parentId}` : "commentContent";
+  const content = document.getElementById(textareaId).value.trim();
+  if (!content) return alert("댓글을 입력해주세요.");
+
+  const res = await fetch("https://myDomain.com/wp-json/wp/v2/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`, // 로그인 토큰
+    },
+    body: JSON.stringify({
+      post: postId,
+      content,
+      parent: parentId,
+    }),
+  });
+
+  if (res.ok) {
+    document.getElementById(textareaId).value = "";
+    loadComments(); // 새로고침 없이 댓글 반영
+  } else {
+    const err = await res.json();
+    alert("댓글 작성에 실패했습니다: " + (err.message || "오류"));
+  }
+}</code></pre>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">답글에 댓글을 달기위한 답글 폼 동적 생성:</p>
+<pre id="code_1744101337387" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>function showReplyForm(parentId, depth) {
+  const container = document.getElementById(`reply-form-${parentId}`);
+  container.innerHTML = `
+    &lt;textarea id="replyContent-${parentId}" placeholder="답글을 입력하세요"&gt;&lt;/textarea&gt;
+    &lt;button onclick="submitComment(${parentId})"&gt;답글 작성&lt;/button&gt;
+  `;
+}</code></pre>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16"><b>완성된 모습</b></p>
+<figure class="imagegridblock">
+                                    <div class="image-container">
+                                        <img src="./images/wordpress-add-comments-rest-api_03.png" alt="" class="">
+                                        <img src="./images/wordpress-add-comments-rest-api_04.png" alt="" class="">
+                                    </div>
+                                    <figcaption class="text-center"></figcaption>
+                                </figure>
+<p><figure class="imageblock alignCenter" data-is-animation="false" data-origin-width="978" data-origin-height="990" data-filename="스크린샷 2025-04-08 오후 5.37.11.png" style="width: 53.2413%; margin-right: 10px;" data-widthpercent="53.87">
+    <span data-lightbox="lightbox">
+        <img src="./img/img.png" data-is-animation="false" data-origin-width="978" data-origin-height="990" data-filename="스크린샷 2025-04-08 오후 5.37.11.png" style="width: 53.2413%; margin-right: 10px;" data-widthpercent="53.87" />
+    </span>
+    <figcaption></figcaption>
+</figure><figure class="imageblock alignCenter" data-is-animation="false" data-origin-width="978" data-origin-height="1156" data-filename="스크린샷 2025-04-08 오후 5.45.03.png" style="width: 45.5959%;" data-widthpercent="46.13">
+    <span data-lightbox="lightbox">
+        <img src="./img/img_1.png" data-is-animation="false" data-origin-width="978" data-origin-height="1156" data-filename="스크린샷 2025-04-08 오후 5.45.03.png" style="width: 45.5959%;" data-widthpercent="46.13" />
+    </span>
+    <figcaption></figcaption>
+</figure></p>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<p data-end="490" data-start="411" data-ke-size="size16">&nbsp;</p>
+<h3 data-end="116" data-start="105" data-ke-size="size23">? 마무리하며</h3>
+<p data-end="563" data-start="510" data-ke-size="size16">지금까지 총 6편에 걸쳐 워드프레스 REST API를 활용해 나만의 사이트를 만드는 과정을 정리해보았습니다.</p>
+<p data-end="266" data-start="155" data-ke-size="size16">사용자 인증부터 게시물 작성, 이미지 업로드, 검색, 댓글 기능까지, 기본적인 기능은 어느 정도 구현되었기에 이 연재는 여기서 마무리하려 합니다.</p>
+<p data-end="266" data-start="155" data-ke-size="size16"><br />하지만 사실, <b>지금부터가 진짜 시작</b>입니다.</p>
+<p data-end="317" data-start="268" data-ke-size="size16">이제부터는 각자의 스타일에 맞게 사이트를 만들어나가기 나름입니다.</p>
+<p data-end="317" data-start="268" data-ke-size="size16"><br />예를 들면 이런 것들입니다:</p>
+<ul style="list-style-type: disc;" data-end="392" data-start="319" data-ke-list-type="disc">
+<li data-end="338" data-start="319">✏️ 게시물 수정/삭제 기능</li>
+<li data-end="357" data-start="339">? 댓글 수정/삭제 기능</li>
+<li data-end="392" data-start="358">? 외형 꾸미기 (CSS 커스터마이징, 다크모드 등)</li>
+</ul>
+<p data-end="514" data-start="394" data-ke-size="size16">사실 1~2편 쓰는 동안 실제 구현은 대부분 끝나버렸고, 그 이후로는 글을 작성하기위해서 핵심기능만 빼내서 코드를 작성하자니 오히려 코드가 꼬이거나 귀찮아서 글을 쓰는 게 조금 버겁기도 했습니다.</p>
+<p data-end="514" data-start="394" data-ke-size="size16">&nbsp;</p>
+<p data-end="514" data-start="394" data-ke-size="size16">그래도 <b>누군가에게 이 시리즈가 도움이 되었기를</b> 바라며, 이렇게 마무리합니다.</p>
+<p data-end="531" data-start="516" data-ke-size="size16">읽어주셔서 감사합니다! ?</p>
+                                <!-- contents end -->
+                            </div>
+                        </div>
+                        <!-- // article-content -->
+
+                        <!-- article-footer -->
+                        <div class="z-article__footer">
+                            <div class="z-article__prenext-divider"></div>
+                            <div class="article-page">
+                                <div class="z-article__prenext-list">
+                                    <!-- article-nav -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- // article-footer -->
+                        <!-- comments -->
+                        <div id="disqus_thread"></div>
+                        <script>(function () { var d = document, s = d.createElement('script'); s.src = 'https://zenless.disqus.com/embed.js'; s.setAttribute('data-timestamp', +new Date()); (d.head || d.body).appendChild(s); })();</script>
+
+                    </div>
+                </div>
+
+        </div>
+        <div class="z-common-area"></div>
+        </main>
+    </div>
+
+    </div>
+
+    <div id="z-footer"></div>
+
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/article-nav.js"></script>
+    <script src="/assets/js/cp_widget.js"></script>
+
+</body>
+
+</html>
