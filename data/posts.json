@@ -1,5 +1,95 @@
 [
     {
+        "id": 10010,
+        "title": "Eden's Shadow 규칙 설명서",
+        "category": "creation/boardgame",
+        "date": "2025.06.28",
+        "thumb": "/category/creation/boardgame/2025/images/edens-shadow-user-guide-kor_01.png",
+        "url": "/category/creation/boardgame/2025/edens-shadow-user-guide-kor.html",
+        "excerpt": "Domina Games에서 발매한 보드게임 Eden's Shadow의 한글 규칙 설명서입니다. 1~4인용의 예상 플레이 타임 30~120분 정도의 보드 게임입니다.",
+        "status": "public"
+    },
+    {
+        "id": 10009,
+        "title": "GEMINOA 규칙 설명서",
+        "category": "creation/boardgame",
+        "date": "2025.06.27",
+        "thumb": "/category/creation/boardgame/2025/images/geminoa-user-guide-kor_01.png",
+        "url": "/category/creation/boardgame/2025/geminoa-user-guide-kor.html",
+        "excerpt": "Domina Games에서 발매한 보드게임 GEMINOA의 한글 규칙 설명서입니다. 1~2인용의 예상 플레이 타임 10~20분 정도의 대전 보드 게임입니다.",
+        "status": "public"
+    },
+    {
+        "id": 10008,
+        "title": "건나건(ガンナガン) 규칙 설명서",
+        "category": "creation/boardgame",
+        "date": "2025.06.24",
+        "thumb": "/category/creation/boardgame/2025/images/gun-and-gun-user-guide-kor_01.png",
+        "url": "/category/creation/boardgame/2025/gun-and-gun-user-guide-kor.html",
+        "excerpt": "보드게임 건나건(ガンナガン)의 규칙 설명서입니다.",
+        "status": "public"
+    },
+    {
+        "id": 10007,
+        "title": "CROSS LORDS 카드 한글화 번역",
+        "category": "creation/boardgame",
+        "date": "2025.06.22",
+        "thumb": "/category/creation/boardgame/2025/images/cross-lords-card-list-kor_01.png",
+        "url": "/category/creation/boardgame/2025/cross-lords-card-list-kor.html",
+        "excerpt": "보드게임 CROSS LORDS의 카드 목록입니다.",
+        "status": "public"
+    },
+    {
+        "id": 10006,
+        "title": "CROSSxGEAR 카드 목록",
+        "category": "creation/boardgame",
+        "date": "2025.06.22",
+        "thumb": "/category/creation/boardgame/2025/images/cross-x-gear-card-list_01.png",
+        "url": "/category/creation/boardgame/2025/cross-x-gear-card-list.html",
+        "excerpt": "보드게임 CROSSxGEAR의 카드 목록입니다.",
+        "status": "public"
+    },
+    {
+        "id": 10005,
+        "title": "CROSSxGEAR 규칙 설명서",
+        "category": "creation/boardgame",
+        "date": "2025.06.21",
+        "thumb": "/category/creation/boardgame/2025/images/cross-x-gear-user-guide-kor_01.png",
+        "url": "/category/creation/boardgame/2025/cross-x-gear-user-guide-kor.html",
+        "excerpt": "당신은 이 나라의 왕입니다. 최근, 다른 국가들 사이에서 연일 발생하는 끊임없는 전투와 좋지 않은 소문들. 그러한 것과는 상관없을거라 생각될 정도로 평온한 이 나라도, 이제는 언제 전쟁의 소용돌이에 휩쓸려들거나, 다른 국가의 습격을 받을 지도 모르는 상태입니다. 그리고 그런 위기적 상황에 당신은, 자국을 지키기 위해 나라 곳곳의 숙련자들을 소집하고, 그 중에서 선택한 2명과 계약을 체결하게 됩니다. 왕의 혈통에 이어진 힘 -GEAR LINK-. 계약자에게 가져오는 강력한 능력. 양보할 수 없는 전투를 지배하는 것은 자국인가, 다른 국가인가・・・・・・",
+        "status": "public"
+    },
+    {
+        "id": 10004,
+        "title": "Lemures 규칙 설명서",
+        "category": "creation/boardgame",
+        "date": "2025.06.20",
+        "thumb": "/category/creation/boardgame/2025/images/lemures-user-guide-kor_01.png",
+        "url": "/category/creation/boardgame/2025/lemures-user-guide-kor.html",
+        "excerpt": "Domina Games에서 2021.12.03에 발매한 보드게임 Lemures의 한글 규칙 설명서입니다. 「Lemures」는 1~2인용의 초고난이도의 던전 공략 보드 게임입니다.",
+        "status": "public"
+    },
+    {
+        "id": 10003,
+        "title": "아이돌어라이브(アイドルアライブ) 규칙 설명서",
+        "category": "creation/boardgame",
+        "date": "2025.06.19",
+        "thumb": "/category/creation/boardgame/2025/images/idol-a-live-user-guide-kor_01.png",
+        "url": "/category/creation/boardgame/2025/idol-a-live-user-guide-kor.html",
+        "excerpt": "SUSABI GAMES에서 2024년 1월 25일날 발매한 보드게임 아이돌어라이브(アイドルアライブ)의 규칙 설명서입니다.",
+        "status": "public"
+    },
+    {
+        "id": 95005,
+        "title": "시퀀스 다이어그램을 작성하는 이유와 구성 요소, 온라인 도구 안내",
+        "category": "workspace/workflow",
+        "date": "2025.06.17",
+        "thumb": "/category/workspace/workflow/2025/images/sequence-diagram-reason-components-online-guide_01.png",
+        "url": "/category/workspace/workflow/2025/sequence-diagram-reason-components-online-guide.html",
+        "excerpt": "시퀀스 다이어그램은 UML 다이어그램의 한 종류로 시스템 내부의 객체들 간의 상호작용을 시간 순서에 따라 표현하는 행위 다이어그램입니다. 주로 소프트웨어 개발에서 사용되며, 시스템의 동작을 시각적으로 이해하고 설계할 수 있게 도와주는 객체 지향 설계에서 중요한 도구입니다.",
+        "status": "public"
+    },
+    {
         "id": 95004,
         "title": "체크리스트, 테스트시나리오, 테스트케이스: 품질보증을위한 필수도구들",
         "category": "workspace/workflow",
