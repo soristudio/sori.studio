@@ -6,6 +6,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const headerSuccess = initializeHeader();
     if (headerSuccess) {
       // console.log('헤더 초기화 완료');
+      // 헤더가 삽입된 후 검색 이벤트 연결
+const searchInput = document.getElementById('search');
+if (searchInput) {
+  searchInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+      const query = encodeURIComponent(searchInput.value.trim());
+      if (query) {
+        window.location.href = `/search.html?q=${query}`;
+        searchInput.value = '';
+      }
+    }
+  });
+}
     } else {
       // console.error('헤더 초기화 실패');
     }

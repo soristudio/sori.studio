@@ -80,6 +80,26 @@
         "status": "public"
     },
     {
+        "id": 95007,
+        "title": "제품을 만드는 절차와 단계별 목표",
+        "category": "workspace/workflow",
+        "date": "2025.07.08",
+        "thumb": "",
+        "url": "/category/workspace/workflow/2025/product-development-process-and-stepwise-goals.html",
+        "excerpt": "제품 개발은 단순히 ‘개발을 시작해서 출시하는 것’만을 의미하지 않는다. 각 단계마다 생각할 거리와 해결할 문제가 다르고, 그에 따라 목표도 조금씩 달라진다.",
+        "status": "public"
+    },
+    {
+        "id": 95006,
+        "title": "Copyright란? 의미부터 올바른 표기법까지",
+        "category": "workspace/workflow",
+        "date": "2025.07.02",
+        "thumb": "/category/workspace/workflow/2025/images/copyright-meaning-and-correct-notation_01.png",
+        "url": "/category/workspace/workflow/2025/copyright-meaning-and-correct-notation.html",
+        "excerpt": "Copyright는 창작물에 대한 법적 권리를 보호하기 위한 제도로, 저작권의 의미와 올바른 표기법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
         "id": 95005,
         "title": "시퀀스 다이어그램을 작성하는 이유와 구성 요소, 온라인 도구 안내",
         "category": "workspace/workflow",
@@ -137,6 +157,46 @@
         "thumb": "/category/workspace/tool/2025/images/kakao-multi-install-mac_01.jpg",
         "url": "/category/workspace/tool/2025/kakao-multi-install-mac.html",
         "excerpt": "맥에서 두 개 이상의 카카오톡을 사용하는 방법에 대한 가이드입니다.",
+        "status": "public"
+    },
+    {
+        "id": 80005,
+        "title": "노트 관리 기법: 'PDCA'의 활용과 적용",
+        "category": "workspace/system",
+        "date": "2025.06.29",
+        "thumb": "/category/workspace/system/2025/images/note-management-technique-pdca_01.png",
+        "url": "/category/workspace/system/2025/note-management-technique-pdca.html",
+        "excerpt": "PDCA 기법의 기본 개념과 활용 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80004,
+        "title": "노트 관리 기법: 'PARA'의 활용과 적용",
+        "category": "workspace/system",
+        "date": "2025.06.27",
+        "thumb": "/category/workspace/system/2025/images/note-management-technique-para_01.png",
+        "url": "/category/workspace/system/2025/note-management-technique-para.html",
+        "excerpt": "PARA 기법의 기본 개념과 활용 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80003,
+        "title": "노트 관리 기법: '제텔카스텐'의 활용과 적용",
+        "category": "workspace/system",
+        "date": "2025.06.26",
+        "thumb": "/category/workspace/system/2025/images/note-management-technique-zettelkasten_01.png",
+        "url": "/category/workspace/system/2025/note-management-technique-zettelkasten.html",
+        "excerpt": "제텔카스텐 기법의 기본 개념과 활용 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80002,
+        "title": "효율적인 사진 관리: 폴더 구조와 파일명 형식 정리 방법",
+        "category": "workspace/system",
+        "date": "2025.06.26",
+        "thumb": "/category/workspace/system/2025/images/efficient-photo-management-folder-structure-filename_01.png",
+        "url": "/category/workspace/system/2025/efficient-photo-management-folder-structure-filename.html",
+        "excerpt": "효율적인 사진 관리를 위한 폴더 구조와 파일명 형식 정리 방법에 대해 알아봅니다.",
         "status": "public"
     },
     {

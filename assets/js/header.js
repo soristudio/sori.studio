@@ -36,6 +36,12 @@ function loadHeader() {
         </div>
         <!-- 모바일 사이드 메뉴 -->
         <div id="z-header__aside" class="z-header__aside">
+        
+            <!-- 검색 -->
+       <div class="widget search text-center">
+    <label for="search" class="screen_out">블로그 내 검색</label>
+    <input id="search" class="search" placeholder="press enter to search…" type="text" name="search">
+</div>
             <!-- 카테고리 목록 -->
             <nav class="">
                 <ul class="z-header__category">
@@ -193,3 +199,4 @@ function initializeHeader() {
     return false;
   }
 }
+

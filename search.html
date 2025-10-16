@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>검색 결과</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="/assets/js/lib/highlight.min.js"></script>
+    <script src="/assets/js/lib/lenis.min.js"></script>
+    <script src="/assets/js/head.js"></script>
+</head>
+
+<body>
+    <div id="z-body">
+        <div id="z-header"></div>
+
+        <!-- container -->
+        <div id="z-layout">
+            <main class="z-main">
+                <div class="z-main__area">
+                    <section class="z-section" data-category="search" data-limit="3">
+                        <div class="z-section__header">
+                            <h2 class="z-section__title">검색 결과</h2>
+                            <div class="z-section__title-line"></div>
+                        </div>
+
+                        <div class="z-section__list">
+                        </div>
+
+                        <div class="z-section__ad">
+                            <iframe
+                                src="https://ads-partners.coupang.com/widgets.html?id=919592&amp;template=carousel&amp;trackingCode=AF6561083&amp;subId=&amp;width=1400&amp;height=160&amp;tsource="
+                                width="1400" height="160" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"
+                                browsingtopics=""></iframe>
+                        </div>
+                    </section>
+
+                </div>
+
+            </main>
+            <!-- // container -->
+
+            <div id="z-footer"></div>
+        </div>
+    </div>
+
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/footer.js"></script>
+    <script src="/assets/js/script.js"></script>
+    <!-- <script src="/assets/js/cards.js"></script> -->
+
+     <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = (urlParams.get("q") || "").trim();
+
+    const res = await fetch("/data/posts.json");
+    const posts = await res.json();
+
+    const filtered = posts.filter(p =>
+        p.status === "public" &&
+        (p.title.toLowerCase().includes(query.toLowerCase()) ||
+         (p.excerpt && p.excerpt.toLowerCase().includes(query.toLowerCase())))
+    );
+
+    const section = document.querySelector(".z-section[data-category='search']");
+    const list = section.querySelector(".z-section__list");
+    list.innerHTML = "";
+
+    if (filtered.length === 0) {
+        const emptyMessage = document.createElement("div");
+        emptyMessage.className = "z-card empty-message";
+        emptyMessage.innerHTML = `
+            <div class="z-card_wrapper">
+                <div class="z-card__content">
+                    <div class="z-card_title">📭 검색 결과가 없습니다.</div>
+                    <div class="z-card_summary">검색어 "${query}"에 해당하는 게시물이 없습니다.</div>
+                </div>
+            </div>
+        `;
+        list.appendChild(emptyMessage);
+        return;
+    }
+
+    filtered.forEach(post => {
+        const thumbSrc = post.thumb && post.thumb.trim() !== "" ? post.thumb : "/assets/images/thumb_bg.png";
+
+        const article = document.createElement("article");
+        article.classList.add("z-card");
+        article.innerHTML = `
+            <div class="z-card_wrapper">
+                <div class="z-card__thumb">
+                    <div class="z-card__thumb_wrapper">
+                        <div class="z-card__thumb_inset">
+                            <img loading="lazy" src="${thumbSrc}" class="z-card__thumb_image" role="presentation"
+                                 onerror="this.onerror=null;this.src='/assets/images/load_error.png';">
+                        </div>
+                    </div>
+                </div>
+                <a href="${post.url}" class="z-card_link"></a>
+                <div class="z-card__content">
+                    <div class="z-card_info">
+                        <a href="/category/${post.category}" class="z-card__category">
+                            <div class="z-card__category-text">${post.category}</div>
+                        </a>
+                        <div class="z-card__meta-divider"></div>
+                        <div class="z-card__date">${post.date}</div>
+                    </div>
+                    <div class="z-card_title">${post.title}</div>
+                    ${post.excerpt ? `<div class="z-card_summary">${post.excerpt}</div>` : ""}
+                </div>
+            </div>
+        `;
+        list.appendChild(article);
+    });
+});
+
+    </script>
+
+</body>
+
+</html>

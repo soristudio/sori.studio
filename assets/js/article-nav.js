@@ -24,6 +24,8 @@ async function loadPrevNext() {
   if (!container) return;
 
   function createPrenext(post, empty = false) {
+    const thumbSrc = post.thumb && post.thumb.trim() !== "" ? post.thumb : "/assets/images/thumb_bg.png";
+
     return `
       <div class="z-prenext ${empty ? 'empty' : ''}">
         ${!empty ? `
@@ -31,9 +33,9 @@ async function loadPrevNext() {
           <div class="z-prenext__thumb">
             <div class="z-prenext__thumb-wrapper">
               <div class="z-prenext__thumb-inset">
-                <img loading="lazy" src="${post.thumb}"
-                    onerror="this.onerror=null;this.src='/img/thumb_bg.png';"
-                    class="z-prenext__image" alt="">
+                  <img loading="lazy" src="${thumbSrc}"
+                  onerror="this.onerror=null;this.src='/assets/images/load_error.png';"
+                  class="z-prenext__image" alt="">
               </div>
             </div>
           </div>
