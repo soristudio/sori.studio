@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 게시물 필터링
     let filtered;
     if (categoryKey === "latest") {
-      filtered = posts.slice();
+      filtered = posts.slice().filter(p => p.status === "public");
     } else {
-      filtered = posts.filter(p => p.category.startsWith(categoryKey));
+      filtered = posts.filter(p => p.category.startsWith(categoryKey) && p.status === "public");
     }
 
     // 데이터 리미트가 0이면 페이지네이션 사용

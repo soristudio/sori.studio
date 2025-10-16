@@ -188,12 +188,10 @@ li {
   게시물 본문
 //////////////////// */
 
-
-#tt-body-page figure.imageblock img,
 figure.imageblock img {
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 24px;
+    /* margin-bottom: 24px; */
     outline: rgba(0, 0, 0, 0.08) solid 1px;
     outline-offset: -1px;
 }
@@ -555,7 +553,6 @@ figure.imagegridblock .image-container img {
 }
 
 figure.imagegridblock figcaption {
-    text-align: center;
     margin-top: 8px;
     font-size: 0.875rem;
     color: #555;
@@ -564,7 +561,6 @@ figure.imagegridblock figcaption {
 /* //////////////////// 
   ZC 공통
 //////////////////// */
-
 
 
 
@@ -957,7 +953,7 @@ figure.imagegridblock figcaption {
 }
 
 div#disqus_thread {
-        width: 100%;
+    width: 100%;
     max-width: 760px;
     margin: 0 auto;
     padding: 4rem 40px 0;
@@ -967,6 +963,7 @@ div#disqus_thread {
     .z-main {
         padding: 0 20px;
     }
+
     div#disqus_thread {
         padding: 2rem 20px 0;
     }
@@ -1680,4 +1677,13 @@ html.lenis body {
 
 .toc__collapsed .toc__item {
     opacity: 0;
+}
+
+
+
+
+
+/* Tailwind CSS */
+.text-center {
+    text-align: center;
 }

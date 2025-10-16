@@ -1,56 +1,132 @@
 [
     {
-        "id": 6,
+        "id": 95004,
+        "title": "체크리스트, 테스트시나리오, 테스트케이스: 품질보증을위한 필수도구들",
+        "category": "workspace/workflow",
+        "date": "2025.06.17",
+        "thumb": "/category/workspace/workflow/2025/images/checklist-test-scenario-test-case-quality-assurance_01.png",
+        "url": "/category/workspace/workflow/2025/checklist-test-scenario-test-case-quality-assurance.html",
+        "excerpt": "소프트웨어 개발 프로젝트를 진행할 때 품질 보증은 중요한 과제 중 하나입니다. 사용자의 요구 사항을 충족시키고, 안정적이며 신뢰할 수 있는 제품을 개발하기 위해서는 테스트 과정이 필수적입니다. 이를 위해 체크리스트, 테스트 시나리오, 테스트 케이스는 품질 보증을 위한 필수 도구로서 사용됩니다. 각 도구는 프로젝트의 다양한 단계에서 품질을 검증하고 보증하는 데 도움을 주지만 각각은 서로 다른 목적과 특징을 갖고 있습니다.",
+        "status": "public"
+    },
+    {
+        "id": 95003,
+        "title": "WBS와 간트 차트: 프로젝트 관리의 핵심 도구들",
+        "category": "workspace/workflow",
+        "date": "2025.06.17",
+        "thumb": "/category/workspace/workflow/2025/images/wbs-and-gantt-chart-project-management_01.png",
+        "url": "/category/workspace/workflow/2025/wbs-and-gantt-chart-project-management.html",
+        "excerpt": "프로젝트의 성공은 목표를 구체화하고 그 목표를 달성하기 위한 체계적인 계획을 수립하는 데서 시작됩니다. 이를 위해 프로젝트 관리자들은 복잡한 프로젝트를 효과적으로 관리하기 위한 도구로 WBS(Work Breakdown Structure)와 간트 차트(Gantt Chart)를 주로 활용합니다. 이들 도구는 프로젝트의 복잡성을 이해하고 효율적으로 관리하는 데 필수적인 역할을 합니다.",
+        "status": "public"
+    },
+    {
+        "id": 95002,
+        "title": "기능 정의서: 제품 개발 프로세스의 핵심 문서",
+        "category": "workspace/workflow",
+        "date": "2025.06.17",
+        "thumb": "/category/workspace/workflow/2025/images/functional-specification-product-development-process_01.png",
+        "url": "/category/workspace/workflow/2025/functional-specification-product-development-process.html",
+        "excerpt": "제품을 개발하는 과정에서 기능 정의서는 매우 중요한 역할을 합니다. 기능 정의서는 제품의 기능적인 측면을 상세하게 정의하고 문서화하는 도구로, 개발팀과 이해관계자 간의 의사 소통을 원활하게 하며 프로젝트의 방향성을 명확히 합니다. 아래에서는 제품 개발의 핵심 단계와 기능 정의서 작성 방법 및 중요성에 대해 자세히 알아보겠습니다.",
+        "status": "public"
+    },
+    {
+        "id": 95001,
+        "title": "프로젝트 매니저의 역할과 책임",
+        "category": "workspace/workflow",
+        "date": "2025.06.17",
+        "thumb": "/category/workspace/workflow/2025/images/project-manager-role-and-responsibilities_01.png",
+        "url": "/category/workspace/workflow/2025/project-manager-role-and-responsibilities.html",
+        "excerpt": "프로젝트 매니저는 현대 조직에서 핵심적인 역할을 맡고 있습니다. 그들은 프로젝트의 성공과 실패에 큰 영향을 미치는 업무를 담당하며, 전략적인 계획과 효율적인 실행을 통해 조직의 목표를 달성합니다. 이들은 프로젝트의 이해 관계자들과 긴밀히 협력하며, 팀원들을 이끄는 역할을 수행하여 프로젝트의 품질과 일정을 유지하고 개선합니다.",
+        "status": "public"
+    },
+    {
+        "id": 85001,
+        "title": "카카오톡 다중 설치 가이드: 맥에서 두 개 이상의 카카오톡 사용하기",
+        "category": "workspace/tool",
+        "date": "2025.05.06",
+        "thumb": "/category/workspace/tool/2025/images/kakao-multi-install-mac_01.jpg",
+        "url": "/category/workspace/tool/2025/kakao-multi-install-mac.html",
+        "excerpt": "맥에서 두 개 이상의 카카오톡을 사용하는 방법에 대한 가이드입니다.",
+        "status": "public"
+    },
+    {
+        "id": 80001,
+        "title": "3-2-1 백업 전략: 데이터 안전을 위한 최적의 방법",
+        "category": "workspace/system",
+        "date": "2025.06.17",
+        "thumb": "/category/workspace/system/2025/images/3-2-1-backup-strategy_01.png",
+        "url": "/category/workspace/system/2025/3-2-1-backup-strategy.html",
+        "excerpt": "3-2-1 백업 전략은 데이터 손실을 방지하기 위한 효과적인 방법입니다.",
+        "status": "public"
+    },
+    {
+        "id": 10002,
+        "title": "DarkOne 카드 목록",
+        "category": "creation/boardgame",
+        "date": "2025.06.16",
+        "thumb": "/category/creation/boardgame/2025/images/dark-one-card-list_01.png",
+        "url": "/category/creation/boardgame/2025/dark-one-card-list.html",
+        "excerpt": "Domina Games의 보드게임 DarkOne의 카드 목록입니다.",
+        "status": "public"
+    },
+    {
+        "id": 10001,
         "title": "DarkOne 한글 규칙 설명서",
         "category": "creation/boardgame",
         "date": "2025.06.16",
-        "thumb": "/category/creation/boardgame/2025/images/dark-one-user-guide-kor_01.jpeg",
+        "thumb": "/category/creation/boardgame/2025/images/dark-one-user-guide-kor_01.jpg",
         "url": "/category/creation/boardgame/2025/dark-one-user-guide-kor.html",
-        "excerpt": "Domina Games에서 2023.12.21에 발매한 신작 보드게임 DarkOne의 한글 규칙 설명서입니다. 이쪽은 정식 발매자체가 되지 않고 있기에 당연히 공식은 아니고 임의로 한글화 한거니, 오역이 있을 수 있습니다.  4명의 개성있는 캐릭터들 중 하나를 선택하여 1:1로 대전을 하는 게임으로, '블레이드 론도' 시리즈에서 캐릭터 선택이 추가되었다고 보면 조금은 쉽게 다가갈 수 있지 않을까 싶은데... 선택하는 캐릭터에 따라 사용하는 방식이 다르기에 꽤 흥미롭습니다.  1~2인용 게임이며, 플레이 타임은 10-20분 정도입니다."
+        "excerpt": "Domina Games에서 2023.12.21에 발매한 신작 보드게임 DarkOne의 한글 규칙 설명서입니다. 이쪽은 정식 발매자체가 되지 않고 있기에 당연히 공식은 아니고 임의로 한글화 한거니, 오역이 있을 수 있습니다.  4명의 개성있는 캐릭터들 중 하나를 선택하여 1:1로 대전을 하는 게임으로, '블레이드 론도' 시리즈에서 캐릭터 선택이 추가되었다고 보면 조금은 쉽게 다가갈 수 있지 않을까 싶은데... 선택하는 캐릭터에 따라 사용하는 방식이 다르기에 꽤 흥미롭습니다.  1~2인용 게임이며, 플레이 타임은 10-20분 정도입니다.",
+        "status": "public"
     },
     {
-        "id": 5,
+        "id": 15005,
         "title": "Union Arena Custom Playmat",
         "category": "creation/original",
         "date": "2025.05.06",
         "thumb": "/category/creation/original/2025/images/union-arena-custom-playmat_01.jpeg",
         "url": "/category/creation/original/2025/union-arena-custom-playmat.html",
-        "excerpt": "유니온 아레나 커스텀 플레이매트입니다. 유니온 아레나는 카드 게임을 위한 디지털 플랫폼으로, 플레이매트를 커스터마이징할 수 있는 기능을 제공합니다."
+        "excerpt": "유니온 아레나 커스텀 플레이매트입니다. 유니온 아레나는 카드 게임을 위한 디지털 플랫폼으로, 플레이매트를 커스터마이징할 수 있는 기능을 제공합니다.",
+        "status": "public"
     },
     {
-        "id": 4,
+        "id": 15004,
         "title": "tistory skin - zenn.skin",
         "category": "creation/original",
         "date": "2025.05.06",
         "thumb": "/category/creation/original/2025/images/tistory-zenn-skin_01.jpeg",
         "url": "/category/creation/original/2025/tistory-zenn-skin.html",
-        "excerpt": "zenn.skin은 Zenn 블로그의 미니멀하고 깔끔한 디자인을 티스토리 블로그에 적용한 스킨입니다. Zenn의 심플한 미학을 좋아하는 사용자에게 적합합니다."
+        "excerpt": "zenn.skin은 Zenn 블로그의 미니멀하고 깔끔한 디자인을 티스토리 블로그에 적용한 스킨입니다. Zenn의 심플한 미학을 좋아하는 사용자에게 적합합니다.",
+        "status": "public"
     },
     {
-        "id": 3,
+        "id": 15003,
         "title": "tistory skin - BiCute skin",
         "category": "creation/original",
         "date": "2025.05.06",
         "thumb": "/category/creation/original/2025/images/tistory-bicute-skin_01.jpeg",
         "url": "/category/creation/original/2025/tistory-bicute-skin.html",
-        "excerpt": "BiCute 스킨은 인기 스킨 Odyssey의 장점을 계승하면서, 다양한 문제점을 보완하고 사용자 맞춤 기능을 강화한 티스토리 블로그용 스킨입니다."
+        "excerpt": "BiCute 스킨은 인기 스킨 Odyssey의 장점을 계승하면서, 다양한 문제점을 보완하고 사용자 맞춤 기능을 강화한 티스토리 블로그용 스킨입니다.",
+        "status": "public"
     },
     {
-        "id": 2,
+        "id": 15002,
         "title": "일본 라인 스티커, 필요하신 분들 도와드려요",
         "category": "creation/original",
         "date": "2025.05.06",
         "thumb": "/category/creation/original/2025/images/gift-line-sticker_01.jpg",
         "url": "/category/creation/original/2025/gift-line-sticker.html",
-        "excerpt": "일본 라인 스탬프를 구매하고 싶지만 일본 계정이 없어 어려움을 겪고 계신가요? 원하시는 일본 한정 스티커를 대신 구매해 선물해드리고 있습니다."
+        "excerpt": "일본 라인 스탬프를 구매하고 싶지만 일본 계정이 없어 어려움을 겪고 계신가요? 원하시는 일본 한정 스티커를 대신 구매해 선물해드리고 있습니다.",
+        "status": "public"
     },
     {
-        "id": 1,
+        "id": 15001,
         "title": "Union Arena Deck Builder(uadeck) - Update Log",
         "category": "creation/original",
         "date": "2025.05.06",
         "thumb": "/category/creation/original/2025/images/union-arena-deck-builder_update-log_01.jpeg",
         "url": "/category/creation/original/2025/union-arena-deck-builder_update-log.html",
-        "excerpt": "반다이남코의 트레이딩 카드 게임 [UNION ARENA]의 덱 빌더 사이트 uniare.zenncloud.com 의 업데이트 내역입니다."
+        "excerpt": "반다이남코의 트레이딩 카드 게임 [UNION ARENA]의 덱 빌더 사이트 uniare.zenncloud.com 의 업데이트 내역입니다.",
+        "status": "public"
     }
 ]
