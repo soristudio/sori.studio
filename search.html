@@ -3,10 +3,14 @@
 
 <head>
     <title>검색 결과</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <script src="/assets/js/lib/highlight.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/lib/highlight.min.css">
     <script src="/assets/js/lib/lenis.min.js"></script>
-    <script src="/assets/js/head.js"></script>
+
 </head>
 
 <body>
@@ -48,28 +52,28 @@
     <script src="/assets/js/script.js"></script>
     <!-- <script src="/assets/js/cards.js"></script> -->
 
-     <script>
+    <script>
         document.addEventListener("DOMContentLoaded", async () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = (urlParams.get("q") || "").trim();
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = (urlParams.get("q") || "").trim();
 
-    const res = await fetch("/data/posts.json");
-    const posts = await res.json();
+            const res = await fetch("/data/posts.json");
+            const posts = await res.json();
 
-    const filtered = posts.filter(p =>
-        p.status === "public" &&
-        (p.title.toLowerCase().includes(query.toLowerCase()) ||
-         (p.excerpt && p.excerpt.toLowerCase().includes(query.toLowerCase())))
-    );
+            const filtered = posts.filter(p =>
+                p.status === "public" &&
+                (p.title.toLowerCase().includes(query.toLowerCase()) ||
+                    (p.excerpt && p.excerpt.toLowerCase().includes(query.toLowerCase())))
+            );
 
-    const section = document.querySelector(".z-section[data-category='search']");
-    const list = section.querySelector(".z-section__list");
-    list.innerHTML = "";
+            const section = document.querySelector(".z-section[data-category='search']");
+            const list = section.querySelector(".z-section__list");
+            list.innerHTML = "";
 
-    if (filtered.length === 0) {
-        const emptyMessage = document.createElement("div");
-        emptyMessage.className = "z-card empty-message";
-        emptyMessage.innerHTML = `
+            if (filtered.length === 0) {
+                const emptyMessage = document.createElement("div");
+                emptyMessage.className = "z-card empty-message";
+                emptyMessage.innerHTML = `
             <div class="z-card_wrapper">
                 <div class="z-card__content">
                     <div class="z-card_title">📭 검색 결과가 없습니다.</div>
@@ -77,22 +81,22 @@
                 </div>
             </div>
         `;
-        list.appendChild(emptyMessage);
-        return;
-    }
+                list.appendChild(emptyMessage);
+                return;
+            }
 
-    filtered.forEach(post => {
-        const thumbSrc = post.thumb && post.thumb.trim() !== "" ? post.thumb : "/assets/images/thumb_bg.png";
+            filtered.forEach(post => {
+                const thumbSrc = post.thumb && post.thumb.trim() !== "" ? post.thumb : "/assets/images/thumb_bg.png";
 
-        const article = document.createElement("article");
-        article.classList.add("z-card");
-        article.innerHTML = `
+                const article = document.createElement("article");
+                article.classList.add("z-card");
+                article.innerHTML = `
             <div class="z-card_wrapper">
                 <div class="z-card__thumb">
                     <div class="z-card__thumb_wrapper">
                         <div class="z-card__thumb_inset">
                             <img loading="lazy" src="${thumbSrc}" class="z-card__thumb_image" role="presentation"
-                                 onerror="this.onerror=null;this.src='/assets/images/load_error.png';">
+                                onerror="this.onerror=null;this.src='/assets/images/load_error.png';">
                         </div>
                     </div>
                 </div>
@@ -110,9 +114,9 @@
                 </div>
             </div>
         `;
-        list.appendChild(article);
-    });
-});
+                list.appendChild(article);
+            });
+        });
 
     </script>
 

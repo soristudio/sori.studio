@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 데이터 리미트가 0이면 페이지네이션 사용
     let paginationEnabled = false;
     let sliceLimit = limit;
-    console.log(limit)
+    // console.log("Cards limit:", limit);
     if (limit === 0) {
       paginationEnabled = true;
-      sliceLimit = 10; // 페이지네이션 단위
+      sliceLimit = 10;
     }
 
     // slice

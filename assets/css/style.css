@@ -1481,6 +1481,7 @@ div#disqus_thread {
     border-radius: 8px;
     overflow: hidden;
     width: 100%;
+    border: rgba(0, 0, 0, 0.08) solid 1px;
 }
 
 .z-prenext__thumb-wrapper {

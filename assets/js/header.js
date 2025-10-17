@@ -51,7 +51,7 @@ function loadHeader() {
                                 <ul class="z-header__sub-category-list">
                                     <li class=""><a href="/category/workspace/web" class="z-header__sub-category-item"> web
                                         </a></li>
-                                    <li class=""><a href="/category/workspace/tools" class="z-header__sub-category-item">
+                                    <li class=""><a href="/category/workspace/tool" class="z-header__sub-category-item">
                                             tools </a></li>
                                     <li class=""><a href="/category/workspace/system" class="z-header__sub-category-item">
                                             system </a></li>
@@ -74,7 +74,7 @@ function loadHeader() {
                                     <li class=""><a href="/category/keepsakes/goods" class="z-header__sub-category-item">
                                             goods </a></li>
                                     <li class=""><a href="/category/keepsakes/pick" class="z-header__sub-category-item">
-                                            pick </a></li>
+                                            picks </a></li>
                                     <li class=""><a href="/category/keepsakes/archive" class="z-header__sub-category-item">
                                             archive </a></li>
                                 </ul>
@@ -82,7 +82,7 @@ function loadHeader() {
                             <li class=""><a href="/category/mosaic" class="z-header__category-item"> mosaic </a>
                                 <ul class="z-header__sub-category-list">
                                     <li class=""><a href="/category/mosaic/moment" class="z-header__sub-category-item">
-                                            moment </a></li>
+                                            moments </a></li>
                                     <li class=""><a href="/category/mosaic/place" class="z-header__sub-category-item"> place
                                         </a></li>
                                     <li class=""><a href="/category/mosaic/subculture" class="z-header__sub-category-item">
