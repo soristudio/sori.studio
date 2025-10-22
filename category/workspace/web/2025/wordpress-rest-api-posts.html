@@ -50,35 +50,35 @@
                                 <img src="./images/wordpress-rest-api-posts_01.jpg" alt="" class="z-article__thumb">
                                 <!-- contents start -->
                                 <h2 data-ke-size="size26"><b>? 워드프레스 REST API를 이용해서 나만의 사이트 만들기 - 1편</b></h2>
-                                <p data-ke-size="size16"><b>워드프레스로 게시물 목록 불러오기 (GET 요청 활용)</b></p>
-                                <p data-ke-size="size16">&nbsp;</p>
-                                <p data-ke-size="size16">
-                                    <br />웹사이트를&nbsp;구축할&nbsp;때&nbsp;가장&nbsp;쉬우면서도&nbsp;유연하게&nbsp;CMS와&nbsp;백엔드를&nbsp;구성할&nbsp;수&nbsp;있는&nbsp;방법&nbsp;중&nbsp;하나가&nbsp;워드프레스라고&nbsp;생각한다.<br />기본적인&nbsp;관리&nbsp;UI도&nbsp;잘&nbsp;되어&nbsp;있고,&nbsp;무엇보다&nbsp;REST&nbsp;API를&nbsp;통해&nbsp;데이터를&nbsp;쉽게&nbsp;가져오고&nbsp;다룰&nbsp;수&nbsp;있어서&nbsp;프론트엔드는&nbsp;내가&nbsp;원하는&nbsp;대로&nbsp;자유롭게&nbsp;만들&nbsp;수&nbsp;있다.<br /><br />그래서&nbsp;이번에&nbsp;워드프레스&nbsp;REST&nbsp;API를&nbsp;이용해서&nbsp;내가&nbsp;원하는&nbsp;스타일의&nbsp;웹사이트를&nbsp;직접&nbsp;만들어보려고&nbsp;한다.<br />이&nbsp;과정을&nbsp;정리해서&nbsp;블로그에&nbsp;시리즈로&nbsp;기록해보려고&nbsp;하고,<br />이&nbsp;글들이&nbsp;나처럼&nbsp;프론트&nbsp;중심으로&nbsp;작업을&nbsp;하면서&nbsp;CMS가&nbsp;필요했던&nbsp;누군가에게&nbsp;작은&nbsp;도움이&nbsp;되면&nbsp;좋겠다.<br /><br />기록은&nbsp;복잡하게&nbsp;쓰지&nbsp;않고,&nbsp;최대한&nbsp;내가&nbsp;생각한&nbsp;흐름,&nbsp;개발을&nbsp;진행한&nbsp;순서대로&nbsp;정리해볼&nbsp;생각이다.
+                                <p><b>워드프레스로 게시물 목록 불러오기 (GET 요청 활용)</b></p>
+                                <p> </p>
+                                <p>
+                                    <br />웹사이트를 구축할 때 가장 쉬우면서도 유연하게 CMS와 백엔드를 구성할 수 있는 방법 중 하나가 워드프레스라고 생각한다.<br />기본적인 관리 UI도 잘 되어 있고, 무엇보다 REST API를 통해 데이터를 쉽게 가져오고 다룰 수 있어서 프론트엔드는 내가 원하는 대로 자유롭게 만들 수 있다.<br /><br />그래서 이번에 워드프레스 REST API를 이용해서 내가 원하는 스타일의 웹사이트를 직접 만들어보려고 한다.<br />이 과정을 정리해서 블로그에 시리즈로 기록해보려고 하고,<br />이 글들이 나처럼 프론트 중심으로 작업을 하면서 CMS가 필요했던 누군가에게 작은 도움이 되면 좋겠다.<br /><br />기록은 복잡하게 쓰지 않고, 최대한 내가 생각한 흐름, 개발을 진행한 순서대로 정리해볼 생각이다.
                                 </p>
-                                <p data-ke-size="size16">&nbsp;</p>
-                                <p data-ke-size="size16">&nbsp;</p>
-                                <h3 data-end="539" data-start="514" data-ke-size="size23">REST API로 게시물 불러오기</h3>
-                                <p data-end="619" data-start="541" data-ke-size="size16">첫 번째는 제일 기본적인 내용부터
+                                <p> </p>
+                                <p> </p>
+                                <h3 data-end="539" data-start="514">REST API로 게시물 불러오기</h3>
+                                <p data-end="619" data-start="541">첫 번째는 제일 기본적인 내용부터
                                     시작한다.<br />워드프레스에서 REST API를 통해 게시물 데이터를 가져와서 웹사이트에 표시하는 방식이다.</p>
-                                <p data-end="673" data-start="621" data-ke-size="size16">&nbsp;</p>
+                                <p data-end="673" data-start="621"> </p>
                                 <h4 data-end="382" data-start="364" data-ke-size="size20">워드프레스 REST API?</h4>
-                                <p data-end="478" data-start="384" data-ke-size="size16">워드프레스는 자체적으로 REST API를
+                                <p data-end="478" data-start="384">워드프레스는 자체적으로 REST API를
                                     제공한다.<br />따로 플러그인 설치 안 해도 기본적으로 작동하고, 브라우저에서 주소만 입력해도 JSON 데이터를 확인할 수 있다.</p>
-                                <p data-end="548" data-start="480" data-ke-size="size16">예를 들어 워드프레스 주소가 <a
+                                <p data-end="548" data-start="480">예를 들어 워드프레스 주소가 <a
                                         href="https://example.com">https://example.com</a>이라면, 게시물 리스트는 아래 주소에서 확인할 수
                                     있다:</p>
                                 <pre id="code_1744034847005" class="javascript" data-ke-language="javascript"
                                     data-ke-type="codeblock"><code>https://example.com/wp-json/wp/v2/posts</code></pre>
-                                <p data-end="548" data-start="480" data-ke-size="size16">&nbsp;</p>
-                                <p data-end="548" data-start="480" data-ke-size="size16">
-                                    이&nbsp;URL로&nbsp;들어가보면&nbsp;게시물&nbsp;데이터가&nbsp;JSON&nbsp;형식으로&nbsp;쭉&nbsp;나온다.<br />프론트엔드에서는&nbsp;이&nbsp;데이터를&nbsp;fetch&nbsp;같은&nbsp;걸로&nbsp;불러오면&nbsp;끝이다.
+                                <p data-end="548" data-start="480"> </p>
+                                <p data-end="548" data-start="480">
+                                    이 URL로 들어가보면 게시물 데이터가 JSON 형식으로 쭉 나온다.<br />프론트엔드에서는 이 데이터를 fetch 같은 걸로 불러오면 끝이다.
                                 </p>
-                                <p data-end="548" data-start="480" data-ke-size="size16">&nbsp;</p>
-                                <h3 data-end="705" data-start="686" data-ke-size="size23">예제로 만들어본 게시물 리스트</h3>
-                                <p data-end="791" data-start="707" data-ke-size="size16">아래는 간단하게 만든 HTML + JavaScript
+                                <p data-end="548" data-start="480"> </p>
+                                <h3 data-end="705" data-start="686">예제로 만들어본 게시물 리스트</h3>
+                                <p data-end="791" data-start="707">아래는 간단하게 만든 HTML + JavaScript
                                     예제다.<br />워드프레스에서 게시물을 가져와서, 제목이랑 요약을 화면에 보여주는 방식으로 만들었다.</p>
-                                <p data-end="791" data-start="707" data-ke-size="size16">&nbsp;</p>
-                                <p data-end="791" data-start="707" data-ke-size="size16"><b>HTML (index.html)</b></p>
+                                <p data-end="791" data-start="707"> </p>
+                                <p data-end="791" data-start="707"><b>HTML (index.html)</b></p>
                                 <pre id="code_1744035228924" class="html xml" data-ke-language="html"
                                     data-ke-type="codeblock"><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
@@ -93,8 +93,8 @@
   &lt;script src="main.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-                                <p data-end="791" data-start="707" data-ke-size="size16">&nbsp;</p>
-                                <p data-end="791" data-start="707" data-ke-size="size16"><b>JavaScript (main.js)</b></p>
+                                <p data-end="791" data-start="707"> </p>
+                                <p data-end="791" data-start="707"><b>JavaScript (main.js)</b></p>
                                 <pre id="code_1744035532104" class="javascript" data-ke-language="javascript"
                                     data-ke-type="codeblock"><code>const apiURL = 'https://example.com/wp-json/wp/v2/posts';
 
@@ -117,15 +117,15 @@ fetch(apiURL)
   .catch(err =&gt; {
     console.error('에러 발생:', err);
   });</code></pre>
-                                <p data-end="548" data-start="480" data-ke-size="size16">&nbsp;</p>
-                                <p data-end="548" data-start="480" data-ke-size="size16">참고로 워드프레스는 제목이나 내용 같은 텍스트를
+                                <p data-end="548" data-start="480"> </p>
+                                <p data-end="548" data-start="480">참고로 워드프레스는 제목이나 내용 같은 텍스트를
                                     HTML로 감싸서 주기 때문에, title.rendered, excerpt.rendered 같은 필드를 사용해야 한다.<br />이걸 그대로
                                     innerHTML에 넣어주면 된다.</p>
-                                <p data-end="548" data-start="480" data-ke-size="size16">&nbsp;</p>
-                                <p data-end="548" data-start="480" data-ke-size="size16">&nbsp;</p>
+                                <p data-end="548" data-start="480"> </p>
+                                <p data-end="548" data-start="480"> </p>
                                 <h4 data-end="548" data-start="480" data-ke-size="size20">워드프레스 REST API에서 excerpt와
                                     content 차이</h4>
-                                <h3 data-end="79" data-start="64" data-ke-size="size23">✅ excerpt</h3>
+                                <h3 data-end="79" data-start="64">✅ excerpt</h3>
                                 <ul style="list-style-type: disc;" data-end="318" data-start="80"
                                     data-ke-list-type="disc">
                                     <li data-end="101" data-start="80"><b>요약된 글 내용</b>을 의미.</li>
@@ -135,17 +135,17 @@ fetch(apiURL)
                                             잘라서</b> 생성.</li>
                                     <li data-end="247" data-start="209">간단한 요약 정보에 적합.</li>
                                 </ul>
-                                <h3 data-end="398" data-start="383" data-ke-size="size23">✅ content</h3>
+                                <h3 data-end="398" data-start="383">✅ content</h3>
                                 <ul style="list-style-type: disc;" data-end="536" data-start="399"
                                     data-ke-list-type="disc">
                                     <li data-end="420" data-start="399">글의 <b>전체 본문</b>을 의미.</li>
                                     <li data-end="470" data-start="421">워드프레스 편집기에서 작성한 모든 내용을 포함(이미지, 스타일, HTML 포함).
                                     </li>
                                 </ul>
-                                <p data-end="548" data-start="480" data-ke-size="size16">&nbsp;</p>
-                                <p data-end="548" data-start="480" data-ke-size="size16">&nbsp;</p>
-                                <h3 data-end="548" data-start="480" data-ke-size="size23">결과물</h3>
-                                <p data-ke-size="size16">워드프레스 관리자 페이지에서 작성한 게시물(좌)을 나의 웹(우)에 그대로 가져와 사용할 수 있게 된다.</p>
+                                <p data-end="548" data-start="480"> </p>
+                                <p data-end="548" data-start="480"> </p>
+                                <h3 data-end="548" data-start="480">결과물</h3>
+                                <p>워드프레스 관리자 페이지에서 작성한 게시물(좌)을 나의 웹(우)에 그대로 가져와 사용할 수 있게 된다.</p>
                                 <figure class="imagegridblock">
                                     <div class="image-container">
                                         <img src="./images/wordpress-rest-api-posts_02.png" alt="" class="">
@@ -153,7 +153,7 @@ fetch(apiURL)
                                     </div>
                                     <figcaption class="text-center"></figcaption>
                                 </figure>
-                                <p data-ke-size="size16">&nbsp;</p>
+                                <p> </p>
                                 <!-- contents end -->
                             </div>
                         </div>
@@ -191,6 +191,7 @@ fetch(apiURL)
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/article-nav.js"></script>
     <script src="/assets/js/cp_widget.js"></script>
+    <script src="/assets/js/backtotop.js"></script>
 
 </body>
 

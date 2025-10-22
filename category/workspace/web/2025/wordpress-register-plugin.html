@@ -48,32 +48,32 @@
                 <!-- contents start -->
                 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>? 워드프레스 REST API를 이용해서 나만의 사이트
                     만들기 - 3편</b></h2>
-                <p style="color: #333333; text-align: start;" data-ke-size="size16"><b>워드프레스에서 일반 사용자 회원가입 기능 만들기 (커스텀
+                <p style="color: #333333; text-align: start;"><b>워드프레스에서 일반 사용자 회원가입 기능 만들기 (커스텀
                     플러그인 활용)</b></p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">이제 글을 불러와서 보여줄 수 있고, 사용자가 글을 쓸 수 있도록 로그인하고, JWT 인증을 이용해서 게시물을 작성하는 기능까지 붙여봤다.
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <p>이제 글을 불러와서 보여줄 수 있고, 사용자가 글을 쓸 수 있도록 로그인하고, JWT 인증을 이용해서 게시물을 작성하는 기능까지 붙여봤다.
                 </p>
-                <p data-ke-size="size16">이제 기본적인 '보고', &lsquo;쓰기&rsquo; 흐름은 완성된 셈이다.</p>
-                <p data-ke-size="size16">그렇다면 다음 단계는?<br />바로 <b>일반 사용자도 스스로 회원가입할 수 있어야 한다는 점</b>이다.</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <h3 data-end="468" data-start="393" data-ke-size="size23">왜 회원가입이 필요할까?</h3>
-                <p data-ke-size="size16">
-                  트위터처럼&nbsp;짧게&nbsp;글을&nbsp;쓰는&nbsp;구조로&nbsp;사이트를&nbsp;만들기로&nbsp;했기&nbsp;때문에,<br />관리자 혼자 블로그처럼 글을 계속
-                  쓰는 방식이 아니라 여러&nbsp;사용자가&nbsp;자유롭게&nbsp;글을&nbsp;남길&nbsp;수&nbsp;있어야&nbsp;한다.<br /><br />그래서 사용자 계정이
-                  필요하고, 그&nbsp;사용자들이&nbsp;로그인해서&nbsp;글을&nbsp;쓸&nbsp;수&nbsp;있어야&nbsp;한다.<br />그러려면 당연히 회원가입도 되어야 하고...
+                <p>이제 기본적인 '보고', &lsquo;쓰기&rsquo; 흐름은 완성된 셈이다.</p>
+                <p>그렇다면 다음 단계는?<br />바로 <b>일반 사용자도 스스로 회원가입할 수 있어야 한다는 점</b>이다.</p>
+                <p> </p>
+                <p> </p>
+                <h3 data-end="468" data-start="393">왜 회원가입이 필요할까?</h3>
+                <p>
+                  트위터처럼 짧게 글을 쓰는 구조로 사이트를 만들기로 했기 때문에,<br />관리자 혼자 블로그처럼 글을 계속
+                  쓰는 방식이 아니라 여러 사용자가 자유롭게 글을 남길 수 있어야 한다.<br /><br />그래서 사용자 계정이
+                  필요하고, 그 사용자들이 로그인해서 글을 쓸 수 있어야 한다.<br />그러려면 당연히 회원가입도 되어야 하고...
                 </p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <h3 data-ke-size="size23">왜 커스텀 플러그인을 선택했는가?</h3>
-                <p data-ke-size="size16">워드프레스 REST API는 기본적으로 사용자 등록 기능을 제공하긴 하지만, 보안 문제 때문에 <b>일반적으로는 REST API를 통해 사용자
+                <p> </p>
+                <p> </p>
+                <h3>왜 커스텀 플러그인을 선택했는가?</h3>
+                <p>워드프레스 REST API는 기본적으로 사용자 등록 기능을 제공하긴 하지만, 보안 문제 때문에 <b>일반적으로는 REST API를 통해 사용자
                     등록이 막혀 있다.</b></p>
-                <p data-end="703" data-start="663" data-ke-size="size16">하지만 <b>워드프레스 관리자 권한</b>으로 API 요청을 보내면 가능은하다.
+                <p data-end="703" data-start="663">하지만 <b>워드프레스 관리자 권한</b>으로 API 요청을 보내면 가능은하다.
                 </p>
-                <p data-end="703" data-start="663" data-ke-size="size16">&nbsp;</p>
-                <p data-end="703" data-start="663" data-ke-size="size16"><b>회원가입(register.js) 스크립트</b>:</p>
+                <p data-end="703" data-start="663"> </p>
+                <p data-end="703" data-start="663"><b>회원가입(register.js) 스크립트</b>:</p>
                 <pre id="code_1744083505062" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>const appPassword = '애플리케이션 비밀번호';
 const adminUser = '관리자 아이디';
 
@@ -91,14 +91,14 @@ const response = await fetch('https://도메인/wp-json/wp/v2/users', {
     roles: ['author'],
   }),
 });</code></pre>
-                <p data-ke-size="size16">하지만 이 구조는 <b>프론트엔드에서 직접 관리자 인증 정보를 노출</b>시키기 때문에, 사실상 <b>보안상 안전하지 않은 방식</b>이다.
+                <p>하지만 이 구조는 <b>프론트엔드에서 직접 관리자 인증 정보를 노출</b>시키기 때문에, 사실상 <b>보안상 안전하지 않은 방식</b>이다.
                 </p>
-                <p data-ke-size="size16">이 문제를 해결하기 위해서 플러그인을 이용할 것인데, 유명한 플러그인들도 많지만 특정 기능 하나만 사용할 예정이기에 직접 만든 플러그인을 써서
+                <p>이 문제를 해결하기 위해서 플러그인을 이용할 것인데, 유명한 플러그인들도 많지만 특정 기능 하나만 사용할 예정이기에 직접 만든 플러그인을 써서
                   부하를 최소화 하도록 한다. (이후 유지관리 여부나 여러 문제를 고려했을 때 직접 구현하는 게 더 편리)</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <h3 data-ke-size="size23">커스텀 플러그인(custom-rest-register)</h3>
-                <p data-ke-size="size16">워드프레스의 REST API 시스템을 활용해 어떤 사용자든 작성자(author) 권한으로 회원가입이 가능하도록 해주는 플러그인이다.</p>
+                <p> </p>
+                <p> </p>
+                <h3>커스텀 플러그인(custom-rest-register)</h3>
+                <p>워드프레스의 REST API 시스템을 활용해 어떤 사용자든 작성자(author) 권한으로 회원가입이 가능하도록 해주는 플러그인이다.</p>
                 <figure class="fileblock" data-ke-align="alignCenter">
                   <a href="./file/custom-rest-register.zip" class="">
                     <div class="image"></div>
@@ -110,23 +110,23 @@ const response = await fetch('https://도메인/wp-json/wp/v2/users', {
                     </div>
                   </a>
                 </figure>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <h3 data-ke-size="size23">프론트엔드 회원가입 페이지 구현</h3>
-                <p data-ke-size="size16">
-                  이제&nbsp;아래처럼&nbsp;프론트엔드에서&nbsp;바로&nbsp;회원가입을&nbsp;요청할&nbsp;수&nbsp;있다.<br />플러그인&nbsp;설치&nbsp;이후엔&nbsp;더&nbsp;이상&nbsp;관리자&nbsp;인증이나&nbsp;애플리케이션&nbsp;비밀번호는&nbsp;필요&nbsp;없다.
+                <p> </p>
+                <p> </p>
+                <p> </p>
+                <h3>프론트엔드 회원가입 페이지 구현</h3>
+                <p>
+                  이제 아래처럼 프론트엔드에서 바로 회원가입을 요청할 수 있다.<br />플러그인 설치 이후엔 더 이상 관리자 인증이나 애플리케이션 비밀번호는 필요 없다.
                 </p>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16"><b>회원가입(register.html) 페이지</b>:</p>
+                <p> </p>
+                <p><b>회원가입(register.html) 페이지</b>:</p>
                 <pre id="code_1744083991093" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>&lt;input type="text" id="username" placeholder="아이디 (영문/숫자)" /&gt;
 &lt;input type="password" id="password" placeholder="비밀번호" /&gt;
 &lt;input type="text" id="nickname" placeholder="닉네임" /&gt;
 &lt;input type="email" id="email" placeholder="이메일" /&gt;
 &lt;button onclick="register()"&gt;회원가입&lt;/button&gt;
 &lt;p id="message"&gt;&lt;/p&gt;</code></pre>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16"><b>회원가입 스크립트</b>:</p>
+                <p> </p>
+                <p><b>회원가입 스크립트</b>:</p>
                 <pre id="code_1744084083336" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>async function register() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -154,8 +154,8 @@ const response = await fetch('https://도메인/wp-json/wp/v2/users', {
             '회원가입 실패: ' + (result.message || '오류 발생');
     }
 }</code></pre>
-                <p data-ke-size="size16">&nbsp;</p>
-                <p data-ke-size="size16">&nbsp;</p>
+                <p> </p>
+                <p> </p>
                 <!-- contents end -->
               </div>
             </div>

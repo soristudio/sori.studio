@@ -50,56 +50,56 @@
                                 <img src="./images/wordpress-login-jwt_01.jpg" alt="" class="z-article__thumb">
                                 <!-- contents start -->
 <h2 style="color: #000000; text-align: start;" data-ke-size="size26"><b>? 워드프레스 REST API를 이용해서 나만의 사이트 만들기 - 2편</b></h2>
-<p style="color: #333333; text-align: start;" data-ke-size="size16"><b>워드프레스로 로그인 &amp; 글쓰기 직접 구현하기 (JWT 인증 사용)</b></p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">지난 글에서는 워드프레스 REST API를 이용해서 등록된 게시물을 가져와서 웹사이트에 표시하는 걸 해봤다.<br />REST API가 잘 동작하는것을 확인했으니 이제 이것을 이용해서 원하는 사이트를 만들어 볼 차례이다.<br /><br /></p>
-<p data-ke-size="size16">&nbsp;</p>
-<h3 data-end="357" data-start="342" data-ke-size="size23">무엇을 만들 것인가</h3>
-<p data-ke-size="size16">이번 프로젝트는 <b>트위터처럼 짧고 간단한 글을 남기는 구조</b>를 목표로 하고 있다.<br />그 이유는, 나에게 있었던 일이나 게임 플레이 기록, 구매한 물건 등 다양한 일상들을 블로그 글이라고 하기엔 애매할 정도로 짧게 남기고 싶었기 때문이다.<br />&ldquo;언제, 어떤 일이 있었다&rdquo; 정도만 빠르게 기록할 수 있는 형식을 고민하다가, 트위터처럼 가볍게 글을 쓸 수 있는 구조가 가장 적합하다고 느꼈다.<br /><br />그래서 기존 블로그처럼 &ldquo;글 작성 페이지로 이동 &rarr; 제목 입력 &rarr; 본문 작성&rdquo; 같은 흐름은 아예 없다.<br /><b>하나의 화면(index.html)</b> 안에서, <b>상단에는 글 작성</b> 공간이, <b>하단에는 작성된 글 목록</b>이 바로 이어지는 구조로 만들어볼 것이다.<br />기왕 트위터처럼 만들기로 했으니 다른 사람들도 글을 쓸수 있도록 해보면 어떨까 한다.<br /><br />그래서 index.html을 열면 로그인한 사용자라면 바로 글을 쓸 수 있어야 하고, 로그인하지 않은 상태라면 글쓰기를 막고 로그인 페이지로 보내는 방식으로 구성할 예정이다.</p>
-<p data-end="472" data-start="359" data-ke-size="size16">&nbsp;</p>
-<p data-end="472" data-start="359" data-ke-size="size16">&nbsp;</p>
+<p style="color: #333333; text-align: start;"><b>워드프레스로 로그인 &amp; 글쓰기 직접 구현하기 (JWT 인증 사용)</b></p>
+<p> </p>
+<p>지난 글에서는 워드프레스 REST API를 이용해서 등록된 게시물을 가져와서 웹사이트에 표시하는 걸 해봤다.<br />REST API가 잘 동작하는것을 확인했으니 이제 이것을 이용해서 원하는 사이트를 만들어 볼 차례이다.<br /><br /></p>
+<p> </p>
+<h3 data-end="357" data-start="342">무엇을 만들 것인가</h3>
+<p>이번 프로젝트는 <b>트위터처럼 짧고 간단한 글을 남기는 구조</b>를 목표로 하고 있다.<br />그 이유는, 나에게 있었던 일이나 게임 플레이 기록, 구매한 물건 등 다양한 일상들을 블로그 글이라고 하기엔 애매할 정도로 짧게 남기고 싶었기 때문이다.<br />&ldquo;언제, 어떤 일이 있었다&rdquo; 정도만 빠르게 기록할 수 있는 형식을 고민하다가, 트위터처럼 가볍게 글을 쓸 수 있는 구조가 가장 적합하다고 느꼈다.<br /><br />그래서 기존 블로그처럼 &ldquo;글 작성 페이지로 이동 &rarr; 제목 입력 &rarr; 본문 작성&rdquo; 같은 흐름은 아예 없다.<br /><b>하나의 화면(index.html)</b> 안에서, <b>상단에는 글 작성</b> 공간이, <b>하단에는 작성된 글 목록</b>이 바로 이어지는 구조로 만들어볼 것이다.<br />기왕 트위터처럼 만들기로 했으니 다른 사람들도 글을 쓸수 있도록 해보면 어떨까 한다.<br /><br />그래서 index.html을 열면 로그인한 사용자라면 바로 글을 쓸 수 있어야 하고, 로그인하지 않은 상태라면 글쓰기를 막고 로그인 페이지로 보내는 방식으로 구성할 예정이다.</p>
+<p data-end="472" data-start="359"> </p>
+<p data-end="472" data-start="359"> </p>
 <h2 data-end="654" data-start="641" data-ke-size="size26">인증은 꼭 필요하다</h2>
-<p data-end="770" data-start="656" data-ke-size="size16">REST API로 글을 작성하거나 수정하려면 인증이 필요하다.<br />그래서 이번 글에서는 <b>JWT 토큰 기반 인증</b>을 도입해서 로그인 &rarr; 토큰 발급 &rarr; 글 작성 요청 까지 연결하는 흐름을 만든다.</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<h3 data-ke-size="size23">플러그인&nbsp;설치:&nbsp;JWT&nbsp;Authentication&nbsp;for&nbsp;WP&nbsp;REST&nbsp;API</h3>
-<p data-ke-size="size16">워드프레스 관리자 페이지에서 이 플러그인을 설치한다: <a href="https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/" target="_blank" rel="noopener" data-end="945" data-start="858">JWT Authentication for WP REST API</a></p>
-<p data-end="968" data-start="947" data-ke-size="size16">&nbsp;</p>
-<p data-end="968" data-start="947" data-ke-size="size16">설치 후 아래 설정들을 추가해야 한다.</p>
-<p data-end="968" data-start="947" data-ke-size="size16">&nbsp;</p>
-<p data-end="968" data-start="947" data-ke-size="size16"><b>wp-config.php에 추가</b>:</p>
+<p data-end="770" data-start="656">REST API로 글을 작성하거나 수정하려면 인증이 필요하다.<br />그래서 이번 글에서는 <b>JWT 토큰 기반 인증</b>을 도입해서 로그인 &rarr; 토큰 발급 &rarr; 글 작성 요청 까지 연결하는 흐름을 만든다.</p>
+<p> </p>
+<p> </p>
+<h3>플러그인 설치: JWT Authentication for WP REST API</h3>
+<p>워드프레스 관리자 페이지에서 이 플러그인을 설치한다: <a href="https://wordpress.org/plugins/jwt-authentication-for-wp-rest-api/" target="_blank" rel="noopener" data-end="945" data-start="858">JWT Authentication for WP REST API</a></p>
+<p data-end="968" data-start="947"> </p>
+<p data-end="968" data-start="947">설치 후 아래 설정들을 추가해야 한다.</p>
+<p data-end="968" data-start="947"> </p>
+<p data-end="968" data-start="947"><b>wp-config.php에 추가</b>:</p>
 <pre id="code_1744077261481" class="php" data-ke-language="php" data-ke-type="codeblock"><code>define('JWT_AUTH_SECRET_KEY', '적당히_복잡한_비밀키');
 define('JWT_AUTH_CORS_ENABLE', true);</code></pre>
-<p data-ke-size="size16">여기서 비밀키는 <a href="https://randomkeygen.com/" target="_blank" rel="noopener&nbsp;noreferrer">https://randomkeygen.com/</a> 같은 사이트를 이용해서 가져와도 좋고, 직접 'e2f7c6b4a8d9e1f0b3c4d5f6e7f8g9h0i1j2k3l4m5n6o7p8'와 같은 16진수 형식의 랜덤한 값을 지정해도 된다.</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>.htaccess (Apache 사용 시)</b>:</p>
+<p>여기서 비밀키는 <a href="https://randomkeygen.com/" target="_blank" rel="noopener noreferrer">https://randomkeygen.com/</a> 같은 사이트를 이용해서 가져와도 좋고, 직접 'e2f7c6b4a8d9e1f0b3c4d5f6e7f8g9h0i1j2k3l4m5n6o7p8'와 같은 16진수 형식의 랜덤한 값을 지정해도 된다.</p>
+<p> </p>
+<p><b>.htaccess (Apache 사용 시)</b>:</p>
 <pre id="code_1744077501079" class="php" data-ke-language="php" data-ke-type="codeblock"><code>RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<h3 data-ke-size="size23">로그인 요청: 토큰 받아오기</h3>
-<p data-ke-size="size16">로그인&nbsp;폼에서&nbsp;입력한&nbsp;정보로&nbsp;아래&nbsp;API에&nbsp;요청을&nbsp;보내면&nbsp;된다:</p>
+<p> </p>
+<p> </p>
+<h3>로그인 요청: 토큰 받아오기</h3>
+<p>로그인 폼에서 입력한 정보로 아래 API에 요청을 보내면 된다:</p>
 <pre id="code_1744077728134" class="bash" data-ke-language="bash" data-ke-type="codeblock"><code>POST /wp-json/jwt-auth/v1/token</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">요청 바디는 이렇게:</p>
+<p> </p>
+<p> </p>
+<p>요청 바디는 이렇게:</p>
 <pre id="code_1744077767987" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>{
   "username": "아이디",
   "password": "비밀번호"
 }</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">응답으로는 이렇게 생긴 토큰이 온다:</p>
+<p> </p>
+<p>응답으로는 이렇게 생긴 토큰이 온다:</p>
 <pre id="code_1744077791725" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>{
   "token": "eyJ0eXAiOiJKV1QiLCJhbGci...",
   "user_email": "example@email.com",
   "user_nicename": "홍길동",
   ...
 }</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">여기서 이 token만 뽑아서 localStorage에 저장해두면 된다.</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>로그인 화면(login.html)</b>의 스크립트:</p>
+<p> </p>
+<p>여기서 이 token만 뽑아서 localStorage에 저장해두면 된다.</p>
+<p> </p>
+<p> </p>
+<p><b>로그인 화면(login.html)</b>의 스크립트:</p>
 <pre id="code_1744078111576" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>async function login() {
   const username = usernameInput.value;
   const password = passwordInput.value;
@@ -123,37 +123,37 @@ SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1</code></pre>
     document.getElementById('message').innerText = '로그인 실패: ' + result.message;
   }
 }</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
+<p> </p>
+<p> </p>
 <h2 data-end="2652" data-start="2629" data-ke-size="size26">index.html에서 토큰 검사하기</h2>
-<p data-end="2706" data-start="2654" data-ke-size="size16">index.html을 열었을 때, 토큰이 없다면 바로 login.html로 보내버린다.<br />HTML로 웹을 구현한다면 매 페이지 이 동작이 필요하다.</p>
+<p data-end="2706" data-start="2654">index.html을 열었을 때, 토큰이 없다면 바로 login.html로 보내버린다.<br />HTML로 웹을 구현한다면 매 페이지 이 동작이 필요하다.</p>
 <pre id="code_1744078177860" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>const token = localStorage.getItem('jwt_token');
 if (!token) {
   window.location.href = 'login.html';
 }</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
+<p> </p>
+<p> </p>
 <h2 data-end="2853" data-start="2832" data-ke-size="size26">게시물 작성하기</h2>
-<p data-ke-size="size16">다시한번 정리하는 목표로 하고있는 index.html 구조를 요약해본다.</p>
+<p>다시한번 정리하는 목표로 하고있는 index.html 구조를 요약해본다.</p>
 <ul style="list-style-type: disc;" data-end="2928" data-start="2855" data-ke-list-type="disc">
 <li data-end="2875" data-start="2855">글 작성 영역: 상단에 바로 입력</li>
 <li data-end="2893" data-start="2876">이미지 업로드도 여기서 처리 (이번 내용에서는 제외)</li>
 <li data-end="2928" data-start="2894">게시하기 버튼을 누르면 REST API로 POST 요청</li>
 </ul>
 <blockquote data-end="2982" data-start="2930" data-ke-style="style1">
-<p data-end="2982" data-start="2932" data-ke-size="size16">글 작성을 위한 별도 페이지는 없다.<br />트위터같은 느낌의 메인 화면에서 모든 걸 처리한다.</p>
+<p data-end="2982" data-start="2932">글 작성을 위한 별도 페이지는 없다.<br />트위터같은 느낌의 메인 화면에서 모든 걸 처리한다.</p>
 </blockquote>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>글 작성 영역(index.html):</b></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><b>글 작성 영역(index.html):</b></p>
 <pre id="code_1744078804654" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>&lt;textarea 
   id="postContent" placeholder="무슨 일이 일어나고 있나요?" 
   rows="3" style="width:100%;"&gt;
 &lt;/textarea&gt;
 &lt;button onclick="submitPost()"&gt;게시하기&lt;/button&gt;</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>글 작성 요청(index.js) 함수:</b></p>
+<p> </p>
+<p><b>글 작성 요청(index.js) 함수:</b></p>
 <pre id="code_1744078591588" class="html xml" data-ke-language="html" data-ke-type="codeblock"><code>async function submitPost() {
   const content = document.getElementById('postContent').value;
   if (!content.trim()) return;
@@ -178,10 +178,10 @@ if (!token) {
     alert('게시 실패! 로그인 상태를 확인하세요.');
   }
 }</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<h3 data-ke-size="size23">? 참고: 워드프레스 status 값 종류</h3>
-<p data-ke-size="size16">&nbsp;</p>
+<p> </p>
+<p> </p>
+<h3>? 참고: 워드프레스 status 값 종류</h3>
+<p> </p>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li data-end="79" data-start="45"><b>publish</b>: 공개 글. 누구나 볼 수 있음.</li>
 <li data-end="118" data-start="80"><b>draft</b>: 임시 글. 로그인한 작성자만 볼 수 있음.</li>
@@ -192,17 +192,17 @@ if (!token) {
 <li data-end="343" data-start="290"><b>inherit</b>: 첨부 파일 등에 사용되는 내부용 상태. 직접 쓸 일은 거의 없음.</li>
 <li data-end="401" data-start="344"><b>auto-draft</b>: 자동 저장된 초안. 워드프레스 내부에서 사용. 일반적으로 사용 안 함.</li>
 </ul>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>예시: 예약발행</b></p>
+<p> </p>
+<p><b>예시: 예약발행</b></p>
 <pre id="code_1744079263096" class="javascript" data-ke-language="javascript" data-ke-type="codeblock"><code>{
   "title": "예약된 글",
   "content": "이 글은 나중에 자동으로 공개됩니다.",
   "status": "future",
   "date": "2025-04-10T10:00:00"
 }</code></pre>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">필요에 따라 버튼 UI를 다르게 구성하여 "임시 저장" 버튼 누르면 "status": "draft"로 보내고, "발행하기" 버튼 누르면 "publish"로 보내는 식으로 게시물을 작성할 수 있지만 지금 내가 만들려고하는 사이트에서는 이런 기능이 필요 없기에 사용하지는 않을 예정.</p>
-<p data-ke-size="size16">&nbsp;</p>
+<p> </p>
+<p>필요에 따라 버튼 UI를 다르게 구성하여 "임시 저장" 버튼 누르면 "status": "draft"로 보내고, "발행하기" 버튼 누르면 "publish"로 보내는 식으로 게시물을 작성할 수 있지만 지금 내가 만들려고하는 사이트에서는 이런 기능이 필요 없기에 사용하지는 않을 예정.</p>
+<p> </p>
                                 <!-- contents end -->
                             </div>
                         </div>
@@ -240,6 +240,7 @@ if (!token) {
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/article-nav.js"></script>
     <script src="/assets/js/cp_widget.js"></script>
+    <script src="/assets/js/backtotop.js"></script>
 
 </body>
 

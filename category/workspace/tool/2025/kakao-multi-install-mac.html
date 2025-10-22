@@ -49,18 +49,18 @@
                             <div class="z-article__body" id="z-article__body">
                                 <img src="./images/kakao-multi-install-mac_01.jpg" alt="" class="z-article__thumb">
                                 <!-- contents start -->
-                               <p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">맥에는 기본적으로 하나의 카카오톡만 설치할 수 있습니다. <br />하지만 특정 상황에서는 같은 앱을 여러 개 설치하고 복수의 계정을 동시에 사용하는 것이 매우 유용할 때가 있습니다. <br />특히, 두 개 이상의 카카오톡 계정을 관리해야 하는 경우라면 복제된 카카오톡 앱을 사용하는 방법이 효과적입니다.</p>
-<p data-ke-size="size16">이 글에서는 맥에서 카카오톡을 여러 개 설치하는 방법을 소개합니다.</p>
-<p data-ke-size="size16">&nbsp;</p>
-<h3 data-ke-size="size23">카카오톡을 복수로 사용하는 경우</h3>
-<p data-ke-size="size16">저의 경우 Android와 iOS 모두 개발에 필요하다보니 각각 업무용과 개인용 휴대폰으로 설정해서 사용하고 있습니다.<br />이 경우가 아니더라도 회사에서 폰을 지급하는 경우 2대 이상의 휴대폰을 사용하는 분이 많기도하고, 2대 이상을 사용하지 않더라도 최근 eSIM이나 듀얼심 기능이 탑재된 기종들이 보급되면서 하나의 휴대폰에서 두 개의 전화번호를 사용하는 경우가 늘고 있습니다.</p>
-<p data-ke-size="size16">&nbsp;</p>
+                               <p> </p>
+<p>맥에는 기본적으로 하나의 카카오톡만 설치할 수 있습니다. <br />하지만 특정 상황에서는 같은 앱을 여러 개 설치하고 복수의 계정을 동시에 사용하는 것이 매우 유용할 때가 있습니다. <br />특히, 두 개 이상의 카카오톡 계정을 관리해야 하는 경우라면 복제된 카카오톡 앱을 사용하는 방법이 효과적입니다.</p>
+<p>이 글에서는 맥에서 카카오톡을 여러 개 설치하는 방법을 소개합니다.</p>
+<p> </p>
+<h3>카카오톡을 복수로 사용하는 경우</h3>
+<p>저의 경우 Android와 iOS 모두 개발에 필요하다보니 각각 업무용과 개인용 휴대폰으로 설정해서 사용하고 있습니다.<br />이 경우가 아니더라도 회사에서 폰을 지급하는 경우 2대 이상의 휴대폰을 사용하는 분이 많기도하고, 2대 이상을 사용하지 않더라도 최근 eSIM이나 듀얼심 기능이 탑재된 기종들이 보급되면서 하나의 휴대폰에서 두 개의 전화번호를 사용하는 경우가 늘고 있습니다.</p>
+<p> </p>
 <h2 data-ke-size="size26">카카오톡을 복제하여 여러 개 설치하는 방법</h2>
-<p data-ke-size="size16">설치 방법자체는 별거 없습니다. <br />맥에서 터미널을 실행하고 다음 명령어들을 순서대로 입력하면 끝입니다.</p>
-<p data-ke-size="size16">※ <b>KakaoTalkSub.app</b>에서 <b>KakaoTalkSub</b>는 임의로 설정한 이름이며, <b>KakaoTalkxxx</b> 처럼 원하는 이름으로 변경가능합니다.</p>
-<p data-ke-size="size16">각 라인의 명령어는 아래에서 따로 설명합니다.</p>
-<p data-ke-size="size16">&nbsp;</p>
+<p>설치 방법자체는 별거 없습니다. <br />맥에서 터미널을 실행하고 다음 명령어들을 순서대로 입력하면 끝입니다.</p>
+<p>※ <b>KakaoTalkSub.app</b>에서 <b>KakaoTalkSub</b>는 임의로 설정한 이름이며, <b>KakaoTalkxxx</b> 처럼 원하는 이름으로 변경가능합니다.</p>
+<p>각 라인의 명령어는 아래에서 따로 설명합니다.</p>
+<p> </p>
 <pre id="code_1746496185436" class="bash" data-ke-language="bash" data-ke-type="codeblock"><code>cp -a /Applications/KakaoTalk.app /Applications/KakaoTalkSub.app</code></pre>
 <pre id="code_1746496206047" class="bash" data-ke-language="bash" data-ke-type="codeblock"><code>mv /Applications/KakaoTalkSub.app/Contents/MacOS/KakaoTalk /Applications/KakaoTalkSub.app/Contents/MacOS/KakaoTalkSub</code></pre>
 <div data-code-block-pro-font-family="Code-Pro-JetBrains-Mono">
@@ -72,60 +72,60 @@
 </div>
 <pre id="code_1746496299674" class="bash" data-ke-language="bash" data-ke-type="codeblock"><code>codesign --force --deep --sign - /Applications/KakaoTalkSub.app</code></pre>
 <pre id="code_1746496318972" class="bash" data-ke-language="bash" data-ke-type="codeblock"><code>open /Applications/KakaoTalkSub.app</code></pre>
-<div data-code-block-pro-font-family="Code-Pro-JetBrains-Mono">&nbsp;</div>
-<div data-code-block-pro-font-family="Code-Pro-JetBrains-Mono">&nbsp;</div>
-<h3 data-ke-size="size23">명령어 설명<b></b></h3>
-<p data-ke-size="size16"><b>01.</b></p>
-<p data-ke-size="size16"><b>cp -a /Applications/KakaoTalk.app /Applications/KakaoTalkSub.app</b></p>
+<div data-code-block-pro-font-family="Code-Pro-JetBrains-Mono"> </div>
+<div data-code-block-pro-font-family="Code-Pro-JetBrains-Mono"> </div>
+<h3>명령어 설명<b></b></h3>
+<p><b>01.</b></p>
+<p><b>cp -a /Applications/KakaoTalk.app /Applications/KakaoTalkSub.app</b></p>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li>cp는 파일 복사 명령어입니다.</li>
 <li>-a 옵션은 파일의 속성(권한, 타임스탬프 등)을 그대로 유지하면서 복사합니다.</li>
 <li>이 명령은 원래 설치된 카카오톡 앱을 KakaoTalkSub.app이라는 이름으로 복사하여, 새롭게 독립된 앱을 만드는 과정입니다.<b></b></li>
 </ul>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>02.</b></p>
-<p data-ke-size="size16"><b>mv /Applications/KakaoTalkSub.app/contents/MacOS/KakaoTalk /Applications/KakaoTalkSub.app/Contents/MacOS/KakaoTalkSub</b></p>
+<p> </p>
+<p> </p>
+<p><b>02.</b></p>
+<p><b>mv /Applications/KakaoTalkSub.app/contents/MacOS/KakaoTalk /Applications/KakaoTalkSub.app/Contents/MacOS/KakaoTalkSub</b></p>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li>mv는 파일이나 디렉토리의 이름을 변경하거나 위치를 이동시키는 명령어입니다.</li>
 <li>여기서는 KakaoTalkSub.app 내부의 MacOS 폴더에 있는 실행 파일인 KakaoTalk의 이름을 KakaoTalkSub로 변경합니다.</li>
 <li>이 과정은 앱 실행 파일의 이름을 변경하여, 중복된 앱과 충돌을 방지하려는 목적입니다.</li>
 </ul>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>03.</b></p>
-<p data-ke-size="size16"><b>cd /Applications/KakaoTalkSub.app/Contents/</b></p>
+<p> </p>
+<p><b>03.</b></p>
+<p><b>cd /Applications/KakaoTalkSub.app/Contents/</b></p>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li>cd는 디렉토리를 변경하는 명령어입니다.</li>
 <li>이 명령은 현재 디렉토리를 KakaoTalkSub.app의 Contents 폴더로 이동시킵니다. 이 폴더는 앱의 설정 파일인 Info.plist를 포함하고 있습니다.</li>
 </ul>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>04.</b></p>
-<p data-ke-size="size16"><b>sed -i .bak "s/KakaoTalk&lt;\/string&gt;/KakaoTalkSub&lt;\/string&gt;/g" Info.plist</b></p>
+<p> </p>
+<p> </p>
+<p><b>04.</b></p>
+<p><b>sed -i .bak "s/KakaoTalk&lt;\/string&gt;/KakaoTalkSub&lt;\/string&gt;/g" Info.plist</b></p>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li>sed는 파일 내에서 텍스트를 찾아서 바꾸는 명령어입니다.</li>
 <li>-i .bak 옵션은 원본 파일을 Info.plist.bak이라는 이름으로 백업하면서 수정합니다.</li>
 <li>이 명령은 Info.plist 파일에서 &lt;string&gt;KakaoTalk&lt;/string&gt; 부분을 &lt;string&gt;KakaoTalkSub&lt;/string&gt;로 변경합니다.</li>
 <li>앱의 표시 이름을 변경하여, 시스템에서 복제된 앱이 KakaoTalkSub라는 이름으로 표시되도록 만듭니다.<b></b></li>
 </ul>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>05.&nbsp;</b></p>
-<p data-ke-size="size16"><b>sed -i .bak "s/com.kakao.KakaoTalkMac&lt;\/string&gt;/com.kakao.KakaoTalkSubMac&lt;\/string&gt;/g" Info.plist</b></p>
+<p> </p>
+<p><b>05. </b></p>
+<p><b>sed -i .bak "s/com.kakao.KakaoTalkMac&lt;\/string&gt;/com.kakao.KakaoTalkSubMac&lt;\/string&gt;/g" Info.plist</b></p>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li>앞선 sed 명령과 동일한 방식으로, 앱의 번들 식별자(bundle identifier)를 com.kakao.KakaoTalkSubMac으로 변경합니다.</li>
 <li>번들 식별자는 macOS 시스템에서 앱을 구분하는 중요한 요소이며, 중복 앱이 충돌하지 않도록 번들 식별자도 변경해 줍니다.<b></b></li>
 </ul>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>06.</b></p>
-<p data-ke-size="size16"><b>codesign --force --deep --sign - /Applications/KakaoTalkSub.app</b></p>
+<p> </p>
+<p><b>06.</b></p>
+<p><b>codesign --force --deep --sign - /Applications/KakaoTalkSub.app</b></p>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li>codesign은 macOS에서 앱에 서명하는 명령어입니다.</li>
 <li>--force는 이전 서명을 덮어쓰는 옵션이며, --deep은 서명이 필요한 하위 컴포넌트까지 서명합니다.</li>
 <li>이 명령을 통해 복사한 KakaoTalkSub.app을 다시 서명하여 macOS에서 앱이 정상적으로 실행되도록 합니다.<b></b></li>
 </ul>
-<p data-ke-size="size16">&nbsp;</p>
-<p data-ke-size="size16"><b>07.</b></p>
-<p data-ke-size="size16"><b>open /Applications/KakaoTalkSub.app</b> (선택사항)</p>
+<p> </p>
+<p><b>07.</b></p>
+<p><b>open /Applications/KakaoTalkSub.app</b> (선택사항)</p>
 <ul style="list-style-type: disc;" data-ke-list-type="disc">
 <li>open은 앱이나 파일을 여는 명령어입니다.</li>
 <li>이 명령은 새롭게 복제된 KakaoTalkSub.app을 실행합니다.</li>
@@ -168,6 +168,7 @@
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/article-nav.js"></script>
     <script src="/assets/js/cp_widget.js"></script>
+    <script src="/assets/js/backtotop.js"></script>
 
 </body>
 
