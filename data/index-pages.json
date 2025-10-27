@@ -1,0 +1,146 @@
+[
+    {
+        "title": "Sori.Studio",
+        "url": "index.html",
+        "excerpt": "Sori.Studio는 다양한 주제의 정보, 경험, 창작물을 아카이브하는 개인 스튜디오형 블로그입니다. mosaic, creation, keepsakes, workspace, log 다섯 가지 영역을 통해 기록과 창작의 흐름을 담습니다.",
+        "thumb": "/assets/images/og-image.png"
+    },
+    {
+        "title": "Mosaic",
+        "url": "category/mosaic/index.html",
+        "excerpt": "게임, 애니메이션, 장소 후기 등 다양한 주제를 모아 구성한 기록 공간입니다.",
+        "thumb": "/assets/images/thumb_mosaic.png"
+    },
+    {
+        "title": "subculture",
+        "url": "category/mosaic/subculture/index.html",
+        "excerpt": "게임, 애니메이션, 드라마 등 서브컬처 감상 및 소소한 기록을 정리합니다.",
+        "thumb": "/assets/images/thumb_subculture.png"
+    },
+    {
+        "title": "wishlist",
+        "url": "category/mosaic/wishlist/index.html",
+        "excerpt": "갖고 싶은 물건, 관심 있는 아이템을 기록하고 메모하는 공간입니다.",
+        "thumb": "/assets/images/thumb_wishlist.png"
+    },
+    {
+        "title": "moments",
+        "url": "category/mosaic/moment/index.html",
+        "excerpt": "기록하고 싶은 순간, 감정이 담긴 짧은 메모나 경험을 아카이브합니다.",
+        "thumb": "/assets/images/thumb_moments.png"
+    },
+    {
+        "title": "places",
+        "url": "category/mosaic/place/index.html",
+        "excerpt": "여행지, 카페, 전시 등 방문한 장소에 대한 후기를 기록합니다.",
+        "thumb": "/assets/images/thumb_places.png"
+    },
+    {
+        "title": "Creation",
+        "url": "category/creation/index.html",
+        "excerpt": "보드게임 정리, 개인 프로젝트 등 독창적인 창작물을 아카이브합니다.",
+        "thumb": "/assets/images/thumb_creation.png"
+    },
+    {
+        "title": "boardgames",
+        "url": "category/creation/boardgame/index.html",
+        "excerpt": "직접 번역·정리한 보드게임 자료를 모아둡니다.",
+        "thumb": "/assets/images/thumb_boardgames.png"
+    },
+    {
+        "title": "original",
+        "url": "category/creation/original/index.html",
+        "excerpt": "개인 프로젝트, 창작 콘텐츠 등 독창적인 결과물을 기록합니다.",
+        "thumb": "/assets/images/thumb_original.png"
+    },
+    {
+        "title": "Keepsakes",
+        "url": "category/keepsakes/index.html",
+        "excerpt": "게임 로그, 굿즈, 구매 리뷰 등 개인적 소장 기록을 보관합니다.",
+        "thumb": "/assets/images/thumb_keepsakes.png"
+    },
+    {
+        "title": "gamelog",
+        "url": "category/keepsakes/gamelog/index.html",
+        "excerpt": "게임 클리어 로그를 기록합니다.",
+        "thumb": "/assets/images/thumb_gamelog.png"
+    },
+    {
+        "title": "goods",
+        "url": "category/keepsakes/goods/index.html",
+        "excerpt": "피규어, 아트북, 굿즈 등 서브컬처 관련 아이템을 기록합니다.",
+        "thumb": "/assets/images/thumb_goods.png"
+    },
+    {
+        "title": "picks",
+        "url": "category/keepsakes/pick/index.html",
+        "excerpt": "구매한 IT·일반 제품 중 특히 마음에 드는 아이템 리뷰를 기록합니다.",
+        "thumb": "/assets/images/thumb_picks.png"
+    },
+    {
+        "title": "archive",
+        "url": "category/keepsakes/archive/index.html",
+        "excerpt": "더 이상 소장하지 않지만 기록으로 남겨두고 싶은 물건을 기록합니다.",
+        "thumb": "/assets/images/thumb_archive.png"
+    },
+    {
+        "title": "Log",
+        "url": "category/log/index.html",
+        "excerpt": "블로그 운영 기록, 공지, 업데이트 내역 등 사이트 관련 내용을 정리합니다.",
+        "thumb": "/assets/images/thumb_log.png"
+    },
+    {
+        "title": "update",
+        "url": "category/log/update/index.html",
+        "excerpt": "블로그 디자인, 기능, 구조 변경 등 업데이트 내역을 기록합니다.",
+        "thumb": "/assets/images/thumb_update.png"
+    },
+    {
+        "title": "notice",
+        "url": "category/log/notice/index.html",
+        "excerpt": "방문자 안내용 공지사항 및 카테고리 설명 페이지입니다.",
+        "thumb": "/assets/images/thumb_notice.png"
+    },
+    {
+        "title": "news",
+        "url": "category/log/news/index.html",
+        "excerpt": "블로그 관련 소식 및 콘텐츠 계획을 기록합니다.",
+        "thumb": "/assets/images/thumb_news.png"
+    },
+    {
+        "title": "journal",
+        "url": "category/log/journal/index.html",
+        "excerpt": "블로그 운영의 기념적인 이정표를 기록합니다.",
+        "thumb": "/assets/images/thumb_journal.png"
+    },
+    {
+        "title": "Workspace",
+        "url": "category/workspace/index.html",
+        "excerpt": "웹 개발, 서버, 시스템 운영, 워크플로우 등 디지털 작업 환경을 기록합니다.",
+        "thumb": "/assets/images/thumb_workspace.png"
+    },
+    {
+        "title": "web",
+        "url": "category/workspace/web/index.html",
+        "excerpt": "웹 개발 관련 콘텐츠를 기록합니다 (HTML, CSS, JS, Vue, WordPress 등).",
+        "thumb": "/assets/images/thumb_web.png"
+    },
+    {
+        "title": "tools",
+        "url": "category/workspace/tool/index.html",
+        "excerpt": "생산성 도구 및 개발 환경을 정리합니다 (Obsidian, Git, VSCode 등).",
+        "thumb": "/assets/images/thumb_tools.png"
+    },
+    {
+        "title": "system",
+        "url": "category/workspace/system/index.html",
+        "excerpt": "NAS, 라우터, 홈 서버, 클라우드 연동 등 시스템/네트워크 관리 경험을 기록합니다.",
+        "thumb": "/assets/images/thumb_system.png"
+    },
+    {
+        "title": "workflow",
+        "url": "category/workspace/workflow/index.html",
+        "excerpt": "프로젝트 관리, 협업 구조, 백업, 품질보증 등 작업 흐름을 기록합니다.",
+        "thumb": "/assets/images/thumb_workflow.png"
+    }
+]

@@ -1770,25 +1770,6 @@ figure.fileblock .size,
     visibility: visible;
 }
 
-.backtotop::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 46px;
-    height: 46px;
-    font-family: 'Font Awesome\ 6 Free';
-    font-size: 1.6rem;
-    font-weight: 900;
-    line-height: 28px;
-    text-align: center;
-    color: #757575;
-    cursor: pointer;
-    transition: all 0.2s linear;
-    z-index: 1;
-    content: '\f106';
-}
-
 .backtotop:hover::after {
     color: var(--default-link);
 }
@@ -1807,7 +1788,7 @@ figure.fileblock .size,
 .backtotop .progress-count {
     position: absolute;
     right: 0;
-    bottom: 8px;
+    bottom: 12px;
     left: 0;
     display: block;
     font-size: 0.5rem;
@@ -1820,21 +1801,18 @@ figure.fileblock .size,
 }
 
 .backtotop::after {
+    content: '\2B9D';
     color: #2b2b2e;
-}
-
-.backtotop::after {
-  content: '⬆'; /* 유니코드 화살표 */
-  position: absolute;
-  top: 40%;
-  left: 48%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 46px;
-  height: 46px;
-  font-size: 1rem; /* 크기 조절 */
-  line-height: 46px;
-  text-align: center;
-  color: #757575;
-  transition: all 0.2s linear;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 46px;
+    height: 46px;
+    font-size: 1rem;
+    line-height: 46px;
+    text-align: center;
+    color: #757575;
+    transition: all 0.2s linear;
 }
