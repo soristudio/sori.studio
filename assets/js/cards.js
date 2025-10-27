@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       filtered = posts.filter(p => p.category.startsWith(categoryKey) && p.status === "public");
     }
 
+    // 🔹 date 기준 정렬
+    filtered.sort((a, b) => new Date(b.date.replace(/\./g, '-')) - new Date(a.date.replace(/\./g, '-')));
+
     // 데이터 리미트가 0이면 페이지네이션 사용
     let paginationEnabled = false;
     let sliceLimit = limit;
