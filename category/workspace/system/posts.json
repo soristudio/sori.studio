@@ -1,0 +1,62 @@
+[
+    {
+        "id": 90006,
+        "title": "노트 관리 기법: 'PDS'의 활용과 적용",
+        "category": "workspace/system",
+        "date": "2025.06.06",
+        "thumb": "/category/workspace/system/2025/images/note-management-technique-pds_01.png",
+        "url": "/category/workspace/system/2025/note-management-technique-pds.html",
+        "excerpt": "PDS(Plan-Do-See)는 문제 해결과 성과 개선을 위한 간단하고 효과적인 방식입니다. PDS 기법의 기본 개념과 활용 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 90005,
+        "title": "노트 관리 기법: 'PDCA'의 활용과 적용",
+        "category": "workspace/system",
+        "date": "2025.06.05",
+        "thumb": "/category/workspace/system/2025/images/note-management-technique-pdca_01.png",
+        "url": "/category/workspace/system/2025/note-management-technique-pdca.html",
+        "excerpt": "PDCA 기법의 기본 개념과 활용 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 90004,
+        "title": "노트 관리 기법: 'PARA'의 활용과 적용",
+        "category": "workspace/system",
+        "date": "2025.06.04",
+        "thumb": "/category/workspace/system/2025/images/note-management-technique-para_01.png",
+        "url": "/category/workspace/system/2025/note-management-technique-para.html",
+        "excerpt": "PARA 기법의 기본 개념과 활용 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 90003,
+        "title": "노트 관리 기법: '제텔카스텐'의 활용과 적용",
+        "category": "workspace/system",
+        "date": "2025.06.03",
+        "thumb": "/category/workspace/system/2025/images/note-management-technique-zettelkasten_01.png",
+        "url": "/category/workspace/system/2025/note-management-technique-zettelkasten.html",
+        "excerpt": "제텔카스텐 기법의 기본 개념과 활용 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 90002,
+        "title": "효율적인 사진 관리: 폴더 구조와 파일명 형식 정리 방법",
+        "category": "workspace/system",
+        "date": "2025.06.02",
+        "thumb": "/category/workspace/system/2025/images/efficient-photo-management-folder-structure-filename_01.png",
+        "url": "/category/workspace/system/2025/efficient-photo-management-folder-structure-filename.html",
+        "excerpt": "효율적인 사진 관리를 위한 폴더 구조와 파일명 형식 정리 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 90001,
+        "title": "3-2-1 백업 전략: 데이터 안전을 위한 최적의 방법",
+        "category": "workspace/system",
+        "date": "2025.06.01",
+        "thumb": "/category/workspace/system/2025/images/3-2-1-backup-strategy_01.png",
+        "url": "/category/workspace/system/2025/3-2-1-backup-strategy.html",
+        "excerpt": "3-2-1 백업 전략은 데이터 손실을 방지하기 위한 효과적인 방법입니다.",
+        "status": "public"
+    }
+]

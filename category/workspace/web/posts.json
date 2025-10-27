@@ -1,0 +1,62 @@
+[
+    {
+        "id": 80006,
+        "title": "워드프레스 게시글에 댓글 기능 붙이기 (REST API 기반)",
+        "category": "workspace/web",
+        "date": "2025.04.13",
+        "thumb": "/category/workspace/web/2025/images/wordpress-add-comments-rest-api_01.jpg",
+        "url": "/category/workspace/web/2025/wordpress-add-comments-rest-api.html",
+        "excerpt": "워드프레스 REST API를 이용하여 게시물에 댓글 기능을 추가하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80005,
+        "title": "워드프레스 글에 이미지 추가하기 (커스텀 필드 활용)",
+        "category": "workspace/web",
+        "date": "2025.04.12",
+        "thumb": "/category/workspace/web/2025/images/wordpress-add-image-custom-field_01.jpg",
+        "url": "/category/workspace/web/2025/wordpress-add-image-custom-field.html",
+        "excerpt": "워드프레스 REST API를 이용하여 이미지 업로드 및 게시물에 연결하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80004,
+        "title": "워드프레스 사용자 프로필 이름 다루기 (display_name 사용법)",
+        "category": "workspace/web",
+        "date": "2025.04.11",
+        "thumb": "/category/workspace/web/2025/images/wordpress-user-display-name_01.jpg",
+        "url": "/category/workspace/web/2025/wordpress-user-display-name.html",
+        "excerpt": "워드프레스에서 사용자 프로필 이름을 다루는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80003,
+        "title": "워드프레스 사용자 회원가입 기능 직접 만들기 (플러그인 활용)",
+        "category": "workspace/web",
+        "date": "2025.04.10",
+        "thumb": "/category/workspace/web/2025/images/wordpress-register-plugin_01.jpg",
+        "url": "/category/workspace/web/2025/wordpress-register-plugin.html",
+        "excerpt": "워드프레스에서 사용자 회원가입 기능을 직접 구현하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80002,
+        "title": "워드프레스 로그인 & 글 작성 직접 구현하기 (JWT 인증)",
+        "category": "workspace/web",
+        "date": "2025.04.09",
+        "thumb": "/category/workspace/web/2025/images/wordpress-login-jwt_01.jpg",
+        "url": "/category/workspace/web/2025/wordpress-login-jwt.html",
+        "excerpt": "워드프레스에서 JWT 인증을 이용하여 로그인 및 글 작성을 구현하는 방법에 대해 알아봅니다.",
+        "status": "public"
+    },
+    {
+        "id": 80001,
+        "title": "워드프레스에서 REST API로 글 목록 불러오기",
+        "category": "workspace/web",
+        "date": "2025.04.08",
+        "thumb": "/category/workspace/web/2025/images/wordpress-rest-api-posts_01.jpg",
+        "url": "/category/workspace/web/2025/wordpress-rest-api-posts.html",
+        "excerpt": "워드프레스에서 REST API를 이용하여 게시물 목록을 불러오는 방법에 대해 알아봅니다.",
+        "status": "public"
+    }
+]

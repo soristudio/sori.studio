@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const sectionElements = document.querySelectorAll(".z-section");
 
-  // 대분류별 JSON 매핑
+  // 상위 카테고리별 하위 폴더 매핑
   const categoryMap = {
-    mosaic: "/data/posts-mosaic.json",
-    creation: "/data/posts-creation.json",
-    keepsakes: "/data/posts-keepsakes.json",
-    log: "/data/posts-log.json",
-    workspace: "/data/posts-workspace.json"
+    creation: ["creation/original", "creation/boardgame"],
+    keepsakes: ["keepsakes/archive", "keepsakes/gamelog", "keepsakes/goods", "keepsakes/pick"],
+    log: ["log/journal", "log/news", "log/notice", "log/update"],
+    mosaic: ["mosaic/moment", "mosaic/place", "mosaic/subculture", "mosaic/wishlist"],
+    workspace: ["workspace/system", "workspace/tool", "workspace/web", "workspace/workflow"],
   };
 
-  // section 별로 처리
+  // section 별 처리
   for (const section of sectionElements) {
     const list = section.querySelector(".z-section__list");
     if (!list) continue;
@@ -22,32 +22,49 @@ document.addEventListener("DOMContentLoaded", async () => {
     let posts = [];
 
     if (categoryKey === "latest") {
-      // 최신은 모든 대분류 JSON을 합쳐서
-      const fetches = Object.values(categoryMap).map(f => fetch(f).then(r => r.json()));
-      const allData = await Promise.all(fetches);
+      // 최신: 모든 대분류 하위 폴더 합치기
+      const allFetches = [];
+      Object.values(categoryMap).forEach(subCategories => {
+        subCategories.forEach(subCat => {
+          allFetches.push(fetch(`/category/${subCat}/posts.json`).then(r => r.json()).catch(() => []));
+        });
+      });
+      const allData = await Promise.all(allFetches);
       posts = allData.flat();
     } else {
-      // 특정 카테고리일 경우 상위 카테고리 추출
+      // 상위/하위 카테고리 구분
       const topCategory = categoryKey.split("/")[0];
-      console.log(topCategory)
-      const dataFile = categoryMap[topCategory];
-      if (dataFile) {
-        posts = await fetch(dataFile).then(r => r.json());
+      const subCategories = categoryMap[topCategory] || [];
+
+      if (subCategories.includes(categoryKey)) {
+        // 하위 카테고리 선택: 해당 JSON만 fetch
+        try {
+          posts = await fetch(`/category/${categoryKey}/posts.json`).then(r => r.json());
+        } catch {
+          posts = [];
+        }
+      } else {
+        // 상위 카테고리 선택: 모든 하위 폴더 JSON 합치기
+        const fetches = subCategories.map(subCat =>
+          fetch(`/category/${subCat}/posts.json`).then(r => r.json()).catch(() => [])
+        );
+        const allData = await Promise.all(fetches);
+        posts = allData.flat();
       }
     }
 
     // 공개 상태만 필터링
     posts = posts.filter(p => p.status === "public");
 
-    // 하위카테고리 필터링
+    // 하위카테고리 필터링 (정확한 카테고리 표시용)
     if (categoryKey !== "latest") {
       posts = posts.filter(p => p.category.startsWith(categoryKey));
     }
 
-    // 🔹 date 기준 정렬 (최신순)
+    // 최신순 정렬
     posts.sort((a, b) => new Date(b.date.replace(/\./g, '-')) - new Date(a.date.replace(/\./g, '-')));
 
-    // 페이지네이션 처리
+    // 페이지네이션
     let paginationEnabled = false;
     let sliceLimit = limit;
     if (limit === 0) {

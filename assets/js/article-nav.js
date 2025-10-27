@@ -1,10 +1,33 @@
 document.addEventListener('DOMContentLoaded', loadPrevNext);
 
 async function loadPrevNext() {
-  const res = await fetch('/data/posts.json');
-  const posts = await res.json();
-
   const currentPath = window.location.pathname;
+  const categoryParts = currentPath.split('/').filter(Boolean); // ['category','workspace','web','index.html']
+  const topCategory = categoryParts[1]; // workspace
+  const subCategory = categoryParts.length > 3 ? categoryParts[2] : null; // web (없으면 null)
+
+  let posts = [];
+
+  if (subCategory) {
+    // 하위 폴더 글 → 해당 폴더 posts.json만 가져오기
+    const res = await fetch(`/category/${topCategory}/${subCategory}/posts.json`);
+    posts = await res.json();
+  } else {
+    // 상위 폴더 글 → 하위 모든 폴더 posts.json 합치기
+    const subFolders = {
+      creation: ["creation/original", "creation/boardgame"],
+      keepsakes: ["keepsakes/archive", "keepsakes/gamelog", "keepsakes/goods", "keepsakes/pick"],
+      log: ["log/journal", "log/news", "log/notice", "log/update"],
+      mosaic: ["mosaic/moment", "mosaic/place", "mosaic/subculture", "mosaic/wishlist"],
+      workspace: ["workspace/system", "workspace/tool", "workspace/web", "workspace/workflow"]
+    };
+
+    const folderList = subFolders[topCategory] || [];
+    const fetches = folderList.map(f => fetch(`/category/${f}/posts.json`).then(r => r.json()));
+    const allData = await Promise.all(fetches);
+    posts = allData.flat();
+  }
+
   const currentPost = posts.find(post => post.url === currentPath);
   if (!currentPost) return;
 
@@ -12,13 +35,8 @@ async function loadPrevNext() {
     .filter(post => post.category.startsWith(currentPost.category) && post.status === "public")
     .sort((a, b) => a.id - b.id);
 
-  const prev = filteredPosts
-    .filter(post => post.id < currentPost.id)
-    .sort((a, b) => b.id - a.id)[0] || null;
-
-  const next = filteredPosts
-    .filter(post => post.id > currentPost.id)
-    .sort((a, b) => a.id - b.id)[0] || null;
+  const prev = filteredPosts.filter(post => post.id < currentPost.id).sort((a, b) => b.id - a.id)[0] || null;
+  const next = filteredPosts.filter(post => post.id > currentPost.id).sort((a, b) => a.id - b.id)[0] || null;
 
   const container = document.querySelector('.z-article__prenext-list');
   if (!container) return;
