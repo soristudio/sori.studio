@@ -1,43 +1,65 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const res = await fetch("/data/posts.json");
-  const posts = await res.json();
+  const sectionElements = document.querySelectorAll(".z-section");
 
-  // 현재 페이지 쿼리
-  const urlParams = new URLSearchParams(window.location.search);
-  const currentPage = parseInt(urlParams.get("page")) || 1;
+  // 대분류별 JSON 매핑
+  const categoryMap = {
+    mosaic: "/data/posts-mosaic.json",
+    creation: "/data/posts-creation.json",
+    keepsakes: "/data/posts-keepsakes.json",
+    log: "/data/posts-log.json",
+    workspace: "/data/posts-workspace.json"
+  };
 
-  document.querySelectorAll(".z-section").forEach(section => {
+  // section 별로 처리
+  for (const section of sectionElements) {
     const list = section.querySelector(".z-section__list");
-    if (!list) return;
+    if (!list) continue;
 
     const categoryKey = section.dataset.category || "latest";
     let limit = parseInt(section.dataset.limit);
     if (isNaN(limit)) limit = 6;
 
-    // 게시물 필터링
-    let filtered;
+    let posts = [];
+
     if (categoryKey === "latest") {
-      filtered = posts.slice().filter(p => p.status === "public");
+      // 최신은 모든 대분류 JSON을 합쳐서
+      const fetches = Object.values(categoryMap).map(f => fetch(f).then(r => r.json()));
+      const allData = await Promise.all(fetches);
+      posts = allData.flat();
     } else {
-      filtered = posts.filter(p => p.category.startsWith(categoryKey) && p.status === "public");
+      // 특정 카테고리일 경우 상위 카테고리 추출
+      const topCategory = categoryKey.split("/")[0];
+      console.log(topCategory)
+      const dataFile = categoryMap[topCategory];
+      if (dataFile) {
+        posts = await fetch(dataFile).then(r => r.json());
+      }
     }
 
-    // 🔹 date 기준 정렬
-    filtered.sort((a, b) => new Date(b.date.replace(/\./g, '-')) - new Date(a.date.replace(/\./g, '-')));
+    // 공개 상태만 필터링
+    posts = posts.filter(p => p.status === "public");
 
-    // 데이터 리미트가 0이면 페이지네이션 사용
+    // 하위카테고리 필터링
+    if (categoryKey !== "latest") {
+      posts = posts.filter(p => p.category.startsWith(categoryKey));
+    }
+
+    // 🔹 date 기준 정렬 (최신순)
+    posts.sort((a, b) => new Date(b.date.replace(/\./g, '-')) - new Date(a.date.replace(/\./g, '-')));
+
+    // 페이지네이션 처리
     let paginationEnabled = false;
     let sliceLimit = limit;
-    // console.log("Cards limit:", limit);
     if (limit === 0) {
       paginationEnabled = true;
       sliceLimit = 10;
     }
 
-    // slice
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentPage = parseInt(urlParams.get("page")) || 1;
     const start = (currentPage - 1) * sliceLimit;
     const end = start + sliceLimit;
-    const pagePosts = filtered.slice(start, end);
+    const pagePosts = posts.slice(start, end);
 
     // 리스트 초기화
     list.innerHTML = "";
@@ -79,19 +101,19 @@ document.addEventListener("DOMContentLoaded", async () => {
       const emptyMessage = document.createElement("div");
       emptyMessage.className = "z-card empty-message";
       emptyMessage.innerHTML = `
-      <div class="z-card_wrapper">
-        <div class="z-card__content">
-          <div class="z-card_title">📭 관련 글이 없습니다.</div>
-          <div class="z-card_summary">해당 카테고리에 아직 게시물이 등록되지 않았습니다.</div>
+        <div class="z-card_wrapper">
+          <div class="z-card__content">
+            <div class="z-card_title">📭 관련 글이 없습니다.</div>
+            <div class="z-card_summary">해당 카테고리에 아직 게시물이 등록되지 않았습니다.</div>
+          </div>
         </div>
-      </div>
-    `;
+      `;
       list.appendChild(emptyMessage);
     }
 
     // 페이지네이션
     if (paginationEnabled) {
-      const totalPages = Math.ceil(filtered.length / sliceLimit);
+      const totalPages = Math.ceil(posts.length / sliceLimit);
       if (totalPages > 1) {
         const existingPagination = section.querySelector(".z-pagination");
         if (existingPagination) existingPagination.remove();
@@ -110,5 +132,5 @@ document.addEventListener("DOMContentLoaded", async () => {
         section.appendChild(pagination);
       }
     }
-  });
+  }
 });

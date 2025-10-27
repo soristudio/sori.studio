@@ -1,0 +1,22 @@
+[
+    {
+        "id": 65001,
+        "title": "블로그 카테고리 안내",
+        "category": "log/notice",
+        "date": "2025.04.05",
+        "thumb": "",
+        "url": "/category/log/notice/2025/blog-category-guide.html",
+        "excerpt": "이곳은 다양한 관심사와 작업 결과물을 주제별로 정리해두는 개인 아카이브입니다. 내용을 보다 쉽게 찾아볼 수 있도록 카테고리를 몇 가지 기준에 따라 분류해두었습니다. 각 카테고리의 성격과 용도를 간단히 소개합니다.",
+        "status": "public"
+    },
+    {
+        "id": 70001,
+        "title": "새롭게 시작, 가볍게 남기는 기록들",
+        "category": "log/news",
+        "date": "2025.04.01",
+        "thumb": "",
+        "url": "/category/log/news/2025/new-start-light-notes.html",
+        "excerpt": "새로운 시작을 맞이하여 기록 습관을 다시 세우고, 가볍게 남기는 기록들에 대해 생각해봅니다.",
+        "status": "public"
+    }
+]
