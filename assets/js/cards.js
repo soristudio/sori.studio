@@ -10,6 +10,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     workspace: ["workspace/system", "workspace/tool", "workspace/web", "workspace/workflow"],
   };
 
+  // 모든 게시물 통합 로드 함수
+  async function loadAllPosts() {
+    const allFetches = [];
+    Object.values(categoryMap).forEach(subCategories => {
+      subCategories.forEach(subCat => {
+        allFetches.push(fetch(`/category/${subCat}/posts.json`).then(r => r.json()).catch(() => []));
+      });
+    });
+    const allData = await Promise.all(allFetches);
+    return allData.flat().filter(p => p.status === "public");
+  }
+
+  // 🟢 모든 데이터 한 번만 로드
+  const allPosts = await loadAllPosts();
+
   // section 별 처리
   for (const section of sectionElements) {
     const list = section.querySelector(".z-section__list");
@@ -21,44 +36,54 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     let posts = [];
 
-    if (categoryKey === "latest") {
-      // 최신: 모든 대분류 하위 폴더 합치기
-      const allFetches = [];
-      Object.values(categoryMap).forEach(subCategories => {
-        subCategories.forEach(subCat => {
-          allFetches.push(fetch(`/category/${subCat}/posts.json`).then(r => r.json()).catch(() => []));
-        });
-      });
-      const allData = await Promise.all(allFetches);
-      posts = allData.flat();
+    // ✅ 검색 전용 분기
+    if (categoryKey === "search") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = (urlParams.get("q") || "").trim().toLowerCase();
+
+      if (query.length === 0) {
+        list.innerHTML = `<div class="z-card empty-message">
+          <div class="z-card_wrapper">
+            <div class="z-card__content">
+              <div class="z-card_title">🔎 검색어를 입력해주세요.</div>
+              <div class="z-card_summary">검색어가 비어 있습니다.</div>
+            </div>
+          </div>
+        </div>`;
+        continue;
+      }
+
+      posts = allPosts.filter(p =>
+        (p.title && p.title.toLowerCase().includes(query)) ||
+        (p.excerpt && p.excerpt.toLowerCase().includes(query))
+      );
+
+      if (posts.length === 0) {
+        list.innerHTML = `<div class="z-card empty-message">
+          <div class="z-card_wrapper">
+            <div class="z-card__content">
+              <div class="z-card_title">📭 검색 결과가 없습니다.</div>
+              <div class="z-card_summary">"${query}"에 해당하는 게시물이 없습니다.</div>
+            </div>
+          </div>
+        </div>`;
+        continue;
+      }
+
+      posts.sort((a, b) => new Date(b.date.replace(/\./g, '-')) - new Date(a.date.replace(/\./g, '-')));
+    } else if (categoryKey === "latest") {
+      // 최신: allPosts 전체 사용
+      posts = [...allPosts];
     } else {
       // 상위/하위 카테고리 구분
       const topCategory = categoryKey.split("/")[0];
       const subCategories = categoryMap[topCategory] || [];
 
       if (subCategories.includes(categoryKey)) {
-        // 하위 카테고리 선택: 해당 JSON만 fetch
-        try {
-          posts = await fetch(`/category/${categoryKey}/posts.json`).then(r => r.json());
-        } catch {
-          posts = [];
-        }
+        posts = allPosts.filter(p => p.category.startsWith(categoryKey));
       } else {
-        // 상위 카테고리 선택: 모든 하위 폴더 JSON 합치기
-        const fetches = subCategories.map(subCat =>
-          fetch(`/category/${subCat}/posts.json`).then(r => r.json()).catch(() => [])
-        );
-        const allData = await Promise.all(fetches);
-        posts = allData.flat();
+        posts = allPosts.filter(p => subCategories.some(sc => p.category.startsWith(sc)));
       }
-    }
-
-    // 공개 상태만 필터링
-    posts = posts.filter(p => p.status === "public");
-
-    // 하위카테고리 필터링 (정확한 카테고리 표시용)
-    if (categoryKey !== "latest") {
-      posts = posts.filter(p => p.category.startsWith(categoryKey));
     }
 
     // 최신순 정렬
@@ -113,8 +138,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       list.appendChild(article);
     });
 
-    // 게시물이 없는 경우 안내
-    if (pagePosts.length === 0) {
+    // 게시물이 없는 경우 안내 (검색 이외)
+    if (categoryKey !== "search" && pagePosts.length === 0) {
       const emptyMessage = document.createElement("div");
       emptyMessage.className = "z-card empty-message";
       emptyMessage.innerHTML = `
