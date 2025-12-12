@@ -36,6 +36,9 @@ function generateMeta(post) {
     <link rel="icon" href="/assets/images/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
 
+    <!-- Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4516420168710424" crossorigin="anonymous"></script>
+
     <!-- Styles & Scripts -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/lib/highlight.min.js"></script>
